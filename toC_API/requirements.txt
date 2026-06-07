@@ -1,0 +1,3 @@
+# 服务器完整依赖：API + 管线 LLM
+-r requirements-api.txt
+openai>=1.0.0

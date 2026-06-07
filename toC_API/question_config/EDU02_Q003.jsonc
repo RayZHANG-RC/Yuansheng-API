@@ -1,0 +1,87 @@
+{
+    // 教育发展 - 人才相关 - 学术投稿择吉时机
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "EDU02_Q003",
+        "question_text": "本次投稿应该选在什么时候?",
+        "question_domain": "教育发展",
+        "question_theme": "人才相关",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [
+                {"type": "select", "name": "投稿类型", "options": ["SCI期刊", "核心期刊", "普通期刊", "会议论文", "专利申请", "著作出版"], "user_input":""}, // 这个是投稿类型，需要用户输入 如 SCI期刊
+
+                {"type": "time_string", "name": "编辑部当地真太阳时", "options": "YYYY-MM-DD HH:mm:ss", "user_input":""} // 这个是编辑部当地真太阳时，需要用户输入 如 2026-01-01 12:00:00
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "用户对投稿过程的其他描述",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系，结合大运流年判断最佳进修时机和发展方向",
+
+        "methods": [
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "risk_decision_logic": "小六壬以时宫所在末传为用，探究该宫整体的吉凶情况。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "如果遇到末传为留连赤口或空亡宫，则意味着学术表达不佳或遭遇审稿挫折，需完善内容",
+                    "如果遇到投稿时机与个人运势相冲，则意味着即便内容优秀也可能遭遇不公正待遇",
+                    "如果遇到文昌受克或学术宫破损，则意味着论文质量存在问题，需深度修改完善",
+                    "如果遇到官鬼爻不利或权威缺失，则意味着期刊选择不当，投稿方向需要调整",
+                    "如果遇到末传为大安速喜小吉，则意味着学术表达优秀，投稿成功概率极高",
+                    "如果遇到六亲六神帮扶且文昌当令，则意味着学术水平得到认可，发表顺利",
+                    "如果遇到空宫吉星或直接接受卦象，则意味着论文质量上乘，无需修改即可发表"
+                ],
+                "raw_palette": {}
+            }
+        ],
+
+        "other_tips": "投稿类型决定择时标准，期刊级别影响成功难度评估，论文领域关系到专业方向的五行属性。国际期刊考虑采用编辑部所在时区"
+    },
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "请确保投稿内容符合学术规范和期刊要求"
+        ],
+
+        "ui_representation_tips": "同时提醒用户关注期刊的投稿截止日期和审稿周期。",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU02_Q002",
+                "question_text": "我 _____ 人才审批能不能下来",
+                "recommendation_reason": "学术成果发表对人才认定的支撑作用"
+            },
+            {
+                "question_id": "CAR01_Q002",
+                "question_text": "我这次换工作能不能成功？什么时候能找到合适的？",
+                "recommendation_reason": "学术成就对职业发展的促进作用"
+            }
+        ]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

@@ -1,0 +1,41 @@
+// API 请求示例（CAR01_Q004）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR01_Q004"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "职业规划方向",
+                        "input": "技术专家"
+                    },
+                    {
+                        "name": "current_salary 当前年薪",
+                        "input": "年薪1万以下"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "location 工作地点",
+                        "input": "一线城市"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

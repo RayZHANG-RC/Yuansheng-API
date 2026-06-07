@@ -1,0 +1,54 @@
+// API 请求示例（REL01_Q013）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "REL01_Q013"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "双方性格",
+                        "input": "示例双方性格"
+                    },
+                    {
+                        "name": "季节时间",
+                        "input": "示例季节时间"
+                    },
+                    {
+                        "name": "预算范围",
+                        "input": "示例预算范围"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "当前感情状态",
+                        "input": "刚认识"
+                    },
+                    {
+                        "name": "其他具体描述",
+                        "input": ""
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            },
+            "synastry": "true",
+            "person_b": {
+                "birth_time": "199005151400",
+                "gender": "female"
+            }
+        }
+    }
+}

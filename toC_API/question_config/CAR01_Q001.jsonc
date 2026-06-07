@@ -1,0 +1,114 @@
+{
+    // 职业发展 - 工作晋升 - 升职机会时机分析
+    // 以八字为主分析官运升迁的时机和策略
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR01_Q001",
+        "question_text": "我最近一次升职机会是什么时候？我要如何做？",
+        "question_domain": "职业发展",
+        "question_theme": "工作晋升",
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "restriction",
+            "message": "此功能仅适用于已在职场工作的用户。"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {"type": "text", "name": "地理位置信息", "options": "请输入地理位置信息"}
+            ],
+            "optional_inputs": [{
+                    "type": "select",
+                    "name": "当前单位性质",
+                    "options": [  "国家行政机关",
+                        "事业单位（含公立学校、医院、科研机构等）",
+                        "国有企业",
+                        "国有控股企业",
+                        "集体所有制企业",
+                        "三资企业（中外合资/合作/外资企业）",
+                        "私营企业（含私营独资/私营有限公司/私营股份制）",
+                        "外商独资企业（外资控股）",
+                        "合伙企业",
+                        "个人独资企业",
+                        "其他（如非营利社会组织、民办非企业单位等）"]
+                }]
+        }
+    },
+
+    "quantitative_stage": {
+        // === 领域内问题的基调 ===
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+    // === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "关键看官鬼是否持世、生世、化进，且父母爻无空破克制，才能确认升职时机。",
+                "priority_remark": 1,
+                "criteria": [
+                    {
+                        "name": "取用神",
+                        "description": "以官鬼爻为用神，预测升职；世爻代表求测者自身。官鬼持世、生世或化进为吉，不宜克制、空亡或休囚。"
+                    },
+                    {
+                        "name": "官鬼旺衰",
+                        "description": "官鬼旺相、发动或受生扶，则升职机遇强；官鬼休囚、空破或受克，机会弱或徒劳。"
+                    },
+                    {
+                        "name": "父母爻状态",
+                        "description": "父母爻代表任命文件及职权支持，需旺相且无墓破；若父母爻持世且被生扶，更利升职。"
+                    },
+                    {
+                        "name": "兄弟/子孙干扰",
+                        "description": "兄弟爻发动为同事竞争；子孙发动为外部或内部扰动，均为不利因素。"
+                    },
+                    {
+                        "name": "世应关系",
+                        "description": "世爻与官鬼、父母间生克、合化关系为时机判断基础；特别看官鬼何时当值或冲开墓库。"
+                    }
+                ],
+                "risk_assessment": [
+                    "如果遇到官鬼爻空破或休囚无气，则意味着升职机会虚无缥缈，时机未到或职位无望",
+                    "如果遇到父母爻空亡被克制，则意味着任命流程受阻，权力支持不足或文件延迟",
+                    "如果遇到兄弟爻发动克财，则意味着职场竞争激烈，同事阻碍或资源争夺加剧",
+                    "如果遇到子孙爻发动克官，则意味着外部变动干扰，项目调整或政策影响升迁",
+                    "如果遇到官鬼爻受克或世爻被刑冲，则意味着工作压力巨大，甚至面临降职或调岗风险",
+                    "如果遇到官鬼爻旺相生世且父母爻得力，则意味着升职时机成熟，上级支持有力，晋升顺利可期",
+                    "如果遇到世爻得官鬼爻生扶且无兄弟爻干扰，则意味着个人能力得到认可，竞争优势明显，升职成功率高"
+                ],
+                "raw_palette": {}
+            }
+        ],
+        "other_tips": ""
+    },
+
+
+    "qualitative_stage": {
+        // === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "职场升迁受个人能力、公司政策、行业环境等多重因素影响"
+        ],
+
+        "ui_representation_tips": "建议用户详细描述当前工作环境、升职竞争情况、个人优势劣势，以及具体的升职目标和时间要求，以便提供更精准的时机分析和策略建议。",
+
+        "follow_up_questions": [
+            {
+                "question_id": "CAR01_Q002",
+                "question_text": "我这次换工作能不能成功？什么时候能找到合适的？"
+            }
+        ]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

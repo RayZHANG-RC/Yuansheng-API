@@ -1,0 +1,75 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q024",
+        "question_text": "TA为什么会不开心？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+ 
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "发生时间",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "当时情境",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"通过世应调和、财爻催旺、用神发动、动爻指向等，判断具体促进关系的有效行动。对此事起卦，以应爻为对方，看其所临六亲与六兽。应临兄弟，多为意气之争或受朋友影响；临子孙，则为随性而为，并无深意；临妻财，必与利益或感情有关；临父母，则为长辈压力或有文书之事；临官鬼，则心有疑虑或另有图谋。再看发动之爻，动必有因，此爻即为事件的直接导火索。注意，除此之外，也应该考虑当前爻所在地支的余气，观察是否为余气中的若干内容所贼。",
+                "risk_assessment": [
+                    "如果遇到应爻临兄弟且兄弟爻发动，则意味着TA不开心可能因朋友圈影响或竞争压力",
+                    "如果遇到应爻临妻财或子孙爻，则意味着TA情绪波动可能关于感情问题或随性冲动",
+                    "如果遇到应爻临父母或官鬼爻，则意味着TA心情不好可能因长辈事务或心理负担",
+                    "如果遇到应爻被刑冲或临凶煞，则意味着TA面临外在压力或内心困扰较重",
+                    "如果遇到日建月建生克动爻和谐，则意味着择吉日温柔沟通或主动慰问效果最佳",
+                    "如果遇到应爻空破或化退，则意味着TA情绪低落原因复杂，需要耐心陪伴理解"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "结合全卦，可知其行为背后的完整逻辑链条。"
+    },
+    "qualitative_stage": {
+
+    // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "需结合双方实际需求，建议多沟通、关注细节，适时调整互动方式"
+        ],
+        "ui_tips": "",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": false
+    }
+}

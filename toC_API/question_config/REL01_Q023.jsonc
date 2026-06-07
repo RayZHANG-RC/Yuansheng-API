@@ -1,0 +1,85 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q023",
+        "question_text": "我应该怎么做来促进我和TA的关系？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题需要预先加载合盘，请在用户输入八字后，加载合盘。"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "select ",
+                    "name": "现在是什么关系？",
+                    "options": ["普通朋友", "刚认识","暧昧", "恋爱", "已分手", "已婚", "已离婚"]
+                },
+                {
+                    "type": "text",
+                    "name": "对方性格",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "障碍与阻力",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "发展目标",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以世应代表双边，官鬼爻代表隐藏议题，结合动爻、解神、变卦判断主动策略。若官鬼爻受生扶且无煞冲，且解神充足，应通过示好、关怀等方式打破僵局；若官鬼爻被克或无解神，则宜暂缓行动，以化解内在障碍为主。",
+                "risk_assessment": [
+                    "如果遇到官鬼爻得生且解神显现，则意味着适合主动示好或制造接触，打破僵局效果佳",
+                    "如果遇到世应相生相合，则意味着互动容易提升，应加深共性连接增进感情",
+                    "如果遇到解神充足且动爻和谐，则意味着通过关怀表达等方式能有效化解障碍",
+                    "如果遇到官鬼爻被克或动爻多煞，则意味着建议先调整自身状态，减少冲突避免激化",
+                    "如果遇到世应相克或变卦为六冲，则意味着建议谨慎推进，需化解误会再行动",
+                    "如果遇到无解神且卦象闭塞，则意味着宜暂缓行动，以化解内在障碍为主"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "结合卦中解神类型（比如比劫合、父母生、子孙护等），具体行为建议（如制造共同行为、表达关心、共同参与活动）要明确且可执行。"
+    },
+    "qualitative_stage": {
+
+    // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "尊重对方感受，不要强迫对方接受",
+            "促进建议需结合双方实际情况和意愿，切勿盲目照搬"
+        ],
+        "ui_tips": "",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": true 
+    }
+}

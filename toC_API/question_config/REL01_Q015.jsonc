@@ -1,0 +1,92 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q015",
+        "question_text": "我适合和TA现在就表明心意吗？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题可以预先加载合盘，但是不强制。"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "表白动机",
+                    "placeholder": "请描述您想要表白的原因和动机..."
+                },
+                {
+                    "type": "text",
+                    "name": "对方态度",
+                    "placeholder": "请描述TA对您的态度和反应..."
+                },
+                {
+                    "type": "text",
+                    "name": "关系基础",
+                    "placeholder": "请描述您们的关系基础和互动情况..."
+                },
+                {
+                    "type": "text",
+                    "name": "外在条件",
+                    "placeholder": "请描述当前的外在环境和条件..."
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充说明其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以“大安、留连、速喜、赤口、小吉、空亡”掌诀判断当前时间之六神状态，再根据三合局中“财爻”（代表地点）与“子孙爻”（代表人和）是否得力，辅助分析地点与人物互动的匹配度。大安/速喜/小吉为吉象，大吉氛围；赤口/留连/空亡为凶象，需谨慎。",
+                "risk_assessment": [
+                    "如果遇到大安六神主时，则意味着气氛温和平稳，非常适合表达感情，成功率较高",
+                    "如果遇到速喜六神当值，则意味着氛围迅速升温，是表白黄金时机，当下表态最佳",
+                    "如果遇到小吉六神临门，则意味着表白效果不错，但需要维持节奏，不可操之过急",
+                    "如果遇到财爻子孙爻得力配合，则意味着表白环境和人和因素俱佳，时机成熟",
+                    "如果遇到赤口六神主事，则意味着易遭口舌争执，应避免表白，容易弄巧成拙",
+                    "如果遇到留连六神当头，则意味着氛围拖沓不利推进，表白效果有限",
+                    "如果遇到空亡六神临时，则意味着冲撞时机不佳，建议回避，表白恐成空谈"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "应期推断按照小六壬时宫所落位置的干支情况；另，该宫之六亲关系或为表白时的场景。"
+    },
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "建议在表白前，先确认双方关系基础和意愿，再结合时机判断。",
+            "请根据实际情况谨慎判断与对方沟通方式"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

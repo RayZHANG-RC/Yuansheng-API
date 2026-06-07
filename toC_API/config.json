@@ -1,0 +1,39 @@
+{
+  "openai": {
+    "api_key": "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",
+    "organization_id": "org-UiYcSlpwIMo0QFi62wLlEqER"
+  },
+  "security": {
+    "allowed_origins": ["http://8.216.48.250", "http://localhost:3000"]
+  },
+  "partner_api": {
+    "enabled": true,
+    "api_keys": [
+      {
+        "key": "4YO2b8AEmRdub9m3tPn-mw89RPBoFZIQ71dVkaiLglE",
+        "name": "partner01",
+        "success_quota": {
+          "enabled": true,
+          "max_successful_requests": 100,
+          "period": "lifetime"
+        }
+      }
+    ],
+    "data_root": "data/partner_trials",
+    "max_concurrent_jobs": 2,
+    "host": "127.0.0.1",
+    "port": 8765,
+    "require_api_key": true,
+    "model_set": "gpt-4.1",
+    "default_user_sensitivity_setting": {
+      "tone": "温和",
+      "tone_MBTI": "ENFJ",
+      "sensitivity": "低"
+    },
+    "default_api_key_success_quota": {
+      "enabled": true,
+      "max_successful_requests": 100,
+      "period": "lifetime"
+    }
+  }
+}

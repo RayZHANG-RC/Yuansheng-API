@@ -1,0 +1,115 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR03_Q004",
+        "question_text": "哪些时间点有利于我创业？",
+        "question_domain": "职业发展",
+        "question_theme": "创业主本人",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "selection",
+                    "name": "时间窗口（2年以内给月份）",
+                    "content": "",
+                    "options": ["1-3个月", "4-6个月", "7-9个月", "10-12个月", "1-2年"]
+                },
+                {
+                    "type": "text",
+                    "name": "时间窗口（2年以上给年份）",
+                    "content": "",
+                    "options": [
+                        "3年后",
+                        "4年后",
+                        "5年后",
+                        "6年后",
+                        "7年后",
+                        "8年后",
+                        "9年后",
+                        "10年后"
+                    ] //之所以要这么做，是为了锁定到当前这一段大运当中。大运一般指的是十年。
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "选定的创业方向（比如在哪些行业、哪些领域、哪些模式、哪些方向上创业？）计划进入的行业或领域",
+                    "content": ""
+                },
+                {
+                    "type": "preloaded_question",
+                    "name": "CAR03-Q002 我适合在哪些行业创业？",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"优选大运或流年进入喜用神通根区（如食伤生财或财库被引动），再辅以流月冲库或流日电入适用之日，即为天时极佳时期。流月、流日引动用神或冲开财库的关键节点亦为佳。需特别留意岁运天干透出财官、地支合会成方成局的年份。结合行业五行属性做复合精细决策。",
+                "risk_assessment": [
+                    "如果遇到大运忌神当令或岁运天克地冲，则意味着时机不成熟，冒然创业风险极高宜谨慎等待",
+                    "如果遇到流年冲破财库或官星受损，则意味着财务环境恶化，创业启动资金困难重重",
+                    "如果遇到流月流日冲克日主或用神，则意味着个人状态不佳，决策能力下降不宜启动",
+                    "如果遇到食伤被克或财星空亡，则意味着创新能力受阻，盈利模式不清晰，需重新规划",
+                    "如果遇到用神大运配合财官透出之年，则意味着事业财运双旺，创业时机最为有利",
+                    "如果遇到贵人星得令且驿马星动，则意味着人脉机遇俱佳，创业启动条件成熟",
+                    "如果遇到流年引动财库且无冲克，则意味着资金到位时机成熟，创业成功率极高"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "黄历",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"择日参考黄历中“宜开市”、避“四离”“冲店主生肖日”，择取当天吉神如月德、天德，再结合喜神方位，挑选落地实用的吉日。",
+                "risk_assessment": [
+                    "如果遇到四离四绝日或月破日冲，则意味着日子气场不稳，不宜进行重大决策启动项目",
+                    "如果遇到冲克生肖或犯太岁之日，则意味着个人运势受阻，创业启动多有不顺",
+                    "如果遇到诸事不宜或大凶煞星当值，则意味着天时不利，强行启动必遭挫折",
+                    "如果遇到黄历宜开市且天德月德当值，则意味着天时地利俱佳，创业启动顺利可期",
+                    "如果遇到三合六合日且贵人当值，则意味着人和天时配合，合作机遇良好",
+                    "如果遇到成日开日且吉神护佑，则意味着开创事业最佳时机，成功率高"
+                ],
+                "priority_remark": 2
+            }
+        ],
+        "other_tips": "建议在八字天时期内，选用当月当日进行小六壬或六爻起卦验证。与实际准备度，做复合精细决策。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "实际业务推进需符合相关政策与市场法规"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [
+            {"question_id": "CAR03_Q005", "question_text": "我更适合团队合作还是单打独斗？"},
+            {"question_id": "DAY03_Q002", "question_text": "应该在什么时候开业？"}
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

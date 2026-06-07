@@ -1,0 +1,97 @@
+{
+    // 这部分的问题必须要preload一个之前问过的问题，因为它们完全是之前某个问题的继续
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "DAY01_Q003",
+        "question_text": "我要找的人会在哪里？",
+        "question_domain": "日常问题",
+        "question_theme": "日常模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_input_requirements": {
+            "required_inputs": [
+                {
+                    "name": "日期",
+                    "type": "selection",
+                    "content": "YYYY-MM-DD"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "preloaded_question",
+                    "name": "我未来的结婚对象是什么样的人？",
+                    "options": ["REL01_Q001"]
+                }
+
+            ]
+        }
+    },
+
+    "quantitative_stage":{
+
+        "domain_logic": "加载此前问题中的全部信息内容。结合当前的黄历流日进行分析。",
+
+        "methods": [
+            {
+                "method_name": "黄历",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "考察吉神、忌神方向。分析此日黄历流日与事主的适配程度。",
+                "risk_assessment": [
+                    "如果遇到当日方位被冲克或凶神当值，则意味着所选方向不利，寻找过程可能徒劳无功",
+                    "如果遇到黄历显示忌出行或诸事不宜，则意味着时机不佳，建议调整寻找时间",
+                    "如果遇到喜神方位与个人生肖相冲，则意味着个人状态与方位不合，影响寻人效果",
+                    "如果遇到贵人方位明确且无煞星干扰，则意味着容易在正确方位获得他人帮助",
+                    "如果遇到喜神或天乙贵人临门，则意味着寻人过程顺利，容易在合适地点相遇",
+                    "如果遇到驿马星动且方位明确，则意味着对方可能在交通要道或流动场所出现"
+                ]
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 2,
+                "risk_decision_logic": "按照六爻外卦与内挂互叠的关系，以及卦体本身的卦体含义作为寻人的参考契机。依据起卦时间确定卦象，重点看动爻所向（方位）、世应关系、生克与六神组合，以及卦体象意指向的场所类型，作为相遇线索。",
+                "risk_assessment": [
+                    "如果遇到卦逢六冲或世应相克，则意味着双方缘分不足，相遇困难或时机未到",
+                    "如果遇到用神伏藏或动爻化退神，则意味着所寻之人行踪不定，难以准确定位",
+                    "如果遇到六神混乱或凶神当值，则意味着寻找过程多有阻碍，容易迷失方向",
+                    "如果遇到动爻方位与实际方向相冲，则意味着判断有误，需重新分析卦象",
+                    "如果遇到世应相生且用神得力，则意味着缘分深厚，相遇机会大增",
+                    "如果遇到青龙朱雀吉神护佑，则意味着寻人过程顺利，容易获得准确信息",
+                    "如果遇到卦象指向明确且动爻方位清晰，则意味着所寻之人就在卦象所示场所"
+                ]
+            }
+        ],
+        "other_tips": "理建议将黄历方位（如喜神正南）与六爻动爻方位结合，交叉验证相遇最佳方向和场景。"
+    },
+
+    "qualitative_stage":{
+
+        "law_and_regulation_requirements": [
+            "不可触犯法律进行人身跟踪"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": false
+    }
+}

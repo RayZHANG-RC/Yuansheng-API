@@ -1,0 +1,82 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q031",
+        "question_text": "适合我恋爱的人会倾向于在什么地方出现？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+        
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "preloaded_question",
+                    "name": "我适合和什么类型的人恋爱？",
+                    "options": ["REL01_Q011"]
+                }]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以夫妻宫、福德宫、迁移宫的主星、干支、四化推断相遇环境。夫妻宫主星落迁移宫或迁移宫主星四化入夫妻宫者，易于旅途中、出差场合或外地工作、学习中遇到适合恋爱对象；福德宫主星入庙旺，易于文化场所、兴趣社群、精神学习环境中找到共鸣的对象；若夫妻宫化禄入福德或迁移宫，表示对象倾向在聚会、社交、公共场合出现。结合四化飞星与流年大限，进一步细化场所特征。",
+                "risk_assessment": [
+                    "如果遇到夫妻宫主星庙旺且吉神拱照，则意味着容易在高质量社交场所遇到理想恋爱对象",
+                    "如果遇到福德宫得力且文昌文曲加持，则意味着在文化教育场所或兴趣社团容易遇良缘",
+                    "如果遇到迁移宫吉星云集，则意味着在旅行出差或异地环境中有优质桃花运",
+                    "如果遇到交友宫主星旺相，则意味着通过朋友介绍或社交网络容易遇到合适对象",
+                    "如果遇到夫妻宫逢煞星或四化忌入迁移宫，则意味着需留意异地情缘或短暂邂逅关系难长久",
+                    "如果遇到福德宫空亡或主星弱陷，则意味着需主动扩展兴趣圈，避免等待被动缘分"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "六爻以用神（恋爱对象）所临动爻、六神和卦象，判断对象倾向出现的具体场景：动爻所临青龙象征文娱活动、聚会及庆典；朱雀主学习交流、讲座或公共活动场所；勾陈主日常工作环境或业务往来中；腾蛇指网络互动或线上社交平台；白虎代表体育、竞技、户外场所；玄武表示隐秘、夜间或低调环境。",
+                "risk_assessment": [
+                    "如果遇到用神临青龙且动爻和谐，则意味着在文娱活动聚会及庆典场所容易遇到恋爱对象",
+                    "如果遇到用神临朱雀且得力，则意味着在学习交流讲座或公共活动场所有良好姻缘",
+                    "如果遇到用神临勾陈且旺相，则意味着在日常工作环境或业务往来中容易发展恋情",
+                    "如果遇到用神临腾蛇且无煞，则意味着在网络互动或线上社交平台有机会遇到对象",
+                    "如果遇到用神临白虎且化吉，则意味着在体育竞技户外场所容易产生心动感情",
+                    "如果遇到用神被空亡月破或受克制，则意味着须注意缘分的偶然性与不确定性，避免执着某个特定场景",
+                    "如果遇到六神临腾蛇或玄武且带煞，则意味着应注意交往初期的真实性，需理性辨别情感真伪"
+                ],
+                "priority_remark": 2
+            }
+        ],
+        "other_tips": "给出具体场所建议，做到准确而且具有实际操作的可能性。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "建议理性拓展社交圈，尊重他人隐私与意愿，避免过度依赖术数断语。"
+        ],
+        "ui_representation_tips": "建议以场所类型为主，结合具体生活场景，给出易遇到适合恋爱对象的环境描述。",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": false
+    }
+}

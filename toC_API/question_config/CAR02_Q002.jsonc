@@ -1,0 +1,95 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR02_Q002",
+        "question_text": "我应该如何从竞争者中脱颖而出，展现自己的优点？",
+        "question_domain": "职业发展",
+        "question_theme": "工作模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{}]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "识别比肩劫财与日主强弱：若日主强，自身有力，宜用官杀彰显权威，多强调规则、流程和主导；若日主弱，比肩为喜，应以食伤或财星化解协作，强调协同与创意。并依据格局组合自定突出切入角度。",
+                "risk_assessment": [
+                    "如果遇到身强比劫为忌神，则意味着需用官杀制比劫，展现权威与规则感以压制竞争",
+                    "如果遇到身弱比劫为喜用，则意味着可与竞争者合作共赢，化敌为友建立联盟优势",
+                    "如果遇到忌神当令且气势强盛，则意味着需避免强出头，宜韬光养晦等待时机",
+                    "如果遇到伤官见官且比劫混杂，则意味着需谨慎表达，避免因言辞激烈得罪决策者",
+                    "如果遇到日主强且比肩劫财众多，则意味着应用官杀展现领导力和组织能力脱颖而出",
+                    "如果遇到日主弱且比肩为救应，则意味着借助食伤展现协同共赢能力更容易获得认可",
+                    "如果遇到伤官配印且比劫得制，则意味着可展现才华与智慧，同时避免与竞争者正面冲突",
+                    "如果遇到官杀得比劫生扶，则意味着可展示组织规则优势，成为团队核心人物"
+                ]
+            },
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 2,
+                "risk_decision_logic": "通过交友宫观竞争对手强弱，若竞争者宫干为忌，说明难以对抗。若命宫或官禄宫有“权化入命”“禄化入官”，或有三奇嘉会格局，则说明自身实力有突破力。分析三宫连动形成优势表现路径。",
+                "risk_assessment": [
+                    "如果遇到交友宫化忌入命宫，则意味着竞争激烈且对个人威胁大，需展现强大领导力压制对手",
+                    "如果遇到交友宫化忌入官禄宫，则意味着竞争对手专业能力强，需突出自身专业优势和实战经验",
+                    "如果遇到交友宫化忌入福德宫，则意味着竞争中需展现团队协作精神和人格魅力获得支持",
+                    "如果遇到交友宫化忌入父母宫，则意味着竞争对手背景深厚，需展现组织管理能力和执行力",
+                    "如果遇到交友宫主星吉化入命或官禄，则意味着自身可快速建立人际连接并脱颖而出",
+                    "如果遇到官禄宫化权或化禄且星曜旺盛，则意味着可通过展现实力或资源优势轻松压制对手",
+                    "如果遇到命宫三奇嘉会格局成立，则意味着自身潜力强大容易引起关注和赏识",
+                    "如果遇到三方四正星曜顺连且无破损，则意味着竞争优势明显，胜出几率极高",
+                    "如果遇到交友宫、命宫、官禄宫受煞星冲破，则意味着需调整竞争策略，避开正面交锋"
+                ]
+            }
+        ],
+        "other_tips": "为提升竞争力，建议提前调研对手背景，强化自身格局优势，如展示领导力或协作能力。可根据团队/岗位需求调整策略，动态应对不同竞争环境。"
+    },
+
+    "qualitative_stage": {
+        // # === 法律与合规要求 ===
+        "law_and_regulation_requirements":  [
+            "建议依据公平竞争原则进行，不得虚假或不正当竞争",
+            "面试及竞聘中应诚实表达，不得违反诚信规范"
+        ],
+    // # === UI提示 ===
+        "ui_representation_tips": "可根据专长和竞争环境自动推荐优势展现方式。",
+    // # === 优先级备注 ===
+        "priority_remark": "八字优先，紫微斗数补充。",
+    // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "DAY01_Q001",
+                "question_text": "某一天的面试，我应当如何表达自己？（这个还没有写））"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

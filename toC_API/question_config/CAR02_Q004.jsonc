@@ -1,0 +1,114 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR02_Q004",
+        "question_text": "我适合发展什么方向的副业？",
+        "question_domain": "职业发展",
+        "question_theme": "工作模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "我适合怎样搭配自己的主业和副业？"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "个人技能",
+                    "placeholder": "请详细描述您的个人技能和专长"
+                },
+                {
+                    "type": "number",
+                    "name": "每日可投入时长",
+                    "placeholder": "请输入每日可投入时长（小时）",
+                    "min": 0,
+                    "step": 0.5
+                },
+                {
+                    "type": "number",
+                    "name": "投入预算",
+                    "placeholder": "请输入投入预算金额（元）",
+                    "min": 0,
+                    "step": 100
+                },
+                {
+                    "type": "range",
+                    "name": "风险承受度",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5,
+                    "labels": {"1": "低", "5": "中等", "10": "高"}
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "对于现有主业的具体描述",
+                    "placeholder": "请详细描述您的主业情况"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+        // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "结合八字财格透出与五行喜用分析行业导向。八字中，食神、伤官代表才华与技艺，此为副业之源。若食伤为喜用，则可发展与创作、设计、咨询相关的副业。若命局偏财星旺而为喜用，则适合投资、贸易、中介等灵活求财之道。行业选择上，当以命局喜用神之五行为主导方向，如喜木者可入教育、文化产业。副业（偏财）不应克伤主业之根基（正官、正印），能与主业形成互补或相生之势为上佳。",
+                "risk_assessment": [
+                    "如果遇到财星显透且为喜用神，则意味着可承接灵活性高的偏财项目，适合投资贸易类副业",
+                    "如果遇到食伤旺盛且得用，则意味着建议发展创意生产、咨询指导等技能型副业方向",
+                    "如果遇到五行喜木者，则意味着推荐教育培训、文化创作等行业的副业发展",
+                    "如果遇到五行喜土者，则意味着适合房地产、建筑装修、农业食品等稳健型副业",
+                    "如果遇到五行喜金者，则意味着适合金融投资、机械制造、珠宝贸易等精准型副业",
+                    "如果遇到财星受克或空亡，则意味着需警惕资源投入成本与预期收益不匹配的风险",
+                    "如果遇到日主强旺且比劫有制，则意味着支持多项目并进，具备充足精力管理多条线",
+                    "如果遇到日主虚弱或印比无力，则意味着建议精耕单项目，避免分散精力导致一事无成"
+                ]
+            }
+        ],
+        "other_tips": "如主业时间极为紧张，建议选择门槛低、自动化高或线上运营的副业方式，以避免时间/精力冲突；技术与预算匹配度是成功关键。"
+    },
+
+    "qualitative_stage": {
+        // # === 法律与合规要求 ===
+        "law_and_regulation_requirements": [
+            "合法合规开展副业，不可违反劳动合同与行业规定",
+            "副业收入需缴税，建议咨询财税专业人士"
+        ],
+        // # === UI提示 ===
+        "ui_representation_tips": "",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "CAR02_Q003",
+                "question_text": "我是否有发展副业的机会？"
+            },
+            {
+                "question_id": "CAR02_Q005",
+                "question_text": "如何平衡主业与副业？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

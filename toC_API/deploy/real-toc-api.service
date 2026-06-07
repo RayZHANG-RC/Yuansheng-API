@@ -1,0 +1,17 @@
+[Unit]
+Description=real_toc Partner API
+After=network.target
+
+[Service]
+Type=simple
+User=root
+Group=root
+WorkingDirectory=/root/toC_API
+EnvironmentFile=-/etc/real-toc/real-toc-api.env
+ExecStart=/root/toC_API/.venv/bin/python /root/toC_API/api_server.py
+Restart=on-failure
+RestartSec=10
+TimeoutStopSec=300
+
+[Install]
+WantedBy=multi-user.target

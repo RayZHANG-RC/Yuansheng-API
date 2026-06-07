@@ -1,0 +1,88 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "HLT01_Q004",
+        "question_text": "我应该寻求何种放松方式到一个合适我的舒适状态？",
+        "question_domain": "健康生活",
+        "question_theme": "健康投资",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default", // default, restriction, warning, notice, error
+            "message": "None"
+        }, //任何弹窗提示，如果需要的话
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "name": "压力来源",
+                    "type": "text",
+                    "content": "可选，说明自己平时压力的主要构成和大小，如工作压力、家庭压力、人际关系压力等"
+                },
+                {
+                    "name": "每天可自由用于放松的时间安排",
+                    "type": "selection",
+                    "options":[
+                        "每日少于30分钟",
+                        "每日30-60分钟",
+                        "每日1-2小时",
+                        "周末集中",
+                        "时间弹性大"
+                    ]
+                },
+                {
+                    "name": "当前身心状态自评",
+                    "type": "selection",
+                    "options": ["轻度紧张", "适度疲劳", "高度焦虑", "偶有放松", "身心和谐"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "健康问题重在五行平衡与体质分析，通过八字判断先天体质和疾病倾向。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"若忌神为官杀，通常压力源自职场、社会规范，宜以印星（如阅读、静修、冥想）润化解压；如忌神为财星，压力多因物质追求及欲望失衡，宜借比劫（如结伴锻炼、社交分享）疏导。若八字身弱，则重在强身健体（如瑜伽、气功、太极）；身旺者，宜适度休息与静心。格局失衡可辅以五行调理，如木气不足宜亲近自然、栽种绿植，火气过旺则需冷静内省、少熬夜。建议结合大运流年变化，定期调整解压方式，顺势而为，久而身心舒泰。",
+                "risk_assessment":[
+                    "如果遇到忌神为官杀且压力过重，则意味着压力源自职场社会规范，宜以印星方式如阅读静修冥想润化解压",
+                    "如果遇到忌神为财星且欲望失衡，则意味着压力多因物质追求过度，宜借比劫方式如结伴锻炼社交分享疏导",
+                    "如果遇到八字身弱且精神不振，则意味着重在强身健体，推荐瑜伽气功太极等柔和运动",
+                    "如果遇到八字身旺且精力过剩，则意味着宜适度休息与静心，避免过度亢奋消耗",
+                    "如果遇到格局失衡且五行偏枯，则意味着需五行调理，木气不足宜亲近自然栽种绿植，火气过旺需冷静内省少熬夜"
+                ]
+            }
+        ],
+        "other_tips": "舒适状态源于身心平衡，宜顺应自身体质、五行喜忌、季节变化动态调整解压方式，切勿生搬硬套。八字提示仅供参考，宜与实际体验结合，发现最适合自身的节奏。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "不可替代医疗诊断。如有严重身心不适，请及时就医。"
+        ],
+
+        "ui_representation_tips": "建议结合八字五行喜忌，设计不同放松方式的色彩标签（如绿色代表静心冥想、蓝色代表户外运动、红色为社交活动等），增强交互友好性。每条建议下方可附带简要说明、主要益处与注意事项。V5.0时可以增加具体案例指导",
+
+        "follow_up_questions": []
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

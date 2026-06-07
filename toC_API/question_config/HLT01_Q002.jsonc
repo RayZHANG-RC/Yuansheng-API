@@ -1,0 +1,95 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "HLT01_Q002",
+        "question_text": "我应该如何调整我的生活方式到一个合适我的舒适状态？",
+        "question_domain": "健康生活",
+        "question_theme": "健康投资",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default", // default, restriction, warning, notice, error
+            "message": "None"
+        }, //任何弹窗提示，如果需要的话
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "当前生活状态",
+                    "placeholder": "请描述您当前的生活状态"
+                },
+                {
+                    "type": "range",
+                    "name": "工作压力程度",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5,
+                    "labels": {"1": "无压力", "10": "压力山大"}
+                },
+                {
+                    "type": "text",
+                    "name": "生活目标",
+                    "placeholder": "请描述您的生活目标"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请描述其他相关信息"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "健康问题重在五行平衡与体质分析，通过八字判断先天体质和疾病倾向。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "priority_remark": 1,
+                "risk_decision_logic":"优先判断命局五行分布与日元强弱，再结合特殊格局（如专旺、从格、化气等）辨析个体体质偏向。结合盲派对疾病易感及心理压力的识别经验，细分五脏六腑及情志失衡点。针对不同五行偏枯或过旺，配合时令节气变化，分别给出五行补益、饮食作息、运动及环境调和建议。如木弱多用舒展有氧运动，金旺宜温和拉伸，水弱注意睡眠与冥想。食伤重者，生活宜多姿多彩，忌单调；官印重者，则喜规律安稳，忌动荡。更要参酌调候用神，此乃命局最根本之渴求，若需火暖，则生活宜热闹向阳；若需水润，则宜宁静清幽。所有方案须兼顾“动静平衡”，避免五行互耗过度。并辅以五行调和作用说明及实践注意事项。",
+                "risk_assessment":[
+                    "如果遇到木弱金旺且缺火调候，则意味着体质偏寒抑郁，宜多舒展有氧运动和阳光照射提升活力",
+                    "如果遇到金旺水冷且缺木疏导，则意味着呼吸系统敏感，宜温和拉伸运动改善循环代谢",
+                    "如果遇到水弱火炎且土燥无润，则意味着肾水亏虚易疲劳，注重睡眠质量和冥想静养",
+                    "如果遇到食伤旺盛无制且思虑过重，则意味着生活宜多姿多彩避免单调，增加兴趣爱好调剂",
+                    "如果遇到官印重叠且格局稳固，则意味着喜规律安稳的生活节奏，忌动荡变化造成压力"
+                ]
+            }
+        ],
+        "other_tips": "当前节气及季节需动态调整调理策略：春重肝木，宜清养肝血，适度登高舒展；夏重心火，注重清心降火，适当慢跑游泳；长夏健脾，宜淡养脾胃，缓步冥想；秋养肺金，多深呼吸与室外活动；冬补肾水，重静养与保暖，宜静坐冥想。特殊格局需特别关注突发性情绪波动与身体虚耗。"
+    },
+
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "本系统提供的所有建议仅供个人生活方式参考，不可替代专业医疗诊断与治疗。如有严重健康问题请及时咨询专业医生。"
+        ],
+
+        "ui_representation_tips": "为不同体质与季节调理建议设计交互式卡片，可附相关运动/饮食/作息小贴士，增强健康行为的行动指引。",
+
+        "follow_up_questions": [
+            {}
+        ]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

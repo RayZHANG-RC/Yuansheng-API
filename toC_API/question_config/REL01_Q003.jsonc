@@ -1,0 +1,96 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q003",
+        "question_text": "我下一个桃花是什么样的人？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "name": "当前感情状态",
+                    "type": "selection",
+                    "options": ["单身求缘", "刚分手", "一直单身", "复合可能", "其他"]
+                },
+                {
+                    "name": "期望时间范围",
+                    "type": "selection",
+                    "options": ["1个月内", "3个月内", "半年内", "1年内", "2年内"]
+                },
+                {
+                    "type": "select",
+                    "name": "桃花类型偏好",
+                    "options": ["正缘桃花", "浪漫桃花", "朋友发展", "工作场合", "都可以"]
+                },
+                {
+                    "type": "text",
+                    "name": "完全回避的类型",
+                    "content": "对该类型的描述"
+                },
+                {
+                    "type": "text",
+                    "name": "社交活跃度",
+                    "placeholder": "宅在家/正常人/社交达人 （ 1- 10）"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "流年夫妻宫的主星组合，便为此桃花的主要'人设'。例如，逢紫微则尊贵，逢廉贞则艳丽，贪狼则风流--酒色财气，巨门则多花言巧语或浮华场合。而该流年夫妻宫的四化，特别是化禄与化忌飞向何宫，更揭示了此段缘分的本质——是带财而来，还是携是非而至。",
+                "risk_assessment": [
+                    "如果遇到流年夫妻宫主星陷弱，则意味着下个桃花条件一般，可能不符合理想标准",
+                    "如果遇到廉贞化忌或贪狼遇煞，则意味着桃花对象可能过于浮华，缺乏真诚",
+                    "如果遇到巨门临夫妻宫，则意味着对方善于言辞但可能言行不一，需谨慎判断",
+                    "如果遇到化忌飞入疾厄或兄弟宫，则意味着这段缘分可能带来健康或人际困扰",
+                    "如果遇到紫微坐夫妻宫，则意味着下个桃花出身尊贵，气质高雅值得期待",
+                    "如果遇到化禄飞入财帛宫，则意味着这段感情能带来财富或物质上的帮助",
+                    "如果遇到吉星庙旺且无煞冲，则意味着下个桃花品质优良，感情发展顺利"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "注意下一个桃花的特征是否趋避了当前用户的回避类型。如果无法从命理上趋避，则建议用户主动采取措施缩小。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "感情线索建议仍然需要主动探索。需要主观动作去应象。"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [
+            {"question_id": "REL01_Q004", "question_text": "TA（填性别）是否是我合适的结婚对象？"}
+        ]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

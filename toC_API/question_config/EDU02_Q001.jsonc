@@ -1,0 +1,100 @@
+{
+    // 教育发展 - 人才相关 - 学位毕业时间预测
+    // 以六爻为主的具体事件成败时机分析
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "EDU02_Q001",
+        "question_text": "我 _____ 学位啥时候能毕业?",
+        "question_domain": "教育发展",
+        "question_theme": "人才相关",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {"type": "select", "name": "学位类型", "options": ["本科", "硕士", "博士", "专业学位", "在职学位"]},
+                {"type": "date", "name": "原定毕业时间"}
+            ],
+            "optional_inputs": [
+                {
+                    "type": "textarea",
+                    "name": "对毕业的具体描述",
+                    "placeholder": "请补充说明毕业相关的具体情况（如论文进度、实习安排等）"
+                }
+            ]
+        }
+    },
+
+
+    "quantitative_stage":{
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系，结合大运流年判断最佳进修时机和发展方向",
+
+        "methods": [
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "risk_decision_logic": "小六壬快速判断毕业时机。大安主稳定顺利，速喜主快速完成，小吉主顺利毕业。留连主拖延，赤口主波折，空亡主无果。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "如果遇到留连临身或事情拖延卦象，则意味着毕业时间将比原定计划延后，需做好准备",
+                    "如果遇到赤口发动或口舌是非，则意味着可能遭遇学术争议，影响正常毕业进度",
+                    "如果遇到空亡临身或学业宫受损，则意味着学分不足或论文不达标，毕业存在风险",
+                    "如果遇到凶神当值或煞星临门，则意味着毕业过程可能遇到意外阻碍或突发情况",
+                    "如果遇到大安主稳定或顺利完成卦象，则意味着能够按时顺利毕业，进程稳定",
+                    "如果遇到速喜主快速完成，则意味着有机会提前毕业，效率高于预期",
+                    "如果遇到小吉主顺利且贵人扶助，则意味着毕业过程顺利，得到导师和同学支持",
+                    "如果遇到空亡当头或凶格主事，则意味着毕业事宜虚而不实，需调整策略另择时机"
+                ],
+                "raw_palette": {}
+            },
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "risk_decision_logic": "以官禄宫学业成就、父母宫文书、大限十年运势、流年当年吉凶为重点。流年或大限化科入命、官、父，文昌、文曲庙旺且逢吉化者，学业必能顺利完成。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "官禄宫或父母宫逢煞忌冲破，学业完成困难",
+                    "另关注疾厄宫所处状态，代表学业的耗神程度",
+                    "流年化忌入关键宫位，该年可能遇到重大阻碍"
+                ],
+                "raw_palette": {}
+            }
+        ],
+        "other_tips": "学位类型影响用神选择，当前进度影响卦象解读，预期时间用于应期验证。注意：退学应当以学业相关宫位的化忌对冲来看，不能算作毕业。休学或学籍存续也算作在前者内。这些特殊情况需要在解读时特别注意。应期推算是此问题的关键，需要结合多种方法交叉验证。"
+    },
+
+    "qualitative_stage":{
+
+        "law_and_regulation_requirements": [
+            "学业完成受个人努力、学校政策、导师关系等多重因素影响",
+            "请根据实际学习进度和学校要求合理规划时间"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU02_Q003",
+                "question_text": "投稿择吉",
+                "recommendation_reason": "学术成果发表的最佳时机选择"
+            }
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

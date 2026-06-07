@@ -1,0 +1,36 @@
+// API 请求示例（FIN01_Q001）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "FIN01_Q001"
+            },
+            "user_specification": {
+                "required_inputs": [],
+                "optional_inputs": [
+                    {
+                        "name": "current_net_asset 当前净资产",
+                        "input": "CNY 万元"
+                    },
+                    {
+                        "name": "当前主要收入类型",
+                        "input": "投资收益"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

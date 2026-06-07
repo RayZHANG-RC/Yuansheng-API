@@ -1,0 +1,108 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q012",
+        "question_text": "我适合什么类型的亲密关系？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "情感需求",
+                    "placeholder": "请描述您的情感需求..."
+                },
+                {
+                    "type": "text",
+                    "name": "亲密程度偏好",
+                    "placeholder": "请描述您对亲密程度的偏好..."
+                },
+                {
+                    "type": "text",
+                    "name": "独立性要求",
+                    "placeholder": "请描述您对独立性的要求..."
+                },
+                {
+                    "type": "text",
+                    "name": "安全感需要",
+                    "placeholder": "请描述您对安全感的需要..."
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "textarea",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充说明其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以八字全局论之。命局中印星与食伤之配置，决定了安全感与表达欲的平衡点。印重者，求安稳与精神庇护，宜于深度绑定的关系；食伤重者，求自由与个性舒展，宜于保留空间的伙伴式关系。日柱之纳音与干支关系，亦揭示了天生的情感模式。通过日元与印、食伤、官杀、财星的关系判断情感基础与亲密需求：印重者偏安全依赖；食伤重者偏自由表达；官杀显责任管理；财星显物质互动取向。结合盲派格局若有专旺、偏枯，则需要补短或化解。",
+                "risk_assessment": [
+                    "如果遇到印星重而食伤轻的命局，则意味着求安稳与精神庇护，适合深度绑定的依恋关系",
+                    "如果遇到食伤重而印星轻的配置，则意味着求自由与个性舒展，适合保留空间的伙伴式关系",
+                    "如果遇到官杀显著的八字结构，则意味着偏好有责任感和管理能力的伴侣，喜欢被保护",
+                    "如果遇到财星突出的命局，则意味着重视物质互动取向，适合现实务实的关系模式",
+                    "如果遇到桃花空亡的命象，则意味着感情表达不易展开，需要更多时间建立信任",
+                    "如果遇到比劫旺相的格局，则意味着过于强调独立自由感强，不适合过度束缚的关系",
+                    "如果遇到印星弱或受制，则意味着安全感不足，对方需要更多承托和支持",
+                    "如果遇到夫妻星冲克严重，则意味着关系定位模糊不稳，需要明确界限和期望"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以用神（代表对方）与世爻（代表你）互动为核心。若二者相生合且吉神如青龙、勾陈帮持，适合日常节奏契合型关系；若用神动变被刑冲，则重点时期可能出现错位冲突。",
+                "risk_assessment": [
+                    "如果遇到用神旺相与世爻生合，则意味着双方节奏同步易融合，适合深度亲密关系",
+                    "如果遇到吉神青龙勾陈帮持，则意味着适合日常节奏契合型关系，生活和谐美满",
+                    "如果遇到用神空破或失陷，则意味着易走心走偏缺乏共振，需要更多磨合时间",
+                    "如果遇到动爻煞冲或凶神临身，则意味着相处过程中可能出现摩擦或误解，需要包容",
+                    "如果遇到用神动变被刑冲，则意味着重点时期可能出现错位冲突，关系不够稳定"
+                ],
+                "priority_remark": 2
+            }
+        ],
+        "other_tips": "结合命盘多维度分析亲密关系需求。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "关系发展仍需双方理解、包容与实际磨合"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

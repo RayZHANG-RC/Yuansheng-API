@@ -1,0 +1,124 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "DEV01_Q002",
+        "question_text": "我适合在什么时候进行重要的个人能力提升？",
+        "question_domain": "个人发展",
+        "question_theme": "个人提升",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "warning",
+            "message": "请输入个人生辰。纯事卦将使得结果仅限于当下，而无发展意义。"
+        },
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "能力提升目标",
+                    "placeholder": "简述拟提升方向，如学历、考证、管理能力、专业技能等。"
+                },
+                {
+                    "type": "text",
+                    "name": "个人兴趣",
+                    "placeholder": "请描述您的个人兴趣和爱好"
+                },
+                {
+                    "type": "text",
+                    "name": "已有技能",
+                    "placeholder": "请描述您已掌握的技能和经验"
+                },
+                {
+                    "type": "text",
+                    "name": "发展目标",
+                    "placeholder": "请描述您的发展目标和期望"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "其他具体需求描述",
+                    "placeholder": "请补充说明其他具体需求"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage":{
+
+        "domain_logic": "个人竞争力品格首看命盘格局，次看当下所在大运流年，末看六爻。需鼓励个人努力与投入。",
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"优先考察大运、流年交临之印星、食伤、文昌贵人、太极贵人等吉神星曜及其组合格局。格局高者遇吉运宜全力进修，若行忌神需防思路受阻。印星得力且为用，或遇食伤生财、印比助身，主学业进益、技艺突破、贵人扶持。特殊格如从格、化格、专旺，亦宜结合日主旺衰论断。盲派则关注岁运并临、流年伏吟反吟等时空关系。",
+                "risk_assessment":[
+                    "如果遇到大运流年伤官见官或枭印夺食，则意味着需谨慎把握人际与环境变动，避免急于求成引发冲突",
+                    "如果遇到命局用神受制且忌神当旺，则意味着宜选择积累沉淀阶段，暂缓高强度挑战项目",
+                    "如果遇到印星得力且为用神透干，则意味着学业进益技艺突破，贵人扶持机会增多",
+                    "如果遇到食伤生财且印比助身，则意味着技能变现和能力提升双重收获可期"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"重点考察大限、流年命宫及官禄宫三方四正受化科、文昌、文曲等吉曜拱照，辅以三台、八座、恩光、天贵等辅助星曜会合。若遇四化星曜（化科、化权、化禄）入命，或三方联动，主学业考试、晋升、学术突破皆有良机。亦关注命宫、身宫主星格局与流年辅弼，合断黄金提升周期。遇空劫、擎羊、陀罗等煞曜临宫，宜防进修受阻，需调适心态。",
+                "risk_assessment":[
+                    "如果遇到流年或大限煞忌星会照且三方四正失拱，则意味着提升运势易受外部阻力干扰，需适度调整目标与计划",
+                    "如果遇到命宫官禄宫主星失势且无吉化，则意味着提升成效有限，宜注重内在修为和长期积累",
+                    "如果遇到化科文昌文曲等吉曜拱照命宫，则意味着学业考试晋升学术突破皆有良机",
+                    "如果遇到四化星曜入命或三方联动，则意味着黄金提升周期来临，应把握时机全力进修"
+                ],
+                "priority_remark": 2
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以当前六爻卦象日辰、用神、世应、六亲动静及六兽装载分析短期内个人提升时机。世爻得月建、日建、用神生扶或遇吉神（如青龙、朱雀、六合）临世，则近期宜主动提升。若遇空亡、刑冲、六害，或用神受制，建议等待更有利时机。",
+                "risk_assessment":[
+                    "如果遇到世爻临空亡或逢冲克，则意味着短期计划易受阻挠，需静待更有利时机再行动",
+                    "如果遇到卦中财爻印爻旺相且世爻得生，则意味着近期可得贵人相助技艺进益，学习效果显著",
+                    "如果遇到世爻得月建日建用神生扶，则意味着近期宜主动提升，时机成熟收获可期",
+                    "如果遇到青龙朱雀六合等吉神临世，则意味着学习运势佳，应积极把握提升机会"
+                ],
+                "priority_remark": 3
+            }
+        ],
+
+        "other_tips": "优先选择契合个人五行、星曜与盘式趋势的提升方向"
+    },
+
+    "qualitative_stage":{
+
+        "law_and_regulation_requirements": [
+            "具体进修政策与项目选择，请结合所在单位最新规定。"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [
+            {
+                "question_id": "EDU01_Q001",
+                "question_text": "我参加此次 _____ 培训，对我未来的薪资涨幅有哪些帮助和回报吗？"
+            },
+            {
+                "question_id": "EDU01_Q002",
+                "question_text": "我参加此次 _____ 培训，对我未来的人生发展有哪些帮助和回报吗？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

@@ -1,0 +1,74 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q018",
+        "question_text": "TA喜欢我的礼物吗？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "礼物类型",
+                    "placeholder": "请描述礼物的类型..."
+                },
+                {
+                    "type": "text",
+                    "name": "赠送场合",
+                    "placeholder": "请描述赠送的场景..."
+                },
+                {
+                    "type": "text",
+                    "name": "对方性格",
+                    "placeholder": "请描述对方的性格特点..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以“大安、留连、速喜、赤口、小吉、空亡”掌诀判断当前时间之六神状态，再根据三合局中“财爻”（代表地点）与“子孙爻”（代表人和）是否得力，辅助分析礼物与人物互动的匹配度。大安/速喜/小吉为吉象，大吉氛围；赤口/留连/空亡为凶象。",
+                "risk_assessment": [
+                    "如果遇到大安速喜或小吉六神当值，则意味着礼物更容易被接受并产生好感，收礼效果佳",
+                    "如果遇到财爻子孙爻得力且时机相配，则意味着礼物与人物互动匹配度高，喜爱程度深",
+                    "如果遇到六神状态吉祥且三合局和谐，则意味着赠礼氛围良好，TA感受到真诚心意",
+                    "如果遇到赤口六神主事，则意味着沟通可能出现误会，不宜对礼物效果抱高期待",
+                    "如果遇到留连六神当头，则意味着TA反应迟缓关系暂时不明朗，礼物效果一般",
+                    "如果遇到空亡六神临时，则意味着难引起情绪共鸣，礼物效果有限缺乏回应"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [],
+        "ui_representation_tips": "礼物只是情谊中的一个环节，好坏都只代表当下。对于长久关系中，并不要过于在意。",
+        "follow_up_questions": [{}]
+    },
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

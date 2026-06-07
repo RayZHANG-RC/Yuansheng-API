@@ -1,0 +1,128 @@
+{
+    // 教育发展 - 学历进阶 - 学历对人生发展的宏观影响
+    // 以紫微斗数为主要分析方法，与EDU01_Q003形成对比视角
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "EDU01_Q004",
+        "question_text": "我去读 _____，对我未来的人生发展有哪些帮助和回报吗？",
+        "question_domain": "教育发展",
+        "question_theme": "学历进阶",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {"type": "select", "name": "目标学历层次", "options": ["专科", "成人本科", "硕士", "博士", "MBA", "EMBA", "FMBA"]},
+                {"type": "select", "name": "当前学历层次", "options": ["专科", "成人本科", "硕士", "博士", "MBA", "EMBA", "FMBA"]},
+                {
+                    "type": "select",
+                    "name": "与主业关联度",
+                    "options": ["10分 - 高度相关", "9分 - 非常相关", "8分 - 很相关", "7分 - 相关", "6分 - 较相关", "5分 - 一般相关", "4分 - 不太相关", "3分 - 相关性较低", "2分 - 相关性很低", "1分 - 几乎不相关"]
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "number",
+                    "name": "学费预算",
+                    "min": 0,
+                    "placeholder": "元"
+                },
+                {
+                    "type": "number",
+                    "name": "预期完成时间",
+                    "min": 0,
+                    "placeholder": "请填写数字"
+                },
+                {
+                    "type": "select",
+                    "name": "预期完成时间单位",
+                    "options": ["月", "年"]
+                },
+                {
+                    "type": "text",
+                    "name": "人生规划方向",
+                    "placeholder": "请描述您的人生规划方向..."
+                },
+                {
+                    "type": "text",
+                    "name": "当前发展瓶颈",
+                    "placeholder": "请描述您当前面临的发展瓶颈..."
+                }
+            ]
+        }
+    },
+
+
+    "quantitative_stage":{
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系，结合大运流年判断最佳进修时机和发展方向",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "risk_decision_logic": "紫微斗数中以官禄宫层次、财帛宫收入、福德宫学习、迁移宫外界机遇为重点。若文昌、文曲入命或官禄，流年大限走强运，化禄化权入命财官者，学历对薪资提升最为有利。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "如果遇到命局铃星火星等煞星云集，则意味着学习压力巨大，容易导致精神状态不稳定",
+                    "如果遇到截空地空等空亡星临身，则意味着学习过程虚耗较多，难以取得实质成果",
+                    "如果遇到羊刃驿马等变动星受损，则意味着学业规划频繁改变，难以专注发展",
+                    "如果遇到印星受克或文昌失陷，则意味着学习天赋受限，理解能力不足影响进度",
+                    "如果遇到文昌与禄存等吉星庙旺，则意味着学历提升对人生发展极为有利，前景光明",
+                    "如果遇到印星生身且用神得力，则意味着学习能力强劲，知识转化为智慧效果显著",
+                    "如果遇到大运配合且贵人星临，则意味着学业发展得到有力支持，成就非凡可期"
+                ],
+                "raw_palette": {}
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "以妻财爻为人生回报，父母爻为学历提升。若妻财爻旺相持世或生合世爻，且子孙爻发动以生财，则投资有回报。根据妻财爻来定义。若财爻化退神或回头克，则投资难有预期收益。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "妻财爻旬空月破，投资回报堪忧",
+                    "应当根据妻财爻的干支生合世爻来判断在哪些方面可以进行提示"
+                ],
+                "raw_palette": {} // 将自动加载六爻示例盘.json
+            }
+        ],
+        "other_tips": "学历层次以定印星级别；人生规划以明确论断宫位之主次；瓶颈则为审视命局与大运关窍之关键。本科以下都认为是有利有益处的。"
+    },
+
+    "qualitative_stage":{
+        "law_and_regulation_requirements": [
+            "学历提升效果受个人天赋、努力程度、时代背景等多重因素影响"
+        ],
+
+        "ui_representation_tips": "建议用户明确表达人生发展的长远目标和当前瓶颈，以便进行宏观格局分析。重点关注学历对整体人生轨迹的影响，包括社会地位、人际关系、精神层面的提升。",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU01_Q003",
+                "question_text": "我去读 _____，对我未来的薪资涨幅有哪些帮助和回报吗？",
+                "recommendation_reason": "从人生发展角度细化到具体的财务回报分析"
+            },
+            {
+                "question_id": "EDU02_Q001",
+                "question_text": "我 _____ 学位啥时候能毕业",
+                "recommendation_reason": "确定学历进阶的具体时机和进程"
+            }
+        ]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

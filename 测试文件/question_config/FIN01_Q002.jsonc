@@ -1,0 +1,45 @@
+// API 请求示例（FIN01_Q002）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "FIN01_Q002"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "investment_type 投资类型",
+                        "input": "股票"
+                    },
+                    {
+                        "name": "investment_amount 投资金额",
+                        "input": "CNY 万元"
+                    },
+                    {
+                        "name": "risk_tolerance 风险承受能力",
+                        "input": "保守"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "user_caption 用户对投资选择的具体疑问和偏好",
+                        "input": "过往投资经验、资金来源、预期收益率与投资期限等关键信息"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

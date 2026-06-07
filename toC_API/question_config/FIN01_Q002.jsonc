@@ -1,0 +1,86 @@
+{
+    // 财富管理 - 财运收入 - 投资方向选择
+    // 以紫微斗数为主分析适合的投资方式和风险评估
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "FIN01_Q002",
+        "question_text": "我适合投资什么项目？",
+        "question_domain": "财富运势",
+        "question_theme": "偏财运势",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "select",
+                    "name": "investment_type 投资类型",
+                    "options": ["股票", "基金", "债券", "房产", "黄金/珠宝/玉石", "实业投资", "其他"]
+                },
+                {
+                    "type": "text",
+                    "name": "investment_amount 投资金额",
+                    "content": "CNY 万元"
+                },
+                {
+                    "type": "select",
+                    "name": "risk_tolerance 风险承受能力",
+                    "options": ["保守", "稳健", "激进"]
+                }
+            ],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "user_caption 用户对投资选择的具体疑问和偏好",
+                    "content": "过往投资经验、资金来源、预期收益率与投资期限等关键信息"
+                }]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "东方术数分析财富，须明确正财与偏财之分。八字需考察财星格局、身财平衡与大运流年组合，六爻则重财爻、日月建、六亲六兽等动态变化。关注财星透干、通根、得令与否，以及盘中流通生克制化，判断整体财运走势与阶段性波动，结合风险控制与实际操作建议。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "risk_decision_logic": "以命局财星五行属性定位适宜投资类别。金水旺宜金融、贸易、投资理财；木火旺宜教育、科技、能源；土旺宜房地产、实业；若偏财格有食伤生，适合灵活高波动项目如股票、黄金；正财有官印护，适合稳健型如基金、债券。其次，论投资模式，若命局身强财旺，且食伤生财，则适合主动型、创造型投资；若财旺身弱，则宜与人合作或选择稳健型项目。身强财轻者可取激进，身弱财重宜守成。需以大运流年配合，判断阶段性投资策略。若偏财旺而有食伤生，宜动态投资如股票；正财稳而有官护，宜稳健投资如债券。身强财弱者宜激进，身弱财旺者宜保守。再以盲派宾主论，若财在宾位（年月）而我能制之，则可投资于外部市场或他人之项目；若财在主位（日时），则宜投资于自己掌控的实体。最后，须审视财星是否入墓库，若逢岁运冲开财库，则为暴富之机，但也暗藏巨大风险，需量力而行。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "如果遇到财星为忌神且大运流年再逢财星，则意味着投资务必谨慎，易有失财风险需避免激进投资",
+                    "如果遇到比劫过旺无制且透干发动，则意味着易受亲友牵连导致投资误判，合作投资需特别小心",
+                    "如果遇到身弱财旺且无印比救援，则意味着切忌高杠杆或大额投资，宜选择保守稳健项目",
+                    "如果遇到财星五行为金水且得令，则意味着适合金融贸易投资理财等灵活高收益项目",
+                    "如果遇到偏财格有食伤生且流通有情，则意味着适合股票黄金等高波动主动型投资项目"
+                ],
+                "raw_palette": {}
+            }
+        ],
+
+        "other_tips": "投资类型须与命主用神五行相合。投资金额建议控制在自身财力和命理可承受范围内，勿贪多求快。风险承受力与福德宫及大运组合相关，盘中财星与比劫、食伤、官杀生克交互是关键，盘弱财多尤忌激进。股票、黄金属金火，波动大；基金、债券属土金，偏稳健；房产、实业属土，宜守成。可结合分散投资以减小风险。凡大运流年遇财星忌神、官杀冲克或空亡，皆当慎行。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "严格遵守国家法律法规，选择合规投资渠道及产品"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [{}]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

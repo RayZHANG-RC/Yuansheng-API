@@ -1,0 +1,109 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q011",
+        "question_text": "我适合和什么类型的人恋爱？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "textarea",
+                    "name": "个人性格",
+                    "placeholder": "请描述您的个人性格特点..."
+                },
+                {
+                    "type": "textarea",
+                    "name": "感情经历",
+                    "placeholder": "请描述您的感情经历..."
+                },
+                {
+                    "type": "textarea",
+                    "name": "理想期望",
+                    "placeholder": "请描述您对理想恋爱对象的期望..."
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "textarea",
+                    "name": "现实条件",
+                    "placeholder": "请描述您的现实条件和要求..."
+                },
+                {
+                    "type": "textarea",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充说明其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "先以夫妻宫主星与辅星判断核心伴侣特质；福德宫显精神喜好与共同价值观；疾厄宫显对方能量耗散与压力承载。若夫妻宫吉曜配合印星、权化禄，则适合高智商/高品格伴侣；若福德宫有文昌、文曲，则偏好有教养、文艺型对象；疾厄宫有化权、化禄而无煞，则适合能共同承担、共度生活压力的伴侣。同时，交友宫若有吉曜，说明日常社交中更容易遇到匹配对象。",
+                "risk_assessment": [
+                    "如果遇到夫妻宫主星旺相配印星权化禄，则意味着适合高智商高品格伴侣，文化水平和修养要求较高",
+                    "如果遇到福德宫有文昌文曲吉曜，则意味着偏好有教养文艺型对象，重视精神层面共鸣",
+                    "如果遇到疾厄宫有化权化禄而无煞，则意味着适合能共同承担生活压力的坚强伴侣",
+                    "如果遇到交友宫有吉曜加持，则意味着日常社交中更容易遇到匹配对象，缘分可期",
+                    "如果遇到夫妻宫主星弱或逢煞，则意味着现实伴侣偏离理想需调整期望值，降低标准",
+                    "如果遇到福德宫空亡或受制，则意味着需关注精神共鸣及价值观匹配，重视内在品质",
+                    "如果遇到疾厄宫有煞曜临身，则意味着伴侣可能压力大或健康弱，需要更多关怀体贴"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "通过卦中用神（代表伴侣）与世爻协调状态判断适配度。若用神旺、与世生合，并有吉神（如青龙、勾陈）扶持，说明此类人容易融入你生活；若用神空破，或动爻煞冲，则表示在关键时刻易出现错配或不合节奏的类型。",
+                "risk_assessment": [
+                    "如果遇到用神旺相与世爻生合，则意味着此类伴侣与你节奏同步包容力强，关系和谐稳定",
+                    "如果遇到用神得吉神青龙勾陈扶持，则意味着此类人容易融入你的生活，适应能力强",
+                    "如果遇到用神空破或受制，则意味着此类伴侣内心与行为不一致，容易失衡不稳",
+                    "如果遇到动爻煞冲或凶神加持，则意味着相处时会有意外冲突或摩擦，需谨慎选择",
+                    "如果遇到用神化退或变空，则意味着此类关系在关键时刻易出现错配或不合节奏"
+                ],
+                "priority_remark": 2
+            }
+        ],
+        "other_tips": "结合命宫和交友宫主星，判断在生活中最易接触并吸引的伴侣类型，具体进行类型分型和定义。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "建议结合生活环境与社交圈进行实际对照。"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{
+                "question_id": "REL01_Q031",
+                "question_text": "适合我恋爱的人会倾向于在什么地方出现？"
+            }]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

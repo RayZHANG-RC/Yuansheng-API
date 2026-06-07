@@ -1,0 +1,112 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR04_Q003",
+        "question_text": "我这次去 ______ （地点）的 ______ 签证是否会通过？",
+        "question_domain": "职业发展",
+        "question_theme": "职业国际化",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "selection",
+                    "name": "签证类型",
+                    "options": "学生签证、工作签证、旅游签证、探亲签证、商务签证、过境签证、其他"
+                }
+            ],
+            "optional_inputs":[
+                {
+                    "type": "preloaded_question",
+                    "name": "CAR04_Q001 我是否应该去 ______ (国家/地区)工作？",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "申请条件",
+                    "placeholder": "请描述您的申请条件..."
+                },
+                {
+                    "type": "text",
+                    "name": "递交时间",
+                    "placeholder": "请描述您的递交时间安排..."
+                },
+                {
+                    "type": "text",
+                    "name": "面试安排",
+                    "placeholder": "请描述您的面试安排..."
+                },
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage":{
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以官鬼爻为审批机构、父母爻为材料凭证、世爻为申请人本身。关注日建月建对用神的扶抑，重点分析动爻变爻与六亲六兽的位次与刑冲合害。父母爻得生、官鬼爻得力且世爻安稳为大吉，若子孙爻动、财爻受伤或父母被冲，需警惕补件、驳回。世爻受合或化回头生，有助顺利；化退、化空则预示拖延与阻碍。官鬼生世、父母有根、世爻无冲为大吉；相反则预示材料或流程问题。化回头生和动爻逢六合为材料及时反馈。动爻逢子孙或玄武等虚诈鬼，慎防沟通/材料瑕疵。",
+                "risk_assessment": [
+                    "如果遇到世爻受克或父母爻空亡，则意味着申请资格存在瑕疵，材料准备不足需补充完善",
+                    "如果遇到官鬼爻受冲合或逢刑害，则意味着审批官员变更或政策变化，申请流程可能受阻",
+                    "如果遇到子孙爻发动克官或合住父母，则意味着签证驳回风险高，需反复补充材料",
+                    "如果遇到世爻逢玄武腾蛇等虚诈之神，则意味着材料真实性受质疑，需防沟通误会",
+                    "如果遇到兄弟爻发动或财爻被克，则意味着担保人支持不力或资金证明不足",
+                    "如果遇到财爻发动且生合世爻，则意味着经济担保充足，资金支持有力流程顺利",
+                    "如果遇到世爻旺相临贵人青龙，则意味着申请条件优秀，获得批准的可能性极高",
+                    "如果遇到父母爻得力且官鬼爻生世，则意味着材料齐全且审批顺利，签证成功率高",
+                    "如果遇到动爻逢旬空日空或化空化退，则意味着申请流程拖延，递交时机错失或材料不全"
+                ],
+                "priority_remark": 2
+            },
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"观察申请时间对应之时宫调候象，大安/速喜/小吉为吉利节奏；留连主流程反复，赤口代表问难，空亡预示时机未到。结合调后关系及政策变动判断。",
+                "risk_assessment":[
+                    "时宫自身遇大安、速喜、小吉，且与申请时间相合，预示流程通畅、审批顺利。",
+                    "时宫自身遇留连，需防进度缓慢、被要求补充或二次面试。多次补件或延期可能性高。",
+                    "时宫自身赤口则多为官员苛责、答辩环节受阻，材料务必严谨。",
+                    "时宫自身空亡逢之，常见于签证政策临变、名额用尽或时机未到。",
+                    "调后关系不顺，主外部环境或材料存在不确定风险，需关注政策实时调整。"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "户籍类型与政策环境密切相关，城市户籍需关注落户政策及材料要求，农村、集体户籍重在资格审核。建议主动补齐材料、关注政策公告、动态跟进递交窗口，提升整体成功率。六爻结构与时课动态可辅助预测批次、节点和材料风险。"
+    },
+
+    "qualitative_stage":{
+        "law_and_regulation_requirements": [
+            "涉及材料、政策细节请务必咨询当地公安、户籍管理部门或权威中介。"
+        ],
+        "ui_representation_tips": "界面分步引导户籍类型选择与补充关键申请材料，流程风险节点以色块或图标区分。高风险节点可自动弹窗或警示色标注，方便用户重点关注。",
+        "follow_up_questions": [{}]
+    },  
+    "synastry": {
+        "required": false
+    }
+}

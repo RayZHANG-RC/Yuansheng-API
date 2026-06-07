@@ -1,0 +1,114 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "FAM01_Q003",
+        "question_text": "我什么时候适合要孩子？",
+        "question_domain": "家庭生活",
+        "question_theme": "宠物与子女",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "年龄范围",
+                    "placeholder": "请输入年龄范围，如：25-30岁"
+                },
+                {
+                    "type": "text",
+                    "name": "家庭状况",
+                    "placeholder": "请描述您的家庭状况"
+                },
+                {
+                    "type": "text",
+                    "name": "事业考虑",
+                    "placeholder": "请描述您的事业考虑"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "宠物及无民事行为能力的子女，可将其视为一种特殊的'子女'或'田宅'之延伸。",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "定子女缘分之早晚，当以八字为主，观子女星（男命官杀，女命食伤）与子女宫（时柱）。若大运、流年引动子女星，或来合、冲子女宫，且此星、此宫为喜用，则为最佳生育时机。若原局或大运流年行至子女宫，出现化禄、化权、化科、红鸾、天喜，且无擎羊、陀罗、化忌等煞曜加临，则也是合理的添丁时机。若子女星或宫位为忌，则需待岁运克制此忌神之时，方能顺利得子。若流年命宫或夫妻宫亦有红鸾天喜辅助，添丁概率更高。若流年化忌冲子女宫，则该年不宜生育，须避之。",
+                "risk_assessment": [
+                    "如果遇到子女宫主星旺相且吉神拱照，则意味着子嗣缘分稳定，胎孕过程顺利安全",
+                    "如果遇到子女宫或流年逢煞曜化忌，则意味着不宜当年求孕，需避开煞动或等待化解时机",
+                    "如果遇到命盘或流年子女宫空亡失令，则意味着生育易迟延或需多次尝试，建议医务协助",
+                    "如果遇到夫妻宫不利或婚姻关系不稳，则意味着不宜此时怀孕，需先处理感情问题",
+                    "如果遇到财帛宫破损或经济压力大，则意味着养育成本负担重，需考虑经济承受能力",
+                    "如果遇到大运流年配合且身体健康，则意味着怀孕时机成熟，母子平安可期",
+                    "如果遇到红鸾天喜临门且子女星得力，则意味着添丁时机最佳，怀孕概率极高"
+                ]
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 2,
+                "risk_decision_logic": "观世应与子孙爻的旺衰状态，若子孙爻旺相、得日月建扶持，或卦变后成合子卦，且无冲克、空亡、刑害，则当前即为宜求之时点；如子孙爻被冲克、动化退虚或旬空，则时机欠佳。同时关注神煞中胎爻所处的位置，若胎爻在卦中，则提示宜求之时点。",
+                "risk_assessment": [
+                    "如果遇到子孙动爻化退或空亡，则意味着虽有生育愿望但受孕不易，应暂缓计划",
+                    "如果遇到动爻逢刑冲或卦变多煞，则意味着易发生孕期阻滞或流产风险，需谨慎",
+                    "如果遇到世爻受克或胎爻不现，则意味着个人状态不佳，不适合怀孕生子",
+                    "如果遇到财爻破损或兄弟夺财，则意味着经济条件不足，养育压力较大",
+                    "如果遇到子孙爻旺相且得扶助，则意味着近期为孕育有利时窗，成功率高",
+                    "如果遇到胎爻临青龙或贵人护佑，则意味着胎儿健康发育，母子平安可期",
+                    "如果遇到卦象稳定且世应和谐，则意味着夫妻配合默契，怀孕条件成熟"
+                ]
+            }
+        ],
+
+        "other_tips": "重点关注时机之选择。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "严格遵守所在地计划生育、婚姻法及相关生育政策。",
+            "尊重妇幼健康保护法律法规，建议优先考虑医学健康咨询。",
+            "涉及遗传病、职业暴露等特殊风险时，应依法进行医学评估和咨询。",
+            "不得违反任何现行未成年人保护法或家庭伦理道德底线。"
+        ],
+        // # === UI提示 ===
+        "ui_representation_tips": "",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "REL01_Q021",
+                "question_text": "我们现在是否适合养孩子？"
+            },
+            {
+                "question_id": "HLT01_Q003",
+                "question_text": "我应该如何调整我的饮食方式到一个合适我的舒适状态？"
+            },
+            {
+                "question_id": "HLT01_Q004",
+                "question_text": "我应该寻求何种放松方式到一个合适我的舒适状态？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

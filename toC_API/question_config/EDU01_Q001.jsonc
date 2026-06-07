@@ -1,0 +1,120 @@
+{
+    // 教育发展 - 学历进阶 - 培训投资回报分析
+    // 此问题重点分析培训学费投入与未来薪资涨幅的关系
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "EDU01_Q001",
+        "question_text": "我参加此次 _____ 培训，对我未来的薪资涨幅有哪些帮助和回报吗？",
+        "question_domain": "教育发展",
+        "question_theme": "学历进阶",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            // 用户需要填写的核心信息
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "培训与主业关联度",
+                    "placeholder": "请描述培训内容与您当前工作的关联程度"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "培训类型",
+                    "placeholder": "请详细描述培训的具体类型和内容"
+                },
+                {
+                    "type": "text",
+                    "name": "学费投入",
+                    "placeholder": "请说明培训的总费用投入情况"
+                },
+                {
+                    "type": "text",
+                    "name": "预期时长",
+                    "placeholder": "请说明培训的预期持续时间和学习周期"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage":{
+
+    // # === 领域内问题的基调 ===
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系，结合大运流年判断最佳进修时机和发展方向",
+
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "risk_decision_logic": "印星为学业之本，若印星为喜用，则能学有所成，此为根基。食伤为才华之展现，若食伤得用，则能将所学技能转化为实际能力。财星为最终之收获，若大运流年助起食伤，使其能流通生财，则薪资必有涨幅。此三者（印、食伤、财）若能在大运流年中形成连环相生之势，则回报最大。若印星受克，则学而不精；若食伤被制，则有才难展；若财星破损，则劳而无功。以此辨之，回报可知。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "如果遇到命局财星为忌或食伤被印克制，则意味着培训投资回报不佳，所学难以转化为收入",
+                    "如果遇到大运行忌神或冲克印星，则意味着学习时机不佳，培训效果事倍功半",
+                    "如果遇到培训五行与命局相冲，则意味着学习内容与个人天赋不符，难以发挥优势",
+                    "如果遇到官杀混杂或比劫夺财，则意味着职场竞争激烈，即便有培训加持也难显效果",
+                    "如果遇到食伤生财且财星得力，则意味着培训技能转化率高，薪资涨幅明显可期",
+                    "如果遇到印星生身且用神得助，则意味着学习能力强，培训知识吸收快应用好",
+                    "如果遇到财官相生且大运配合，则意味着培训投资回报丰厚，职业发展前景广阔"
+                ],
+                "raw_palette": {} // 将自动加载八字示例盘.json
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "以妻财爻为薪资回报，父母爻为学习培训，子孙爻为才华技能。若妻财爻旺相持世或生合世爻，且子孙爻发动以生财，则投资有回报。若财爻化退神或回头克，则投资难有预期收益。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "妻财爻旬空月破，投资回报堪忧",
+                    "忌神兄弟爻发动夺财，同事竞争激烈影响涨薪"
+                ],
+                "raw_palette": {} // 将自动加载六爻示例盘.json
+            }
+        ],
+        "other_tips": "关联度用以判断印星、食伤作用于正财还是偏财；学费投入为财星忌神时风险；期望薪资则为应期判断之锚点。培训重要程度40或以下只与个人素养有关，建议考虑个人发展类问题；60以上和主业高度相关；90以上和正副业都有关。"
+    },
+
+    "qualitative_stage":{
+
+    // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "请根据个人能力理性投入时间成本和精力成本到教育培训"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU01_Q002",
+                "question_text": "我参加此次培训，对我未来的人生发展有哪些帮助和回报吗？",
+                "recommendation_reason": "从投资回报扩展到整体人生发展评估"
+            },
+            {
+                "question_id": "DEV01_Q001",
+                "question_text": "我的核心竞争力是什么？",
+                "recommendation_reason": "从核心竞争力的分支提升角度来讨论必要性"
+            }
+
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

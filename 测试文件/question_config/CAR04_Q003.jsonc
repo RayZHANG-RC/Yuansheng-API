@@ -1,0 +1,53 @@
+// API 请求示例（CAR04_Q003）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR04_Q003"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "签证类型",
+                        "input": "学生签证、工作签证、旅游签证、探亲签证、商务签证、过境签证、其他"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "CAR04_Q001 我是否应该去 ______ (国家/地区)工作？",
+                        "input": "CAR04_Q001 我是否应该去 ______ (国家/地区)工作？"
+                    },
+                    {
+                        "name": "申请条件",
+                        "input": ""
+                    },
+                    {
+                        "name": "递交时间",
+                        "input": ""
+                    },
+                    {
+                        "name": "面试安排",
+                        "input": ""
+                    },
+                    {
+                        "name": "其他具体描述",
+                        "input": ""
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

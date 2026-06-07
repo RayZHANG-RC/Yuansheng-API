@@ -1,0 +1,77 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "HLT01_Q001",
+        "question_text": "我适合什么样的运动方式来保持健康？",
+        "question_domain": "健康生活",
+        "question_theme": "健康投资",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {}
+            ],
+            "optional_inputs": [
+                {
+                    "type":"selection",
+                    "name":"当前健康程度判断",
+                    "options":["健康","亚健康","疾病"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "健康问题重在五行平衡与体质分析，通过八字判断先天体质和疾病倾向。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "priority_remark": 1,
+                "risk_decision_logic":"本问题采用八字命理分析五行平衡与体质特点，结合日元、五行旺衰、格局取用等术数要点，对应到不同体质和健康倾向，提供适宜的运动方式建议。优先考虑命局五行过旺、过弱、偏枯、从格、特殊格局等复杂情况，结合现代健康理念给出具体的运动项目名称及其调和作用。1. 依据出生八字盘面的子午流注信息，结合命主日元、五行分布，判断体质偏性（如木旺肝胆、火旺心脏、土旺脾胃、金旺肺呼吸、水平肾水）；2. 若见五行偏枯或特殊格局（如从强、从弱、专旺），优先补足短板、调和偏性；3. 结合盲派及渊海子平经验，细化到易发健康隐患的系统或脏腑，进而对接具体运动方式（如有氧耐力、柔韧平衡、力量爆发等），兼顾适度与个体差异，确保方案可落地、细致实用。",
+                "risk_assessment":[
+                    "如果遇到日元过弱且无印比救应，则意味着基础体能不足，适合增强体能的有氧运动，如快走慢跑太极游泳",
+                    "如果遇到火旺木盛且无水金调候，则意味着体内阳气过盛易上火，多以舒缓降火运动为主，如瑜伽八段锦慢速骑行",
+                    "如果遇到土金偏旺且木火不足，则意味着肺脾系统需要调理，可多选室外有氧呼吸引导类，如羽毛球爬山登楼梯",
+                    "如果遇到水气不足且火土燥烈，则意味着肾水亏虚需要滋补，推荐游泳温和舞蹈有氧操等水性运动",
+                    "如果遇到五行偏枯或极端从格，则意味着体质特殊需个性化调整，避免激烈过度负荷，优先温和均衡周期性运动"
+                ]
+            }
+        ],
+        "other_tips": "运动方式需兼顾五行体质及当下健康状况，具体项目可细分为：1）静态柔韧型（如瑜伽、八段锦、拉伸）；2）有氧耐力型（如快走、慢跑、游泳、骑行）；3）力量训练型（轻量哑铃、器械、俯卧撑）；4）平衡与协调型（太极、舞蹈、乒乓球）；5）竞技对抗型（篮球、羽毛球、足球，适宜基础体质较好者）。建议结合命理分析结果，优先选择能弥补体质短板、促进五行调和的运动项目，避免因五行过盛或体质偏颇而过度耗损或加重负担。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "所有建议仅供参考，不构成医疗建议"
+        ],
+
+        "ui_representation_tips": "采用色彩标签或图标区分各类运动（如绿色代表静态柔韧、蓝色代表有氧耐力、红色为力量训练等），增强交互友好性。 每条运动建议下方可附带简要说明、主要益处与注意事项，支持用户点击查看具体说明和典型案例。",
+
+        "follow_up_questions": [
+            {}
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

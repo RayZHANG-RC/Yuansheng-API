@@ -1,0 +1,44 @@
+// API 请求示例（REL01_Q026）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "REL01_Q026"
+            },
+            "user_specification": {
+                "required_inputs": [],
+                "optional_inputs": [
+                    {
+                        "name": "梦境内容",
+                        "input": ""
+                    },
+                    {
+                        "name": "梦境感受",
+                        "input": ""
+                    },
+                    {
+                        "name": "最近状态",
+                        "input": ""
+                    },
+                    {
+                        "name": "对TA的想法",
+                        "input": ""
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

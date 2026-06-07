@@ -1,0 +1,110 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR03_Q005",
+        "question_text": "我更适合团队合作还是单打独斗？",
+        "question_domain": "职业发展",
+        "question_theme": "创业主本人",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "这里并不指代用户与某一个具体的团队/具体的人进行合作，而是广义上适合团队合作或单打独斗。"
+        },
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "number",
+                    "name": "团队规模",
+                    "placeholder": "请输入人数",
+                    "min": 1,
+                    "max": 100
+                },
+                {
+                    "type": "text",
+                    "name": "个人特质",
+                    "placeholder": "请描述您的个人特质、性格特点等"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "selection",
+                    "name": "MBTI",
+                    "content": "",
+                    "options": ["INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP", "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"]
+                },
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请详细描述其他相关信息"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"比劫为喜用，或官印相生者，善于协作，宜团队发展。比劫为忌，或伤官过重无制，则宜独立发展。盲派亦看宾主分布，月柱为主党力量象征，若能制其者，可与团队共享资源。",
+                "risk_assessment": [
+                    "如果遇到比劫为忌神或兄弟夺财，则意味着团队协作中易生利益冲突，单独创业更为有利",
+                    "如果遇到伤官无制或食神逢克，则意味着个性过于独立难以妥协，团队合作阻力重重",
+                    "如果遇到官印相克或印星无力，则意味着缺乏管理协调能力，不宜承担团队责任",
+                    "如果遇到日主身弱且无比劫帮扶，则意味着独立承担能力不足，需要团队支持",
+                    "如果遇到比劫为用神且官印相生，则意味着善于团队协作，共同发展事半功倍",
+                    "如果遇到食伤生财且财官配合，则意味着个人能力强劲，独立创业优势明显",
+                    "如果遇到用神得力且格局清纯，则意味着领导才能突出，适合带领团队发展"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"仆役宫（交友宫）吉星云集（如辅、弼、魁、钺），且其宫干四化吉入我命、财、官三方者，主伙伴得力，为团队型人才。反之，若仆役宫遭煞忌冲破，或化忌入我方关键宫位，则须防受人拖累，以独立发展为上策。",
+                "risk_assessment": [
+                    "如果遇到仆役宫化忌冲破或煞星云集，则意味着容易遭受合作伙伴拖累，单独发展更为安全",
+                    "如果遇到交友宫化忌入命财官，则意味着团队合作对个人发展不利，宜保持独立",
+                    "如果遇到命宫独座煞星且无吉化，则意味着个人魅力不足，难以凝聚团队力量",
+                    "如果遇到仆役宫主星陷弱或空宫，则意味着缺乏可靠伙伴，团队组建困难",
+                    "如果遇到仆役宫吉星荟萃且四化吉利，则意味着人缘佳合作运强，团队发展前景光明",
+                    "如果遇到左辅右弼入仆役宫且化权禄，则意味着得力助手众多，团队协作效率极高",
+                    "如果遇到文昌文曲会仆役宫，则意味着智囊团队强大，集体决策优势明显"
+                ],
+                "priority_remark": 2
+            }
+        ],
+        "other_tips": "结合个人八字与团队特质，综合判断最优发展模式。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "团队合作请理性评估契约与职能分工"
+        ],
+
+        "ui_representation_tips": "当紫微斗数和八字出现分歧时，只选用二者的交集进行用户展示。",
+
+        "follow_up_questions": [
+            {"question_id": "CAR03_Q006", "question_text": "我如果现在创业，会有哪些可以利用的资源和机会？"}
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

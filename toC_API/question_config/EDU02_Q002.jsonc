@@ -1,0 +1,99 @@
+{
+    // 教育发展 - 人才相关 - 人才审批成功预测
+    // 主要关注官方认定、审批流程的成败判断
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "EDU02_Q002",
+        "question_text": "我 _____ 人才审批能不能下来?",
+        "question_domain": "教育发展",
+        "question_theme": "人才相关",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {"type": "time_string", "name": "申请时间", "options": "YYYY-MM-DD",
+                    "user_input":"2026-01-01"}
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "用户对此次申请的具体描述（如：我申请了什么人才，我所在地区的政策环境，我个人的优势和不足）",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系，结合大运流年判断最佳进修时机和发展方向",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "人才审批之占断，以官鬼爻为审批机关、政府部门，父母爻为证书文凭，世爻为求测人。若官鬼爻生世，或父母爻持世、临世，且得日月生扶，动而化吉，则审批必成。若官鬼爻克世，或父母爻空破被克，则审批有阻。特观官鬼爻之旺衰动静，以断审批机关态度；察父母爻之吉凶，以判证书能否到手。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "如果遇到官鬼爻克世或化煞星，则意味着审批机关对申请人态度不利，通过概率较低",
+                    "如果遇到父母爻空破被克，则意味着所需证书文件有缺失或不被认可，材料准备不足",
+                    "如果遇到世爻无气被冲克，则意味着申请人自身条件不足或申请时机不当",
+                    "如果遇到兄弟爻发动或财爻受损，则意味着竞争激烈或资金支持不足，影响审批结果",
+                    "如果遇到官鬼爻旺相生世，则意味着审批机关认可申请条件，通过概率极高",
+                    "如果遇到父母爻得力且文昌临门，则意味着学历证书完备，学术水平得到认可",
+                    "如果遇到世爻旺相临贵人，则意味着个人条件优秀，人才审批顺利可期"
+                ],
+                "raw_palette": {}
+            },
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "risk_decision_logic": "八字论人才审批，重点观官星与印星配置。官星旺而生印，印星有根有气，主官方认可其学术才华；若官印两弱，或官星被伤克重，则官方认定困难。流年大运若能补强官印，或制服忌神，则审批成功概率大增。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "官星太弱或被伤官克制，主与官方关系不佳或缺乏认可",
+                    "流年流月冲克用神，主该年申请人才认定不利"
+                ],
+                "raw_palette": {}
+            }
+        ],
+        "other_tips": "人才类型决定审批标准和官星层次，申请地区影响政策环境分析，个人条件对应命局资质评估。"
+
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "请确保申请材料真实完整，符合相关政策要求"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [
+            {
+                "question_id": "CAR01_Q001",
+                "question_text": "我最近一次升职机会是什么时候？我要如何做？",
+                "recommendation_reason": "人才认定对职业发展的促进作用"
+            }
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

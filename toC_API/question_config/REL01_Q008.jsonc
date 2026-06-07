@@ -1,0 +1,87 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q008",
+        "question_text": "TA怎么看待我？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题可以预先加载合盘，但是不强制。"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "最近互动情况",
+                    "content": ""
+                },
+                {
+                    "name": "当前感情状态",
+                    "type": "selection",
+                    "options": ["单身求缘", "刚分手", "一直单身", "复合可能", "其他"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以应爻为TA，对我（世爻）之态度见于应爻与世爻的生克关系：若应生合世，TA对你有好感与关注；若应冲克世，TA感受排斥或不满。进一步通过应爻所临的六亲与六兽分析细节：应临财官，表重视关系和未来可能性；应临兄弟则TA将你视为朋友；应临父母则TA有保护或关顾意；应临子孙则交往轻松愉快。六兽若临青龙，则TA态度正直且愉悦；若临玄武，TA心中可能有隐瞒或保留；临白虎则表现强硬态度；临腾蛇，则TA思绪纷乱或較虚伪（玄武关隐匿、白虎与腾蛇象兵刃与疑虑）",
+                "risk_assessment": [
+                    "如果遇到应爻生合世爻，则意味着TA对你有好感与关注，态度积极正面",
+                    "如果遇到应爻临财官六亲，则意味着TA重视关系和未来可能性，看重长期发展",
+                    "如果遇到应爻临青龙吉兽，则意味着TA态度正直且愉悦，心情舒畅看你顺眼",
+                    "如果遇到应爻临父母爻，则意味着TA有保护或关顾意，将你视为需要照顾的人",
+                    "如果遇到应爻临子孙爻，则意味着与你交往轻松愉快，感觉自在无压力",
+                    "如果遇到应爻冲克世爻，则意味着TA感受排斥或不满，对你有抵触情绪",
+                    "如果遇到应爻临兄弟爻，则意味着TA将你视为朋友，暂无更进一步想法",
+                    "如果遇到应爻临玄武凶兽，则意味着TA心中可能有隐瞒或保留，态度暧昧不明",
+                    "如果遇到应爻临白虎腾蛇，则意味着TA表现强硬态度或思绪纷乱，感情复杂"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "建议结合动爻、化动趋势及世爻状态观察TA态度的变化轨迹，可更动态地捕捉TA心理。"
+    },
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "如遇情感暴力、心理问题建议及时寻求专业帮助。"
+        ],
+        "ui_representation_tips": "需要根据以上心理动向进行详尽展示，显示对该人态度的明确分析。尤其应注意与用户所期待的语气相匹配。可以直接模拟对方说话的情况。",
+        "follow_up_questions": [{
+                "question_id": "REL01_Q014",
+                "question_text": "这一次约会结果如何？"},
+            {
+                "question_id": "REL01_Q029",
+                "question_text": "TA今天有没有想到我？"
+            },
+            {
+                "question_id": "REL01_Q030",
+                "question_text": "TA对我有没有生理性喜欢？"
+            }
+        ]
+    },
+
+    "synastry": {
+        "required": true // Optional: 预加载合盘分析，和REL01_Q008 9 10 存在同类的optional冲突
+    }
+}

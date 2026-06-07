@@ -1,0 +1,80 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q022",
+        "question_text": "我是否应该向TA坦白这个秘密？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "秘密的性质和内容",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "影响程度",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "对方性格",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "关系基础",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以“小六壬掌诀”（大安、留连、速喜、赤口、小吉、空亡）判断当前时间对应的六神状态。结合三合局中“子孙爻”（代表人和）和“妻财爻”（代表心意传递）是否得力，评估坦白时机是否通顺自然。",
+                "risk_assessment": [
+                    "如果遇到大安或小吉六神当值，则意味着适合表达坦白，沟通顺畅自然气氛和谐",
+                    "如果遇到速喜六神临门，则意味着坦白有助情感升温，但节奏需把握分寸",
+                    "如果遇到子孙爻妻财爻得力，则意味着人和心意传递通顺，坦白时机成熟",
+                    "如果遇到赤口六神主事，则意味着易生误会或争执，不宜表达秘密容易激化矛盾",
+                    "如果遇到留连或空亡六神，则意味着氛围模糊易使心情复杂，不宜公布秘密"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+    },
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "秘密内容决定风险级别，请根据关系基础与合法性慎重决定",
+            "涉及隐私和敏感信息时，建议遵守相关法律法规，尊重对方感受"
+        ],
+        "ui_representation_tips": "建议首先查看二人的信任基础",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

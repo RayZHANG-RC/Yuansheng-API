@@ -1,0 +1,49 @@
+// API 请求示例（CAR02_Q004）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR02_Q004"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "个人技能",
+                        "input": "示例个人技能"
+                    },
+                    {
+                        "name": "每日可投入时长",
+                        "input": "示例每日可投入时长"
+                    },
+                    {
+                        "name": "投入预算",
+                        "input": "示例投入预算"
+                    },
+                    {
+                        "name": "风险承受度",
+                        "input": "5"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "对于现有主业的具体描述",
+                        "input": ""
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

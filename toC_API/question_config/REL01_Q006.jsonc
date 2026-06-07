@@ -1,0 +1,85 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q006",
+        "question_text": "我和TA是否会分手？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "type": "selection",
+                    "name": "当前关系状态",
+                    "options": ["稳定期", "出现摩擦", "冷淡期", "准备分手", "复合中"]
+                },
+                {
+                    "type": "text",
+                    "name": "矛盾焦点",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "交往时长",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "此问题核心依据六爻卦象推断当下感情存续状况，侧重世应结构、用神状态、反吟伏吟、六冲等关键爻象信息，并结合日月建、旬空等时间点特征分析缘分强弱与趋势动向。以世爻代表自己，应爻代表TA。断分手与否，关键看世应相冲相克、用神（男性看妻财，女性看官鬼）休囚空破、被忌神（兄弟爻/子孙爻）所伤；反吟/伏吟表示关系反复；变卦若为六冲或用神回头克，则为分离之象；若卦中出现间爻发动克用神，提示外力干涉导致关系破裂。",
+                "risk_assessment": [
+                    "如果遇到世应相冲或用神空破，则意味着关系根基不稳，存在分手风险需及时修复",
+                    "如果遇到用神被兄弟爻或子孙爻刑害，则意味着第三者或家庭压力可能促成分手",
+                    "如果遇到反吟伏吟频现卦象，则意味着关系走势反复，感情状态不稳定难以维持",
+                    "如果遇到六冲变卦或用神化回头克，则意味着分手可能性极高，缘分即将终结",
+                    "如果遇到间爻发动克制用神，则意味着外在事件或他人介入导致感情破裂",
+                    "如果遇到水泽节水雷屯水山蹇泽水困等困顿卦象，则意味着感情难以为继且难以复合",
+                    "如果遇到世应相生且用神得力，则意味着感情基础牢固，分手风险较低可化解矛盾",
+                    "如果遇到用神旺相临吉神，则意味着感情依然深厚，通过沟通可重修旧好"
+                ]
+            }
+        ],
+        "other_tips": "六爻提供当前感情走势与可能驱动因素，仅供参考。建议结合现实沟通、价值观匹配、心理咨询等综合判断，不做一锤定音。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "感情建议仅供参考，不代表法律观点或心理咨询意见。",
+            "如遇情感暴力、心理问题建议及时寻求专业帮助。"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    // === 合盘配置 ===
+    // 该问题需要双方性状分析来判断关系稳定性
+    "synastry": {
+        "required": true  // 需要预加载合盘分析
+    }
+}

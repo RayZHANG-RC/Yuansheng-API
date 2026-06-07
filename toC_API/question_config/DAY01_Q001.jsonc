@@ -1,0 +1,81 @@
+{
+    // 这部分的问题必须要preload一个之前问过的问题，因为它们完全是之前某个问题的继续
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "DAY01_Q001",
+        "question_text": "某一天的面试，我应当如何表达自己？",
+        "question_domain": "日常问题",
+        "question_theme": "日常模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "表达和表现包括：肢体语言、表情、眼神、声音、语速、语调等，适用范围：面试、演讲、谈判、社交、职场沟通等。"
+        },
+
+        "user_input_requirements": {
+            "required_inputs": [
+                {
+                    "type": "preloaded_question",
+                    "name": "我更适合一个什么样的自我表达、自我表现形式？",
+                    "options": ["CAR02_Q001"]
+                },
+                {
+                    "name": "日期",
+                    "type": "selection",
+                    "content": "YYYY-MM-DD"
+                }
+            ],
+            "optional_inputs": [{}]
+        }
+    },
+
+    "quantitative_stage":{
+
+        "domain_logic": "加载此前问题中的全部信息内容。结合当前的黄历流日进行分析。",
+
+        "methods": [
+            {
+                "method_name": "黄历",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "考察吉神、忌神方向。分析此日黄历流日与事主的适配程度。",
+                "risk_assessment": [
+                    "如果遇到当日冲克自身生肖或犯太岁，则意味着个人状态不佳，表达容易失误需格外谨慎",
+                    "如果遇到黄历显示忌面试或诸事不宜，则意味着时机不利，建议调整面试时间",
+                    "如果遇到凶神当值或白虎临门，则意味着沟通过程易生冲突，需控制情绪保持谦和",
+                    "如果遇到朱雀发动或口舌煞临，则意味着言语表达易出纰漏，需三思而后言",
+                    "如果遇到天德月德当值且贵人临门，则意味着面试官印象良好，表达能力得到认可",
+                    "如果遇到文昌文曲当值或智慧星照临，则意味着思路清晰表达流畅，专业能力展现充分",
+                    "如果遇到青龙吉神护佑且三合六合日，则意味着面试氛围和谐，个人魅力得到充分发挥"
+                ]
+            }
+        ],
+        "other_tips": ""
+    },
+
+    "qualitative_stage":{
+
+        "law_and_regulation_requirements": [
+            "沟通过程需保持真实诚信，不得虚假夸张",
+            "表达方式应符合职场规范与道德标准"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": false
+    }
+}

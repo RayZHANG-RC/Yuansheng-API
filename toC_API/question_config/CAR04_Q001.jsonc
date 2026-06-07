@@ -1,0 +1,135 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR04_Q001",
+        "question_text": "我是否应该去 ______(国家/地区) 工作？",
+        "question_domain": "职业发展",
+        "question_theme": "职业国际化",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "目标国家/经纬度",
+                    "content": "请输入目标国家/经纬度"
+                },
+                {
+                    "type": "text",
+                    "name": "当前国家/经纬度",
+                    "content": "请输入当前国家/经纬度"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "工作性质",
+                    "placeholder": "请描述您要去海外从事的工作性质..."
+                },
+                {
+                    "type": "number",
+                    "name": "预期时长",
+                    "min": 1
+                },
+                {
+                    "type": "select",
+                    "name": "时长单位",
+                    "options": ["月", "年"]
+                },
+                {
+                    "type": "text",
+                    "name": "语言能力",
+                    "placeholder": "请描述您的语言能力情况..."
+                },
+                {
+                    "type": "text",
+                    "name": "家庭状况",
+                    "placeholder": "请描述您的家庭状况..."
+                },
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage":{
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"若父母爻旺得用为岗位稳定，财爻宜生合世爻为待遇优厚。应爻象征目标地，若生世则利迁移。动爻逢驿马主远行有成，需结合六神与日月建剖析世应力量。卦中驿马发动，更是远行之兆。重官鬼爻为职位、事业发展，宜官爻旺相持世。必要时引入世应跨宫、六亲六兽异动等高阶技法。",
+                "risk_assessment": [
+                    "如果遇到官鬼爻弱受克或空破，则意味着海外职位发展受阻，升迁机会渺茫需谨慎决策",
+                    "如果遇到世爻逢冲克或静而无力，则意味着个人状态不佳，容易在异国环境中受困",
+                    "如果遇到父母爻空亡或受损，则意味着工作签证或职位证明存在障碍，可能影响合法居留",
+                    "如果遇到财爻被克或化退神，则意味着海外薪资待遇不如预期，经济压力较大",
+                    "如果遇到应爻克世或六冲卦，则意味着目标国环境与个人不合，适应困难重重",
+                    "如果遇到驿马发动且应爻得地，则意味着出国工作时机成熟，远行发展前景良好",
+                    "如果遇到官鬼财爻双旺生世，则意味着海外事业财运俱佳，职业发展空间广阔",
+                    "如果遇到世爻旺相临贵人青龙，则意味着个人能力受认可，在异国获得有力支持"
+                ],
+                "priority_remark": 2
+            },
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以大运流向、驿马星及命局用神为主线。大运/流年走目标地五行（如目标地为东南木、命局木为用）则顺利。忌神、刑冲不宜远迁。用神方向、驿马到位、多遇贵人则可去；相反则需慎重。驿马星动主迁移有力，贵人临方主得外助。除方位五行与驿马运外，更要细审迁移对六亲宫位（特别是年柱、月柱）的冲合影响，以判对家庭之利弊。",
+                "risk_assessment": [
+                    "如果遇到流年大运冲克官禄或迁移宫，则意味着海外发展阻力重重，容易水土不服或政策变化",
+                    "如果遇到驿马星逢合化或受冲克，则意味着迁移变动频繁但不稳定，计划易生变故",
+                    "如果遇到用神方位与目标国方向相冲，则意味着地理环境与个人五行不合，发展受限",
+                    "如果遇到忌神当令且冲克年月柱，则意味着对家庭关系造成冲击，亲情疏远风险高",
+                    "如果遇到命局逢贵人文昌临旺地，则意味着异地事业机遇丰富，贵人相助发展顺利",
+                    "如果遇到驿马星动且用神得力，则意味着迁移时机成熟，海外发展前景光明",
+                    "如果遇到目标地五行为用神且大运相配，则意味着地理优势显著，事业财运双旺"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "风水方位学",
+                "enabled": 0,
+                "raw_palette":{},
+                "risk_decision_logic":"根据经纬度计算具体卦位方向，分析地形地貌、气候与个人五行的适配性。",
+                "risk_assessment":[],
+                "priority_remark": 3
+            }
+        ],
+
+        "other_tips": "结合具体排盘，优先分析目的地地理方位（风水八卦定位），并结合行业、时长、家庭等多维度情况调整最终判断。特别重视目标地五行与命局用神匹配度。"
+    },
+
+    "qualitative_stage":{
+
+        "law_and_regulation_requirements": [
+            "出入境、就业及其中介服务等政策以官方解释为准，建议同步咨询专业机构。"
+        ],
+        "ui_representation_tips": "如需进一步分析地域适应性，请补充详细八字与目标地信息。",
+        "follow_up_questions": [
+            {"question_id": "CAR04_Q003", "question_text": "我这次去 ______ （地点）的 ______ 签证是否会通过？"}
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

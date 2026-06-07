@@ -1,0 +1,96 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q017",
+        "question_text": "我适合给TA送什么样的礼物？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题可以预先加载合盘，但是不强制。"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "双方喜好及厌恶",
+                    "placeholder": "请描述双方的喜好和兴趣..."
+                },
+                {
+                    "type": "number",
+                    "name": "预算范围",
+                    "min": 0,
+                    "placeholder": "请输入预算金额",
+                    "unit": "元"
+                },
+                {
+                    "type": "text",
+                    "name": "关系阶段",
+                    "placeholder": "请描述当前的关系阶段和状态..."
+                },
+                {
+                    "type": "text",
+                    "name": "特殊意义",
+                    "placeholder": "请描述礼物的特殊意义和目的..."
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充说明其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以应爻为TA，用神为礼物方向。观应爻所属六亲与五行属性：若应爻临父母，宜送实用类（衣物、书籍）；临妻财则宜金银首饰；临兄弟可选娱乐或互动型礼物。再观月建、日辰与动爻，选择干支相生之时为赠礼良辰。",
+                "risk_assessment": [
+                    "如果遇到应爻临父母爻且五行相配，则意味着适合送实用类礼物如衣物书籍，能体现关怀",
+                    "如果遇到应爻临妻财且金水得力，则意味着适合送金银首饰或贵重物品，彰显重视",
+                    "如果遇到应爻临兄弟爻且动爻和谐，则意味着适合选娱乐或互动型礼物，增进感情",
+                    "如果遇到应爻五行与礼物相生，则意味着更易触动TA内心，礼物效果显著",
+                    "如果遇到月建日辰与动爻相生，则意味着选择此时赠礼为良辰，时机恰当",
+                    "如果遇到用神被克或空破，则意味着赠礼效果可能被忽视，选择需谨慎",
+                    "如果遇到动爻逢冲刑凶象，则意味着送礼需谨慎把握时机，避免适得其反"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "结合对方喜好与预算同时展开。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "送礼应当情真意切，避免过于物质化。"
+        ],
+        "ui_representation_tips": "送礼应当具有创意，需要结合对应的需要进行详细选择，具体到颜色、款式、材质等。",
+        "follow_up_questions": [{
+                "question_id": "REL01_Q018",
+                "question_text": "TA喜欢我的礼物吗？"
+            }]
+    },
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

@@ -1,0 +1,102 @@
+{
+    // 教育发展 - 学历进阶 - 培训对人生发展的综合影响评估
+    // 此问题从格局提升角度分析培训的长远价值
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "EDU01_Q002",
+        "question_text": "我参加此次 _____ 培训，对我未来的人生发展有哪些帮助和回报吗？",
+        "question_domain": "教育发展",
+        "question_theme": "学历进阶",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "note": "评估特定培训对个人格局提升、人生机遇及长远发展的潜在影响",
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {"type": "select", "name": "培训类型",
+                    "options": ["语言", "兴趣爱好", "领导力、情商等培训", "专业技能相关"]}
+            ]
+        }
+    },
+
+    "quantitative_stage":{
+
+    // # === 领域内问题的基调 ===
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系，结合大运流年判断最佳进修时机和发展方向", // # 这个是跟着整个domain一起走的，会有一些基础setting，使得同一个domain下变得统一
+
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "risk_decision_logic": "论及人生发展，当以八字格局为重。培训之五行若为命局之喜用神，则此次学习能补益命局，提升格局层次，对人生有长远助益。若为忌神，则可能耗费精力而收效甚微。再者，若此培训能助我食伤以生财，或助我印星以克制伤官，达成伤官配印等格局优化，则为关键转折之机。以此综合判断，可知此培训对人生之影响。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "如果遇到培训五行为命局忌神，则意味着学习过程事倍功半，甚至引发新的命理失衡",
+                    "如果遇到大运不济或印星受损，则意味着虽有学习但难以致用，应等待时机成熟",
+                    "如果遇到所学专业与命局根本矛盾，则意味着只是扬汤止沸，无法突破核心瓶颈",
+                    "如果遇到官杀混杂或驿马受阻，则意味着培训后人生方向仍然迷茫，发展受限",
+                    "如果遇到印星生身且文昌当令，则意味着学习天赋得到激发，人生格局得以提升",
+                    "如果遇到食伤配印且用神得力，则意味着所学知识与天赋完美结合，发展前景光明",
+                    "如果遇到培训五行补命局不足，则意味着人生短板得到弥补，整体运势显著改善"
+                ],
+                "raw_palette": {}
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "以妻财爻为薪资回报，父母爻为学习培训，子孙爻为才华技能。若妻财爻旺相持世或生合世爻，且子孙爻发动以生财，则投资有回报。根据妻财爻来定义。若财爻化退神或回头克，则投资难有预期收益。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "妻财爻旬空月破，投资回报堪忧",
+                    "忌神兄弟爻发动夺财，同事竞争激烈影响涨薪"
+                ],
+                "raw_palette": {} // 将自动加载六爻示例盘.json
+            }
+        ],
+        "other_tips": "培训类型以定其五行与十神归属，用以判断与命局喜用之关系；发展目标以明确论断方向（如求名、求知、突破瓶颈）；当前瓶颈则用于审视命局与大运的关窍所在。重在格局层次的提升而非单纯的技能获取。"
+    },
+
+    "qualitative_stage":{
+
+    // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "人生发展分析结果仅供参考，不构成人生规划的绝对指导",
+            "个人发展涉及多重主观和客观因素，请结合实际情况综合判断"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU01_Q001",
+                "question_text": "我参加此次培训，对我未来的薪资涨幅有哪些帮助和回报吗？",
+                "recommendation_reason": "从人生发展角度细化到具体的财务回报分析"
+            },
+            {
+                "question_id": "DEV01_Q001",
+                "question_text": "我的核心竞争力是什么？",
+                "recommendation_reason": "深入了解个人优势以指导培训选择"
+            }
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

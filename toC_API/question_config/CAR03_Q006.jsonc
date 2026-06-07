@@ -1,0 +1,78 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR03_Q006",
+        "question_text": "我如果现在创业，会有哪些可以利用的资源和机会？",
+        "question_domain": "职业发展",
+        "question_theme": "创业主本人",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "请简述期待的资金规模、人脉类型、家庭背景、专业技能等",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"观察父母宫、兄弟宫、交友宫五行与星曜：若有左辅/右弼、化禄、化权汇聚，说明官印人脉资源丰富；财帛宫若有天府/化禄云集，福德宫得天同/化权扶持，则财力与内在资源俱佳。再看官禄宫四化是否入主，以判断资本化与运营工具是否到位。在流年此时，观察驿马、天乙贵人、德神等吉星是否入主，以判断资源调动与机会显现。再看下一年之情况，用于判断今年的资源调用与机会显现是否为持续可行。",
+                "risk_assessment": [
+                    "如果遇到父母宫化忌或主星陷弱，则意味着长辈支持不足，缺乏权威人脉引荐和资源背书",
+                    "如果遇到兄弟宫煞星云集或化忌冲突，则意味着合作伙伴不靠谱，容易拖累或背叛",
+                    "如果遇到财帛宫空破或化忌，则意味着资金来源困难，投资渠道受阻或财力不济",
+                    "如果遇到交友宫受损或化忌入命，则意味着人脉关系复杂，容易因社交而受损",
+                    "如果遇到福德宫陷弱无助，则意味着内在福报不足，精神支撑力不够持久",
+                    "如果遇到父母宫天梁化权且吉星拱照，则意味着创业导师支持有力，权威资源丰富",
+                    "如果遇到兄弟宫天同化禄且三方会吉，则意味着合作伙伴忠诚可靠，团队资源整合能力强",
+                    "如果遇到财帛宫天府化禄且库藏丰实，则意味着资金支持稳固，财务资源充沛可期",
+                    "如果遇到交友宫左辅右弼会照，则意味着人脉网络广阔，社交资源助力创业发展",
+                    "如果遇到福德宫化科且精神饱满，则意味着内在动力充足，情绪管理和持久力俱佳"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "分析人脉、情报获取渠道、资金抓手、资源配套能力，按“人—财—能力”三维拆解，并用实际案例指引用户看哪些具体资源是可激活的。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "请在资源动用前确保合规，与相关方签署必要文件"
+        ],
+        "ui_representation_tips": "下一阶段V2.0时，可以在界面上可设计“资源矩阵”，横轴为‘人脉–资金–技能–平台’，纵轴为强弱等级（低/中/高），用户填写完描述后系统自动填色并给出“资源宝库”“薄弱板块”等标签提示；支持点击各标签查看精简术数说明。",
+
+        "follow_up_questions": [
+            {"question_id": "CAR03_Q007", "question_text": "我如果现在创业，会面临哪些困难？"}
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

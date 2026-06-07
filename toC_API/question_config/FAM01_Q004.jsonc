@@ -1,0 +1,89 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "FAM01_Q004",
+        "question_text": "我未来的孩子会是什么样的？",
+        "question_domain": "家庭生活",
+        "question_theme": "宠物与子女",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{}]
+        },
+
+    // # === 领域内问题的基调 ===
+        "domain_logic": "宠物及无民事行为能力的子女，可将其视为一种特殊的'子女'或'田宅'之延伸。",
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "以本命盘‘子女宫’主星为核心，参看化禄、化权、化科、化忌四化在子女宫及三方四正的联动，结合左右、魁钺、昌曲等文贵吉曜。子女宫主星庙旺得地，性格多聪颖善良，若见文昌文曲，主学习敏捷，若逢禄存、科权，主事业有成。若见火铃羊陀或化忌、地空地劫，则宜关注健康、性情波动或成长阻碍。若大运流年四化飞入子女宫，预示成长关键期。并综合命宫与父母宫的互动，分析亲子沟通与性格继承特征。②跨宫连动：子→子女宫的子女宫揭示子女自我发展力，子→子女宫的财映射子女未来经济能力，子→子女宫的疾提示健康弱点；③子女宫三方四正联动子女宫的父母宫及田宅宫，分析亲子关系与家庭氛围；",
+                "risk_assessment": [
+                    "如果遇到子女宫临煞星或化忌，则意味着孩子成长过程易遇波折或性情可能孤僻",
+                    "如果遇到子女宫主星失陷无力，则意味着孩子天赋一般，需后天努力培养才能成材",
+                    "如果遇到煞星冲克或空亡临身，则意味着亲子关系可能疏远，沟通存在障碍",
+                    "如果遇到文昌文曲受损，则意味着孩子学习能力有限，学业发展需要额外关注",
+                    "如果遇到子女宫见昌曲禄权，则意味着孩子多数聪慧好学，文艺才华突出",
+                    "如果遇到三方四正得吉星拱照，则意味着孩子发展空间宽广，志向远大前程似锦",
+                    "如果遇到吉星庙旺且无煞干扰，则意味着孩子天资聪颖品行端正，为家庭之光",
+                    "如果遇到子女宫飞入子女宫主星旺相，则意味着孩子自立性强具自我驱动能力",
+                    "如果遇到子女宫化财且财星得力，则意味着孩子未来经济意识或理财能力突出",
+                    "如果遇到子女宫化忌入疾厄或见煞曜空亡，则意味着需关注孩子体质及成长环境",
+                    "如果遇到命宫福德宫与子女宫互动良好，则意味着家庭和睦亲子融洽关系和谐"
+                ]
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 2,
+                "risk_decision_logic": "以子孙爻为用神，胎爻为参考，详察子孙爻的动静、得失、与世应爻及日月建的生克制化。子孙爻旺相发动，且世应得力，预示子女性格独立、生命力强、早慧。子孙爻静伏或遇冲克，主性格内向、成长需关爱。胎爻临吉神，主天赋异禀，临煞则需关注身体及早期成长阶段。卦变六合或三合，主善于沟通、性格平衡；动化刑冲害，主成长阻力或家庭牵绊。六亲爻若与父母、兄弟互动密切，反映兄弟姐妹缘分及家庭氛围。",
+                "risk_assessment": [
+                    "子孙爻旺相，预示孩子身心健康、进取有为，早慧，行动力强。",
+                    "动爻化退、空亡、刑冲，主性格敏感，成长需特别呵护。",
+                    "胎爻临吉，主天赋突出；临煞，主幼时或成长阶段需关注体质。",
+                    "胎爻临吉神，如青龙六合，可见孩子性情温润、亲和。",
+                    "卦变六合/三合，性格外向易社交；卦变刑害、动化退虚、六冲，成长易有逆境。"
+                ]
+            }
+        ],
+
+        "other_tips": "重点关注个体性格、健康、天赋、未来成长趋势。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "尊重未成年人成长规律，关注身心健康与合法权益。",
+            "结果仅供命理参考，不可替代医学和心理专业建议。"
+        ],
+        // # === UI提示 ===
+        "ui_representation_tips": "建议结合子女出生时间及配偶命盘等进行阶段性复盘。",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "FAM01_Q003",
+                "question_text": "我什么时候适合要孩子？"
+            }
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

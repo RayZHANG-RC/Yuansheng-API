@@ -1,0 +1,45 @@
+// API 请求示例（CAR01_Q003）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR01_Q003"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "当前职位",
+                        "input": "基层员工"
+                    },
+                    {
+                        "name": "个人抱负",
+                        "input": "5"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "专业背景",
+                        "input": ""
+                    },
+                    {
+                        "name": "学历",
+                        "input": "高中"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

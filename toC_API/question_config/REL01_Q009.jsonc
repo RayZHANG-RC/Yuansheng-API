@@ -1,0 +1,91 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q009",
+        "question_text": "我和TA的亲密关系会走到哪一步？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题可以预先加载合盘，但是不强制。"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "select",
+                    "name": "当前关系状态",
+                    "options": ["无恋情史", "暧昧中", "恋爱中", "已分手", "已订婚", "已婚", "已离婚"]
+                },
+                {
+                    "type": "select",
+                    "name": "认识时长",
+                    "options": ["1个月内", "3个月内", "半年内", "1年内", "2年内", "不确定"]
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "现实阻碍",
+                    "content": ""
+                },
+                {
+                    "type": "textarea",
+                    "name": "双方意愿",
+                    "placeholder": "请描述双方的意愿和想法..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "若主卦或变卦出现六合，表关系顺畅稳固，易深入；若出现六冲，则表示关系存在分歧或潜在裂隙。观察代表感情的财爻/官爻：若旺相持世且得日月、青龙、勾陈等吉神加持，则关系正深入或将更亲密；若财/官爻空破、被刑冲，或出现白虎、反吟、伏吟，则感情有冷淡、争吵、变动之兆。若变卦为六冲或用神回头克世，应谨慎，“虽近未必久”。",
+                "risk_assessment": [
+                    "如果遇到财爻或官爻旺相且得日月青龙勾陈加持，则意味着关系正深入发展，能走向更亲密阶段",
+                    "如果遇到主卦或变卦出现六合卦象，则意味着关系顺畅稳固，感情基础深厚易于深入",
+                    "如果遇到用神持世且临吉神，则意味着感情发展主动权在握，关系进展可控",
+                    "如果遇到财官爻空破或被刑冲，则意味着关系难以推进，发展存在明显阻碍",
+                    "如果遇到出现六冲卦象，则意味着关系存在分歧或潜在裂隙，发展前景堪忧",
+                    "如果遇到白虎或反吟伏吟卦象，则意味着感情可能冷却或争吵，关系不稳定",
+                    "如果遇到变卦六冲或用神回头克世，则意味着存在突变风险，虽近未必久远",
+                    "如果遇到世应相合且无刑冲，则意味着双方意愿一致，关系能稳步发展到理想状态"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "后端解卦分三种情况,AB（未在一起过），CEF（正在一起），DG（已分手）。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "所有建议仅供参考，不构成绝对决策依据",
+            "请用户根据实际情况谨慎研判"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": true // Optional: 预加载合盘分析，和REL01_Q008 9 10 存在同类的optional冲突
+    }
+}

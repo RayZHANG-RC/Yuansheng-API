@@ -1,0 +1,85 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q027",
+        "question_text": "我为什么会和TA相遇？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+        
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "相遇经过",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "第一印象",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "缘分感受",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "生活影响",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"世爻为自己，应爻为TA。分析世应之间的生克、合冲、动爻变化，以及主卦、变卦的六亲与六神配置，判断此相遇是互补、助益还是考验。若世应相生、动爻化吉，主善缘、贵人相助；若世应相克、动爻化凶，则为功课、考验或孽缘。再参考日月建、六神（如青龙、玄武、白虎等）赋象，揭示相遇中的情感基调与精神内核。",
+                "risk_assessment": [
+                    "如果遇到世应相生且动爻化吉，则意味着此相遇为善缘贵人相助，对双方都有益处",
+                    "如果遇到世应相合且六神和谐，则意味着相遇是互补助益的安排，缘分深厚",
+                    "如果遇到动爻临青龙且变卦吉利，则意味着相遇带来正面情感基调和精神成长",
+                    "如果遇到世应相克且动爻化凶，则意味着此相遇为功课考验或孽缘，需谨慎处理",
+                    "如果遇到六神临白虎螣蛇，则意味着相遇中有冲突纠缠成分，感情复杂化",
+                    "如果遇到应爻空破或化退，则意味着相遇缘分浅薄，可能只是生命中的过客",
+                    "如果遇到日月建生扶世应，则意味着相遇时机恰当，顺应天时地利人和"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "通过六爻盘式，可溯缘由、知得失、辨善恶，提醒命主顺势而为，既不执着于外在结果，也不回避成长中的挑战。"
+    },
+    "qualitative_stage": {
+
+    // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+
+        ],
+        "ui_representation_tips": "凡相遇皆是缘法。“缘起有因，缘生有象”。",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

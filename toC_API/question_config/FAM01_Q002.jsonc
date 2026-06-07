@@ -1,0 +1,103 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "FAM01_Q002",
+        "question_text": "我适合养什么样的宠物？",
+        "question_domain": "家庭生活",
+        "question_theme": "宠物与子女",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type":"selection",
+                    "name":"家庭成员过敏原筛查",
+                    "options":["毛发","粉尘","花粉","食物","其他"]
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type":"selection",
+                    "name":"居住环境",
+                    "options":["室内","室外"]
+                },
+                {
+                    "type":"selection",
+                    "name":"个人偏好",
+                    "options":["安静","活泼","其他"]
+                },
+                {
+                    "type":"selection",
+                    "name":"照料能力",
+                    "options":["每天多次","每天一次","每三天一次","每周一次","其他"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "宠物及无民事行为能力的子女，可将其视为一种特殊的'子女'或'田宅'之延伸。",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "以田宅、福德为主审居家气场与精神需求，兼察命宫性格与奴仆宫照料意愿。结合四化与三方四正动态，若命主八字喜木火宜犬类，喜金水宜猫、鱼。若田宅逢煞忌，勿养大型动物。命宫重食伤者，适合多互动宠物，重印者宜静养。奴仆宫旺者可协力照料。五行流通平衡为上，避免忌神属类。注意田宅宫所在位置天干地支的宠物类象。",
+                "risk_assessment": [
+                    "如果遇到所选宠物五行与命盘宫位相冲，则意味着容易产生冲突或健康损耗，不宜选择",
+                    "如果遇到田宅宫狭小或遇煞星，则意味着居住环境不适合养大型或高维护需求的宠物",
+                    "如果遇到个人照料能力不足，则意味着应选择易养、耐旱耐饿的小型宠物为宜",
+                    "如果遇到财力有限或比劫夺财，则意味着养护成本过高的宠物不适合，需量力而行",
+                    "如果遇到宠物五行与命盘协调，则意味着人宠关系和谐，相得益彰互相助益",
+                    "如果遇到子孙爻旺相且环境适宜，则意味着所选宠物活泼健康，带来家庭欢乐",
+                    "如果遇到田宅宫吉星云集，则意味着居住环境宽敞舒适，适合养育多种类型宠物",
+                    "如果遇到命盘忌神动物或煞曜临宠物宫，则意味着宠物易带负能量，人宠相冲不宜勉强"
+                ]
+            },
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 2,
+                "risk_decision_logic": "结合小六壬六神（青龙、朱雀、六合等）及调后关系，断当下是否为养宠适宜时机。青龙得位且无空亡或冲克，则当日或短期适合引入新宠；若卦中见朱雀赤口或空亡，则不宜当天做重大决定，如购宠、搬家等。",
+                "risk_assessment": [
+                    "青龙出现且六亲和谐，当日适合接纳新宠或加强互动。",
+                    "赤口、空亡出现在家庭相关爻上，建议先暂停决策或改期。",
+                    "调后关系失衡时，可能养宠后出现意外支出或健康波动。"
+                ]
+            }
+        ],
+
+        "other_tips": "需要结合具体宠物之品类种类进行详细区分，如犬类中的比格，如猫类中的布偶，如鱼类中的金鱼。请深入结合用户的盘式进行相关选择。家庭成员健康（如过敏）为硬性前置条件，不可忽视。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "严格遵守现行《动物防疫法》《野生动物保护法》《养犬管理条例》等相关法规，禁止养殖国家明令禁养、保护类宠物。",
+            "办理宠物登记、疫苗等手续，保障动物与人类共同健康。"
+        ],
+        // # === UI提示 ===
+        "ui_representation_tips": "选宠前可先小规模试养，如领养、寄养体验，观察三个月左右再定。",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [{}]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

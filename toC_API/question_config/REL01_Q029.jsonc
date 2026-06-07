@@ -1,0 +1,67 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q029",
+        "question_text": "TA今天有没有想到我？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+        
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "最近互动情况",
+                    "content": ""
+                }]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以世爻代表自己，应爻为TA。首先观察应爻与世爻的关系：若应爻生合世爻，代表TA积极思念、关注你；若应爻冲克世爻，暗示TA情绪疏远或冷淡。其次观察动爻与化爻：动爻化合世爻，则TA思念强烈并主动；动爻化冲世爻，则TA内心存在矛盾或纠结。最后结合六神临爻：青龙、朱雀临应爻或动爻，表示思念热烈、积极；白虎、玄武临爻，代表TA内心思念较为隐秘或带忧虑。",
+                "risk_assessment": [
+                    "如果遇到应爻生合世爻，则意味着TA积极思念关注你，今天必定有想到你",
+                    "如果遇到动爻化合世爻，则意味着TA思念强烈并主动，内心对你有深刻印象",
+                    "如果遇到青龙朱雀临应爻或动爻，则意味着思念热烈积极，TA对你好感明显",
+                    "如果遇到应爻与世爻无刑冲且六神和谐，则意味着TA心中有你，想念程度温和持续",
+                    "如果遇到应爻冲克世爻，则意味着TA情绪疏远或冷淡，今天可能没有想到你",
+                    "如果遇到动爻化冲世爻，则意味着TA内心存在矛盾或纠结，对你的想念复杂化",
+                    "如果遇到白虎玄武临爻，则意味着TA内心思念较为隐秘或带忧虑，不会轻易表露"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "建议动态观察六爻中动爻与化爻的变化趋势，结合近期互动情况模拟TA内心独白，判断“想”的程度，增加用户的真实感受与理解。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "如遇情感困扰建议理性看待，必要时寻求专业心理帮助。"
+        ],
+        "ui_representation_tips": "需明确展示TA思念的程度和变化，语气温和、贴近用户心理预期。",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

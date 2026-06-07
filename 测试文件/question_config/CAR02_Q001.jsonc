@@ -1,0 +1,53 @@
+// API 请求示例（CAR02_Q001）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR02_Q001"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "面试岗位类型",
+                        "input": "技术岗位"
+                    },
+                    {
+                        "name": "个人性格倾向",
+                        "input": "示例个人性格倾向"
+                    },
+                    {
+                        "name": "个人思维习惯",
+                        "input": "5"
+                    },
+                    {
+                        "name": "面试重要程度",
+                        "input": "5"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "面试官背景",
+                        "input": ""
+                    },
+                    {
+                        "name": "公司文化",
+                        "input": "传统稳重"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

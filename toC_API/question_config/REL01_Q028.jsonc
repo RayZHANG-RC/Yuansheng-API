@@ -1,0 +1,82 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q028",
+        "question_text": "我会有一见钟情的心动吗？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+        
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "年龄阶段",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "感情状态",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "社交环境",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以世爻代表自己，应爻为对方，动爻为关键诱发点。重点观察动爻的爻辞与六神配置：若动爻临朱雀（语言吸引、沟通畅快）或桃花（异性缘佳），且形成生合世应的吉象，配合日建、月建的有力扶持，则是“一见钟情”之象；若动爻为官鬼，或六神中有白虎、螣蛇临动爻，则可能是短暂的迷惑、情绪波动甚至纠缠困扰。",
+                "risk_assessment": [
+                    "如果遇到动爻临朱雀且生合世应，则意味着语言吸引沟通畅快，一见钟情的可能性很高",
+                    "如果遇到动爻临桃花且形成吉象，则意味着异性缘佳充满魅力，容易产生心动感觉",
+                    "如果遇到日建月建有力扶持动爻，则意味着天时地利具备，一见钟情的条件成熟",
+                    "如果遇到动爻生合世应且六神和谐，则意味着双方磁场匹配，瞬间心动在所难免",
+                    "如果遇到动爻为官鬼或临白虎螣蛇，则意味着可能是短暂迷惑或情绪波动，需冷静判断",
+                    "如果遇到动爻冲克世应或化凶，则意味着可能是纠缠困扰而非真正心动，要理性对待"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+    },
+
+    "qualitative_stage": {
+
+    // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "不必妄意揣测他人动机。"
+        ],
+        "ui_representation_tips": "一切有为法，如梦幻泡影，如露亦如电，应作如是观。",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": false
+    }
+}

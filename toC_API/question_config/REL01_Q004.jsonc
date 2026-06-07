@@ -1,0 +1,85 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q004",
+        "question_text": "TA（填对方性别）是否是我合适的结婚对象？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "用户在观测该问题时应完全将心思用于场景构想。"
+        },
+
+        "user_specification": {
+            "required_inputs": [{
+                "type": "selection",
+                "name": "对方性别",
+                "options": ["男", "女", "未说明"]
+            }],
+            "optional_inputs": [{
+                    "type": "selection",
+                    "name": "自己在感情中的强弱势状态",
+                    "options": ["强势/主动", "弱势/被动"]
+                },
+                {
+                "name": "期望时间范围",
+                "type": "selection",
+                "options": ["1个月内", "3个月内", "半年内", "1年内", "2年内"]
+            }
+        ]
+        }
+    },
+
+    "quantitative_stage": {
+
+
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以卦体之变化为论述基础。以世爻为我，应爻为彼。若世应相生相合，且用神（强势/主动占看妻财，弱势/被动方占看官鬼）旺相持世或生世，则对方情真意切，当下缘分具足。反之，若用神休囚空破，或受日月建所克，或有他爻发动来冲克用神，则此缘多有阻碍或不真。",
+                "risk_assessment": [
+                    "如果遇到用神动化冲克，则意味着虽有缘分但现阶段关系难以稳定，时机未到",
+                    "如果遇到兄弟爻或子孙爻发动，则意味着家庭或第三方因素可能造成婚姻干扰",
+                    "如果遇到应爻受克或空亡，则意味着对方对婚姻态度不明朗，承诺能力有限",
+                    "如果遇到财爻破损或比劫夺财，则意味着经济基础不稳，影响婚姻质量",
+                    "如果遇到用神动化合世应爻，则意味着双方互动良好，关系稳定适合结婚",
+                    "如果遇到官鬼爻旺相生世，则意味着对方责任心强，婚姻关系稳固可靠",
+                    "如果遇到父母爻得力且青龙护佑，则意味着双方家庭支持，婚姻得到祝福"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "请遵守社会道德，建立健康的情感关系。"
+        ],
+        "ui_representation_tips": "推荐合盘。",
+        "follow_up_questions": [{}]
+    },
+
+    // === 合盘配置 ===
+    // 该问题需要双方性状分析来判断结婚适配性
+    "synastry": {
+        "required": true  // 需要预加载合盘分析
+    }
+}

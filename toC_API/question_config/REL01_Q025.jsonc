@@ -1,0 +1,92 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q025",
+        "question_text": "TA喜欢什么样的人？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+  
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "对方性格",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "感情经历",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "择偶标准",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "价值观念",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以应爻为对方，看是何六亲来生合应爻，此即为其欣赏之类型。如父母生应，则喜成熟照顾型；兄弟生应，则喜朋友般伴侣；子孙生应，则喜年轻活泼型。再结合应爻所临五行，可知其偏爱之外貌长相、性格特征等。",
+                "risk_assessment": [
+                    "如果遇到父母爻生合应爻，则意味着TA喜欢成熟照顾型伴侣，偏爱有责任感的人",
+                    "如果遇到兄弟爻生合应爻，则意味着TA喜欢朋友般伴侣，重视平等和谐的关系",
+                    "如果遇到子孙爻生合应爻，则意味着TA喜欢年轻活泼型伴侣，追求轻松愉快",
+                    "如果遇到应爻临木火五行，则意味着TA偏爱阳光开朗、积极向上的性格特征",
+                    "如果遇到应爻临金水五行，则意味着TA偏爱冷静理性、内敛深沉的气质类型",
+                    "如果遇到应爻被刑冲或空破，则意味着TA择偶标准模糊不定，容易受外界影响",
+                    "如果遇到应爻临青龙贵人，则意味着TA重视品德修养，喜欢正直善良的人"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+    },
+    "qualitative_stage": {
+        // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "不可对他人隐私进行刺探",
+            "不可对他人进行精神控制、道德绑架等",
+            "对方性格确定分析基础，感情经历反映偏好趋势，择偶标准明确要求，价值观念影响深层匹配"
+        ],
+        "ui_representation_tips": "建议拿对方八字直接看，然后follow up此前的REL01_Q021", //但这个是在合盘之后做的事
+        "follow_up_questions": [{
+                "question_id": "REL01_Q001",
+                "question_text": "我未来的结婚对象是什么样的人？"
+            }]
+    },
+
+    // === 合盘配置 ===
+    // 该问题需要双方性状分析来找到化解矛盾的最佳方式
+    "synastry": {
+        "required": false
+    }
+}

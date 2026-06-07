@@ -1,0 +1,108 @@
+{
+    // CAR01_Q003: 我未来能够达到的职位天花板是什么？
+    // 职场晋升 - 职位发展上限分析
+
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR01_Q003",
+        "question_text": "我未来能够达到的职位天花板是什么？",
+        "question_domain": "职业发展",
+        "question_theme": "工作晋升",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_input_requirements": {
+            "required_inputs": [
+                {
+                    "type": "select",
+                    "name": "当前职位",
+                    "options": ["基层员工", "主管/组长", "经理", "总监", "副总", "总经理", "其他"]
+                },
+                {
+                    "type": "range",
+                    "name": "个人抱负",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "专业背景",
+                    "placeholder": "请输入专业背景"
+                },
+                {
+                    "type": "select",
+                    "name": "学历",
+                    "options": ["高中", "专科", "本科", "硕士", "博士", "其他"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以紫微斗数事业宫与命宫之间的三方四正格局为主干：识别命宫—财帛—官禄—迁移的连动关系；分析是否出现“君臣庆会”“府相朝垣”“三奇嘉会”等格局；重点关注官禄宫四化（化禄、化权、化科）落在命宫或官禄宫的情形，辅之以大限/流年的四化飞星互动，来判断职位发展上限。",
+                "risk_assessment": [
+                    "如果遇到命宫与官禄宫三方四正无吉星连动，则意味着天赋与职位匹配度不高，职业发展上限受制于格局能量不足",
+                    "如果遇到官禄宫化忌或煞星入主，则意味着职场权力运用困难，管理能力存在短板，难以突破中层瓶颈",
+                    "如果遇到命宫主星陷地且无救，则意味着个人核心竞争力不足，职业生涯高度有限",
+                    "如果遇到迁移宫受损且官禄宫无力，则意味着外界发展机会稀少，容易困守现状难以突破",
+                    "如果遇到财帛宫与官禄宫相冲克，则意味着权力与财富难以并存，职位越高压力越大",
+                    "如果遇到三奇嘉会或府相朝垣格局成立，则意味着天赋异禀，具备高层领导潜质，职业天花板极高",
+                    "如果遇到官禄宫化禄化权化科三化齐集，则意味着事业运势强劲，有望成为行业翘楚或企业高管",
+                    "如果遇到大限官禄宫化权入命且流年配合，则意味着关键突破期来临，职位跃升机会显著"
+                ]
+            }
+        ],
+        "other_tips": "职位天花板评估应结合行业特性与企业结构：例如创业公司看领导力与自驱力、外企看跨文化沟通能力、国企央企看体制规则适应力。现代企业组织扁平化趋势下，技术专家路线与管理路线各有其发展空间。关键在于找到与个人天赋最匹配的发展路径，而非盲目追求职级高低。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "请勿仅凭命理结果忽视现实风险及主动经营"
+        ],
+
+        "ui_representation_tips": "可优先提示大限/流年关键节点。",
+
+        "follow_up_questions": [
+            {
+                "question_id": "CAR01_Q001",
+                "question_text": "我最近一次升职机会是什么时候？"
+            },
+            {
+                "question_id": "CAR02_Q008",
+                "question_text": "我应该把自己放在团队里的什么角色？"
+            },
+            {
+                "question_id": "CAR03_Q003",
+                "question_text": "哪些环境下是我适合的创业机会？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+
+}

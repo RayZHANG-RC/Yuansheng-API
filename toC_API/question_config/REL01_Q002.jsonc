@@ -1,0 +1,108 @@
+{
+    // REL01_Q002: 我下一个桃花什么时候出现？
+    // 亲密关系（恋爱脑专场） - 桃花时机预测
+
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q002",
+        "question_text": "我下一个桃花什么时候出现？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_input_requirements": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "name": "当前感情状态",
+                    "type": "selection",
+                    "options": ["单身求缘", "刚分手", "一直单身", "复合可能", "其他"]
+                },
+                {
+                    "name": "期望时间范围",
+                    "type": "selection",
+                    "options": ["1个月内", "3个月内", "半年内", "1年内", "2年内"]
+                },
+                {
+                    "type": "select",
+                    "name": "桃花类型偏好",
+                    "options": ["正缘桃花", "浪漫桃花", "朋友发展", "工作场合", "都可以"]
+                },
+                {
+                    "type": "text",
+                    "name": "社交活跃度",
+                    "placeholder": "宅在家/正常人/社交达人 （ 1- 10）"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "priority_remark": 2,
+                "raw_palette": {},
+                "risk_decision_logic": "以红鸾天喜和桃花星分析感情时机。红鸾主正缘姻缘，天喜主喜庆感情，天姚主肉体关系但易关系走偏进入无底线，咸池主异性缘分。若桃花星落入命或夫妻宫且无化忌刑害，并在流年或大运中被化禄或化科激活，表示在期待的时间范围内易遇新桃花。",
+                "risk_assessment": [
+                    "如果遇到流年冲克夫妻宫或桃花星受阻，则意味着桃花来临时间延后，感情机会较少",
+                    "如果遇到煞星临命或夫妻宫破损，则意味着即使有桃花也质量不高，需谨慎选择",
+                    "如果遇到大运不利或孤辰寡宿当令，则意味着感情运势低迷，桃花难以出现",
+                    "如果遇到驿马受阻或人际宫位受损，则意味着社交机会有限，难以遇到合适对象",
+                    "如果遇到红鸾入命或夫妻宫得力，则意味着正缘桃花即将到来，感情运势上扬",
+                    "如果遇到天喜照会且贵人临门，则意味着感情发展喜悦顺利，桃花质量上乘",
+                    "如果遇到天姚临身且魅力星动，则意味着个人桃花魅力增强，吸引力大增",
+                    "如果遇到化忌落陷或煞星临夫妻宫，则意味着感情发展存在障碍，需留意烂桃花干扰"
+                ]
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "priority_remark": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "观桃花神煞所属干支与爻位，如果桃花神存在于动爻并与兄弟爻、官鬼爻互动良好，且无旬空冲克，预示近期即会有桃花出现；若见刑冲或空亡，则应延后时机。以桃花神煞所在的干支为应期推理。",
+                "risk_assessment": [
+                    "桃花神煞入动爻且得月建时，为近期见桃花之迹象。",
+                    "若爻变为六合或三合卦，提示缘分来临。",
+                    "若旬空、刑冲或变卦中煞曜出现，建议避开当前时机。"
+                ]
+            }
+        ],
+        "other_tips": "桃花的出现往往与个人的心态和行动密切相关。命理分析应同样注意个人心态的调整，也许桃花的时机已经到来，但个人心态上没有准备好，那么桃花也可能会错过。注意夫之夫的位置，比如夫妻宫之桃花，如果夫妻宫之夫妻宫落空/化忌，那么桃花也不能捕捉到。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "感情建议仅供参考，不代表恋情发展必然。",
+            "建议保持理性、不违反社会道德和法律。",
+            "请遵守社会道德，建立健康的情感关系。"
+        ],
+
+        "ui_representation_tips": "行动才是关键。建议在应期主动探索，把握线索。避免仅仅为了脱单而降低标准。",
+
+        "follow_up_questions": [{}]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

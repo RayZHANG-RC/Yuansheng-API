@@ -1,0 +1,90 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q016",
+        "question_text": "我求婚会成功吗？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题可以预先加载合盘，但是不强制。"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "求婚计划",
+                    "placeholder": "请描述您的求婚计划和安排..."
+                },
+                {
+                    "type": "text",
+                    "name": "感情基础",
+                    "placeholder": "请描述您们的感情基础和关系发展..."
+                },
+                {
+                    "type": "text",
+                    "name": "家庭背景",
+                    "placeholder": "请描述双方的家庭背景和家庭态度..."
+                },
+                {
+                    "type": "text",
+                    "name": "现实条件",
+                    "placeholder": "请描述当前的经济、工作、生活等现实条件..."
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充说明其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "结合对应节气、日期的干支判断吉凶，应期所落掌诀即为当前时机判定。若干支再次对应“速喜”或“大安”，则当日表白/求婚成功率高；如落“赤口”或“空亡”，时机凶，宜回避。",
+                "risk_assessment": [
+                    "如果遇到大安六神主时，则意味着氛围稳妥平和，适合表达感情，求婚成功率较高",
+                    "如果遇到速喜六神当值，则意味着气氛迅速升温，是求婚黄金时机，应当把握",
+                    "如果遇到小吉六神临门，则意味着虽有希望成功，但需保持节奏，不可过于急躁",
+                    "如果遇到干支再次对应速喜或大安，则意味着当日求婚成功率极高，天时地利人和",
+                    "如果遇到赤口六神主事，则意味着易生争执冲突，建议回避，强求反而适得其反",
+                    "如果遇到留连六神当头，则意味着环境拖沓效果受限，求婚时机不够理想",
+                    "如果遇到空亡六神或凶煞临时，则意味着机会虚化应避免筹划，时机不成熟"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "应期干支建议与所落掌诀同步，同时参考节气、双方态度、场所氛围等因素。"
+    },
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "请结合真实互动与对方态度，理性判断是否求婚。"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

@@ -1,0 +1,40 @@
+// API 请求示例（HLT01_Q004）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "HLT01_Q004"
+            },
+            "user_specification": {
+                "required_inputs": [],
+                "optional_inputs": [
+                    {
+                        "name": "压力来源",
+                        "input": "可选，说明自己平时压力的主要构成和大小，如工作压力、家庭压力、人际关系压力等"
+                    },
+                    {
+                        "name": "每天可自由用于放松的时间安排",
+                        "input": "每日少于30分钟"
+                    },
+                    {
+                        "name": "当前身心状态自评",
+                        "input": "轻度紧张"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

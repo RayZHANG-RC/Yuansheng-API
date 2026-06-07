@@ -1,0 +1,49 @@
+// API 请求示例（REL01_Q023）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "REL01_Q023"
+            },
+            "user_specification": {
+                "required_inputs": [],
+                "optional_inputs": [
+                    {
+                        "name": "现在是什么关系？",
+                        "input": "普通朋友"
+                    },
+                    {
+                        "name": "对方性格",
+                        "input": ""
+                    },
+                    {
+                        "name": "障碍与阻力",
+                        "input": ""
+                    },
+                    {
+                        "name": "发展目标",
+                        "input": ""
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            },
+            "synastry": "true",
+            "person_b": {
+                "birth_time": "199005151400",
+                "gender": "female"
+            }
+        }
+    }
+}

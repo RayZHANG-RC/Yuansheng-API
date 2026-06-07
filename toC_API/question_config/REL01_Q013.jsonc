@@ -1,0 +1,88 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q013",
+        "question_text": "我们适合在什么类型的地方约会？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+        
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "双方性格",
+                    "placeholder": "请描述双方的性格特点..."
+                },
+                {
+                    "type": "text",
+                    "name": "季节时间",
+                    "placeholder": "请描述约会的时间和季节..."
+                },
+                {
+                    "type": "number",
+                    "name": "预算范围",
+                    "min": 0,
+                    "placeholder": "请输入预算金额",
+                    "unit": "元"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "select",
+                    "name": "当前感情状态",
+                    "options": ["刚认识", "暧昧中", "恋爱中", "已分手", "已订婚", "已婚", "已离婚"]
+                },
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充说明其他相关信息..."
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以“小六壬掌诀”（大安、留连、速喜、赤口、小吉、空亡）判断当前时间对应的六神状态。分析三合局中“财爻（代表地点）”与“子孙爻（代表人和）”是否得力；若出现金木水火土与六神相生，则该类型地点更易引发好气氛；若临赤口或空亡，则避免该类环境。",
+                "risk_assessment": [
+                    "如果遇到大安或小吉时神当值，则意味着适合选安静自然环境如公园博物馆，自然松弛互动舒心",
+                    "如果遇到速喜时神临门，则意味着适合选热闹愉悦环境如咖啡馆市集，易迅速拉近关系",
+                    "如果遇到金木水火土与六神相生，则意味着该类型地点更易引发好气氛，约会成功率高",
+                    "如果遇到留连或空亡时神主事，则意味着不宜强约需选宁静包容环境如图书馆茶室，减少不利氛围",
+                    "如果遇到赤口时神当头，则意味着忌选人多嘈杂地点如夜店广场，易引发摩擦冲突",
+                    "如果遇到时宫天干地支属性和谐，则意味着环境配色状态氛围要与之相配，提升约会质量"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "注意在选择约会地点时，应该十分注意时宫所在状态。当时宫状态为大安、小吉时，适合选择安静自然的环境，如公园、博物馆等，自然松弛，互动舒心。当时宫状态为速喜时，适合选择热闹愉悦的环境，如咖啡馆、市集等，易迅速拉近关系。建议结合小六壬中六神对应的五行属性（如大安属木青龙、速喜属火朱雀等），调整环境配色与对话节奏以优化氛围。非常注意该宫的天干地支，相关的天干地支之属性同样指示环境的配色、状态、氛围。"
+    },
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "命里有时终须有，无需情绪移植向地点。",
+            "请尊重对方意愿并遵守公共秩序"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": true // Optional: 预加载合盘分析，和REL01_Q008 9 10 存在同类的optional冲突
+    }
+}

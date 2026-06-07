@@ -1,0 +1,82 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q020",
+        "question_text": "我和TA的关系是否要公开？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题可以预先加载合盘，但是不强制。"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "保密原因",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "公开意愿",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "外在压力",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "关系稳定度",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以六爻应世关系、父母爻、官鬼爻及财爻动态判断公开是否有利。若父母或官鬼发动并生合世爻，表示家庭或社会助力；父母爻旺、白虎螣蛇动或世爻被冲，则不适合。财爻得生可促进感情公开后的正向反馈。",
+                "risk_assessment": [
+                    "如果遇到父母爻或官鬼爻生合世爻，则意味着家庭和社会环境支持，宜于公开关系",
+                    "如果遇到财爻得生且动爻和谐，则意味着公开后感情有正向发展，关系更稳固",
+                    "如果遇到世应相合且无刑冲，则意味着双方都愿意公开，时机成熟适合表态",
+                    "如果遇到世爻被冲或临白虎螣蛇，则意味着环境不稳动荡，不宜公开易生变故",
+                    "如果遇到间爻或兄弟爻发动，则意味着可能遇外界干扰或争议，公开需谨慎",
+                    "如果遇到用神空破或化退，则意味着公开时机未到，宜等待更合适的机会"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "保密原因确定分析重点，公开意愿评估双方态度，外在压力考虑现实阻力，关系稳定度判断公开风险。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "请综合现实关系基础、时间节点与社会环境理性决策"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+    "synastry": {
+        "required": true // Optional: 可加可不加，但是必须加载新的合盘
+    }
+}

@@ -1,0 +1,89 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q026",
+        "question_text": "我为什么会梦到TA？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+    
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "梦境内容",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "梦境感受",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "最近状态",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "对TA的想法",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+    // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以官鬼爻为梦境，以世爻为自身。若世爻发动入官鬼之墓库，主日有所思，夜有所梦。若官鬼持世，则为心中挂念，难以忘怀。若应爻发动来与世爻相合，主对方亦在思念你，心有灵犀。若卦中财爻或官爻（用神）发动，临青龙、桃花，则是情缘将至之佳兆。若临白虎、螣蛇，则恐为烦恼、纠缠之象。梦境真虚由动静与日月建生克判断。",
+                "risk_assessment": [
+                    "如果遇到世爻发动入官鬼之墓库，则意味着日有所思夜有所梦，TA在你心中印象深刻",
+                    "如果遇到官鬼持世而动，则意味着心中挂念难以忘怀，TA已深深影响你的潜意识",
+                    "如果遇到应爻发动来与世爻相合，则意味着对方亦在思念你，彼此心有灵犀感应",
+                    "如果遇到财爻或官爻发动临青龙桃花，则意味着情缘将至之佳兆，美梦成真",
+                    "如果遇到用神发动临白虎螣蛇，则意味着恐为烦恼纠缠之象，内心焦虑不安",
+                    "如果遇到官鬼爻空破或化退，则意味着梦境虚幻缺乏实际意义，不必过度解读",
+                    "如果遇到动爻与日月建相生，则意味着梦境真实反映内心状态，值得重视"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+    },
+    "qualitative_stage": {
+
+    // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "梦境可能只是一时情感、心理状态的投射，需理性看待",
+            "不可过度解读梦境而忽视现实关系",
+            "需理性区分象征与现实，不可据梦境做重要决策"
+        ],
+        "ui_representation_tips": "尽量把故事撰写得完整一些，不要让用户觉得太突兀",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": false
+    }
+}

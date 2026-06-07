@@ -1,0 +1,118 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR03_Q001",
+        "question_text": "我是否应该和TA一起合伙创业？",
+        "question_domain": "职业发展",
+        "question_theme": "创业主本人",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "这里是对创业主的个体进行提问，而不是对合伙人、创业团队进行提问。如需合盘请使用「八字合盘」功能进行双方命局协同分析。"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "合伙人信息",
+                    "placeholder": "请描述合伙人的背景、能力和特点"
+                },
+                {
+                    "type": "text",
+                    "name": "创业项目",
+                    "placeholder": "请描述创业项目的具体内容和市场前景"
+                },
+                {
+                    "type": "range",
+                    "name": "资金投资比例",
+                    "min": 0,
+                    "max": 100,
+                    "default_value": 50,
+                    "unit": "%"
+                },
+                {
+                    "type": "text",
+                    "name": "责任分工",
+                    "placeholder": "请描述您与合伙人的责任分工和角色定位"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "对创业项目和团队的具体描述",
+                    "placeholder": "请详细描述创业项目的具体情况和团队协作方式"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"六爻评断合作关系重在世应互动合化，官鬼定职责与利益，兄弟象冲看竞争，人心方向从六兽显露。先以世应爻关系决定双方是否和合：首看世应关系，应为伙伴，宜相生相合，忌冲克。合入则合作顺畅，冲克则冲突明显；次审财爻旺相抓利益分配情况、以定利益；再看兄弟爻动态与比和破因素，兄弟爻动静以察人心向背与竞争之险，判断竞争或矛盾；六兽如青龙、朱雀等有助指事务推进与人心合作质量，如青龙持世利合作，白虎发动防纠纷。",
+                "risk_assessment": [
+                    "如果遇到世应相冲或应爻克世爻，则意味着合伙人与自己理念不合，合作基础薄弱易生分歧冲突",
+                    "如果遇到兄弟爻发动或持世克财，则意味着利益分配争端激烈，需提前明确股权责任防范纠纷",
+                    "如果遇到财爻空亡被克或父母爻受损，则意味着项目前景不明朗，投资风险较大宜谨慎",
+                    "如果遇到六兽白虎朱雀发动，则意味着合作过程中易生争执口舌，需加强沟通协调机制",
+                    "如果遇到官鬼爻休囚无力或化退神，则意味着管理决策权分配不当，易导致执行力不足",
+                    "如果遇到世应相生相合且财爻旺相，则意味着合伙关系和谐，利益分配合理，合作前景良好",
+                    "如果遇到青龙持世且子孙爻生财，则意味着合作创新能力强，项目发展潜力大，收益可期"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"从八字审查比劫、财官配置：若比劫主争财旺盛，则合作容易争端；财星配置合理，能互生互补；官星旺相则利职责分工与管理协调。八字看财印关系统筹利益公平与争夺风险。以个人八字看官星状态，重点审查双方比劫与财星配置，看是否存在争财之患。",
+                "risk_assessment": [
+                    "如果遇到比劫强旺且财星受制，则意味着合伙过程中争夺利益欲望强烈，易因分成产生矛盾",
+                    "如果遇到官星无力或空亡，则意味着决策管理能力不足，团队协调执行力较弱",
+                    "如果遇到财星破损或逢冲克，则意味着项目盈利能力存疑，投资回报风险较高",
+                    "如果遇到印星克食伤或食伤无力，则意味着创新思维受限，项目发展缺乏活力",
+                    "如果遇到财官相生且比劫有制，则意味着利益分配合理，管理协调有序，合作成功率高",
+                    "如果遇到食伤生财且官印相济，则意味着创业思路清晰，团队配合默契，发展前景看好"
+                ],
+                "priority_remark": 2
+            }
+
+        ],
+        "other_tips": ""
+    },
+
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "合伙创业需签订正式协议并聘请法律顾问审核"
+        ],
+        "ui_representation_tips": "建议在输出中展示合作吉凶结论、潜在风险点与改善建议，若需更深入请调用合盘模块。",
+        "follow_up_questions": [
+            {"question_id": "CAR03_Q002", "question_text": "我适合在哪些行业创业？"}
+        ]
+    },
+
+    // === 合盘配置 ===
+    // 该问题需要双方性状分析来找到化解矛盾的最佳方式
+    "synastry": {
+        "required": true  // 需要预加载合盘分析
+    }
+
+}

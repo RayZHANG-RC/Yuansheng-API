@@ -1,0 +1,87 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR03_Q008",
+        "question_text": "我在创业中会面临哪些风险？",
+        "question_domain": "职业发展",
+        "question_theme": "创业主本人",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "困难指的是会对自身造成制约、阻滞；风险指的是会对自身造成伤害。"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "创业方向",
+                    "placeholder": "请描述您的创业方向、行业领域等"
+                },
+                {
+                    "type": "text",
+                    "name": "资源状况",
+                    "placeholder": "请描述您的资源状况、资金、人脉等"
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请详细描述其他相关信息"
+                }
+            ]
+        }
+    },
+
+
+    "quantitative_stage":{
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"审查命宫、财帛宫、官禄宫、仆役宫：若四化化忌冲财/官，命宫、命主星被煞（如擎羊、陀罗、火铃等）冲破，则主自身决断受阻、资金断裂、政务阻碍、合作关系崩裂。",
+                "risk_assessment": [
+                    "如果遇到命宫化忌冲破或受煞，则意味着决策能力迷茫，容易引发内部管理纠纷和战略失误",
+                    "如果遇到财帛宫被煞星冲克，则意味着资金链断裂风险高，投资决策易出现隐性亏损",
+                    "如果遇到官禄宫遇煞星或化忌，则意味着政策环境不利，面临合规监管和法律风险",
+                    "如果遇到仆役宫化忌或受损，则意味着合作伙伴关系不稳，团队变动对事业造成重创",
+                    "如果遇到迁移宫破损或化忌，则意味着市场拓展风险大，客户流失和品牌受损概率高",
+                    "如果遇到夫妻宫不利，则意味着家庭关系因创业受压，影响后续支持和决策稳定性",
+                    "如果遇到疾厄宫化忌，则意味着身心健康风险增加，过度劳累可能导致重大疾病",
+                    "如果遇到田宅宫受冲，则意味着基础资产面临风险，可能因创业失败而影响生活根本"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "从“资金–合伙–政策–执行”四个维度拆解风险，对应紫微盘中煞象验证；对财务规划、合伙协议、监管审批、团队协作等进行重点梳理与预案。"
+    },
+
+    "qualitative_stage":{
+
+        "law_and_regulation_requirements": [
+            "请结合实际情况慎重判断，涉及创业政策请咨询专业人士"
+        ],
+        "ui_tips": "V2.0 可在界面显示“风险雷达图”，四象限分别为资金、合伙、政策、执行难点，评级为高/中/低。和CAR03_Q007的“风险雷达图”类似；可参考现代仪表盘设计中的雷达图交互方式（如 Salesforce Radar Chart 分区高亮），可动态交互，点击项可展开对应的术数浅解释。建议采用简洁配色，并兼顾图形与文字说明。",
+        "follow_up_questions": [
+            {}
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

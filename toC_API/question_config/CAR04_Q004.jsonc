@@ -1,0 +1,116 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR04_Q004",
+        "question_text": "我这次去 ______ （地点）的 ______ 户籍审批是否会通过？",
+        "question_domain": "职业发展",
+        "question_theme": "职业国际化",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+
+            ],
+            "optional_inputs":[
+                {
+                    "type": "selection",
+                    "name": "户籍类型",
+                    "options": "城市户籍、农村户籍、集体户籍、其他"
+                },
+                {
+                    "type": "preloaded_question",
+                    "name": "CAR04_Q002 我是否应该去 ______ (境内城市)工作？",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "申请条件",
+                    "placeholder": "请描述您的申请条件..."
+                },
+                {
+                    "type": "text",
+                    "name": "递交时间",
+                    "placeholder": "请描述您的递交时间安排..."
+                },
+                {
+                    "type": "text",
+                    "name": "面试安排",
+                    "placeholder": "请描述您的面试安排..."
+                },
+                {
+                    "type": "text",
+                    "name": "其他具体描述",
+                    "placeholder": "请补充其他相关信息..."
+                }
+            ]
+        }
+    },
+
+
+    "quantitative_stage":{
+
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以官鬼爻为外部审批机关，父母爻为申请材料与资质凭证，世爻为申请人状态，财爻为资金资助。详察日月建与六亲关系，关注用神旺衰与动静变化。父母爻旺而得生、官鬼爻得力，且世爻稳固，多为大吉；父母爻空亡或被冲克，需警惕材料、学历、证明等关键环节出错。官鬼爻临凶或受刑害，常见为政策调整或决策人变动。世爻临贵人、青龙，材料补正、沟通顺畅。动爻逢玄武、朱雀，需警防材料纰漏或误会。化退、化空主延期拖延，子孙爻旺动或合克父母，反映沟通、系统或材料层面问题。",
+                "risk_assessment": [
+                    "如果遇到世爻受克或父母爻空亡被合克，则意味着申请资质或证明材料存在瑕疵，需预先补全准备",
+                    "如果遇到官鬼爻逢刑害或动化不利，则意味着审批官员变动或政策收紧，流程可能中断",
+                    "如果遇到子孙爻动或合克父母爻，则意味着需防反复补件或二次审核，材料务必严谨完善",
+                    "如果遇到世爻逢玄武朱雀腾蛇等虚诈神煞，则意味着信息误传或沟通障碍，需多方核查",
+                    "如果遇到兄弟爻发动或财爻受损，则意味着人际关系支持不力或经济条件不达标",
+                    "如果遇到财爻发动且生合世爻，则意味着经济保障充足，资助渠道顺畅流程高效",
+                    "如果遇到世爻得力临贵人青龙，则意味着申请条件优越，审批通过概率极高",
+                    "如果遇到父母官鬼双旺且相生，则意味着材料完备且审批顺利，户籍迁移成功可期",
+                    "如果遇到动爻化空化退或临旬空日空，则意味着流程拖延时机错失，需提早准备关注递交窗口"
+                ],
+                "priority_remark": 2
+            },
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"以时宫为主，辅以调后关系。遇大安、速喜、小吉，且与申请日期、节点相合，流程顺利。留连、赤口、空亡需谨慎，常见为进度滞后、审批严苛或时机未到。调后关系若与主卦不顺，主外部变量或政策存在不确定风险，建议关注官方渠道动态与补件预案。",
+                "risk_assessment":[
+                    "时宫大安、速喜、小吉，材料齐全且与时令相合，主审批流程通畅，顺利获批概率高。",
+                    "时宫留连，多见拖延、缓批，可能被要求补件或多次递交，建议留意进度追踪。",
+                    "时宫赤口，常为官员刁难、审核严苛，答辩与沟通需充分准备。",
+                    "时宫空亡，遇政策变更、名额用尽、窗口关闭等大环境因素，需主动调整节奏。",
+                    "调后关系不合，或主卦冲克，多为外部政策或机构层面变动，务必及时查阅最新政策。"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "户籍类型与政策环境密切相关，城市户籍需关注落户政策及材料要求，农村、集体户籍重在资格审核。建议主动补齐材料、关注政策公告、动态跟进递交窗口，提升整体成功率。六爻结构与时课动态可辅助预测批次、节点和材料风险。"
+    },
+
+    "qualitative_stage":{
+        "law_and_regulation_requirements": [
+            "实际签证政策请及时查阅官方渠道，所有建议仅为命理参考，不能代替官方审批结论。",
+            "如涉及法律、材料、政策疑问，务必向专业机构或相关部门核实。"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },  
+    "synastry": {
+        "required": false
+    }
+}

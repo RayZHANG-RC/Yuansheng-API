@@ -1,0 +1,102 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR02_Q003",
+        "question_text": "我是否有发展副业的机会？",
+        "question_domain": "职业发展",
+        "question_theme": "工作模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "number",
+                    "name": "主业稳定度 (0为没有主业，10为主业稳定)",
+                    "content": "0-10"
+                }
+            ],
+            "optional_inputs":[
+                {
+                    "type": "number",
+                    "name": "每日可投入时长",
+                    "placeholder": "请输入每日可投入时长（小时）",
+                    "min": 0,
+                    "step": 0.5
+                },
+                {
+                    "type": "text",
+                    "name": "技能储备",
+                    "placeholder": "请详细描述您的技能储备和可用的副业技能"
+                },
+                {
+                    "type": "text",
+                    "name": "对于主业和副业的具体描述",
+                    "placeholder": "请详细描述您的主业情况和期望的副业方向"
+                }
+            ]
+        }
+    },
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+        // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "通过紫微斗数官禄宫与财帛宫四化互动分析主业与副业的关系：观察官禄宫、财帛宫之间是否形成‘权化入财帛’或‘禄化入官禄’等吉化联动，以及是否有三方四正带动效果，则可事业带动财富，发展副业顺理成章；反之，若两宫互化忌，则主业与副业会互相干扰，不宜强求。官禄宫与财帛宫之间有禄、权之吉化互飞。若存在化忌、化煞互冲，则提示可能干扰主业，需评估投入与风险。",
+                "risk_assessment": [
+                    "如果遇到官禄宫化禄入财帛宫，则意味着主业能量流向副业，副业发展顺利起步且获得支持",
+                    "如果遇到财帛宫化权入官禄宫，则意味着副业反哺主业，两者形成良性协同循环",
+                    "如果遇到官禄宫与财帛宫四化同步呈现，则意味着主副业相辅相成，发展潜力巨大",
+                    "如果遇到官禄宫化忌冲财帛宫，则意味着主业与副业产生冲突，容易顾此失彼",
+                    "如果遇到财帛宫化煞入官禄宫，则意味着副业投入过度影响主业，需谨慎控制时间分配",
+                    "如果遇到官禄宫与财帛宫互化忌，则意味着主副业互相干扰，不宜强求并行发展",
+                    "如果遇到财帛宫空亡且吉化联动微弱，则意味着副业动力不足，缺乏持续发展的内在驱动力"
+                ]
+            }
+        ],
+        "other_tips": "若用户主业不稳定或家庭责任较重，建议适配低风险、低投入的副业类型；投入时间与技能储备会影响回报周期。"
+    },
+
+    "qualitative_stage": {
+        // # === 法律与合规要求 ===
+        "law_and_regulation_requirements": [
+            "开展副业需遵守劳动合同及相关法律法规",
+            "若涉及商业合作，请签署正式协议与风险控制"
+        ],
+        // # === UI提示 ===
+        "ui_representation_tips": "",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "CAR02_Q004",
+                "question_text": "我适合发展什么方向的副业？"
+            },
+            {
+                "question_id": "CAR02_Q005",
+                "question_text": "如何平衡主业与副业？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

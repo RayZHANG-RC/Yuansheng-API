@@ -1,0 +1,83 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR02_Q006",
+        "question_text": "我应该如何和同事相处？",
+        "question_domain": "职业发展",
+        "question_theme": "工作模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "此处单指用户与广义上的同事如何相处。如用户特别指定需要与哪位同事进行相处，请跳转到REL领域的问题进行合盘处理。"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "团队角色描述",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+        // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "采用紫微斗数交友宫与兄弟宫为核心进行分析：观察是否化忌或化煞影响同事关系，是否吉星扶持。结合三方四正与四化动态，评估人际支持、合作潜力或职场小人风险。紫微斗数中，交友宫（仆役宫）可观同事之良莠，若化忌冲我命宫或官禄，则需格外提防职场小人。交友宫代表同事与社交圈，若此宫入庙且有吉星如紫微、天机、红鸾、天喜，说明人际关系良好；若有化忌、破军会照或冲命宫，则提示小人或冲突风险。兄弟宫反映平辈支持，可辅助判断团队协作度。",
+                "risk_assessment": [
+                    "如果遇到交友宫吉星入庙如紫微天机，则意味着职场人际助力强，同事关系融洽易获支持",
+                    "如果遇到红鸾天喜加会交友宫，则意味着与同事关系和谐融洽，有助推进各项事务",
+                    "如果遇到兄弟宫星曜旺相且得力，则意味着团队协作能力强，有可靠的伙伴支持",
+                    "如果遇到交友宫与命宫三方四正吉化连动，则意味着人际魅力佳，容易建立良好职场关系",
+                    "如果遇到交友宫化忌或会破军化煞，则意味着小人纷争易发，需防范职场冲突陷阱",
+                    "如果遇到交友宫被四煞冲破或空亡，则意味着关系疏落冷漠，应注意职场孤立风险",
+                    "如果遇到交友宫化忌入命宫或官禄宫，则意味着同事成为阻碍，需格外提防职场小人暗算"
+                ]
+            }
+        ],
+        "other_tips": "注意同步观看其他宫位内的小人情况。如果出现了不同宫之间的小人重叠，需谨慎注意是否事主已经将这部分的小人归结到自己的同事里。另，如果同事为夫妻，需判断夫妻是否为同进退、一致行动之关系。"
+    },
+
+    "qualitative_stage": {
+
+        // # === 法律与合规要求 ===
+        "law_and_regulation_requirements": [
+            "请遵守公司规章制度与职场道德",
+            "处理人际冲突时须讲究职业礼仪与合规方式"
+        ],
+
+        // # === UI提示 ===
+        "ui_representation_tips": "同事之间的关系是对公关系的一部分，需要区别于私人关系进行场景合规考虑。",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "CAR02_Q007",
+                "question_text": "一般来说，我如何与领导相处？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": true // optional，是可以加载预合盘分析的
+    }
+}

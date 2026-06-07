@@ -1,0 +1,101 @@
+{
+    // REL01_Q001: 我未来的结婚对象是什么样的人？
+    // 亲密关系（恋爱脑专场） - 配偶特征预测
+
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q001",
+        "question_text": "我未来的结婚对象是什么样的人？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+        "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_input_requirements": {
+            "required_inputs": [{}],
+            "optional_inputs": [{}]
+        }
+    },
+
+    "quantitative_stage": {
+        // === 领域内问题的基调 ===
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+
+    // === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "主看夫妻宫主星（如紫微、天府彰显贵气；廉贞、武曲显实力；太阳、巨门显智慧与表达力；天同、天梁显品格）。再观察四化（化禄稳健、化科声望、化权力、化忌矛盾），以及夫妻宫跨疾厄线判断健康状况、跨兄弟判断家庭关系，跨子女宫揭示育儿潜力。桃花星如红鸾、天喜、咸池落入夫妻宫或命宫，主感情缘分丰富或婚期可期。",
+                "risk_assessment": [
+                    "如果遇到夫妻宫主星陷弱或化忌，则意味着未来配偶条件一般，感情路径可能坎坷",
+                    "如果遇到夫妻宫受煞星冲克，则意味着婚姻关系易生变故，配偶性格或健康需关注",
+                    "如果遇到夫妻宫四化入兄弟宫，则意味着配偶家庭关系复杂，婚后可能面临人际困扰",
+                    "如果遇到桃花星过多入命，则意味着感情经历丰富但不稳定，择偶需更加谨慎",
+                    "如果遇到夫妻宫主星旺相庙旺且四化无忌，则意味着优质配偶缘分深厚，家庭资源丰富",
+                    "如果遇到文昌文曲会夫妻宫，则意味着配偶知书达理，学识修养俱佳",
+                    "如果遇到天府紫微坐夫妻宫，则意味着配偶出身良好，婚姻稳定幸福",
+                    "如果遇到夫妻宫主星陷弱或化忌，则意味着未来配偶条件一般，感情路径可能坎坷",
+                    "如果遇到四化飞入夫妻宫化科或化禄，则意味着可提升婚姻中的地位与资源运势"
+                ]
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 2,
+                "risk_decision_logic": "夫妻宫对应卦中官鬼爻，兄弟宫对应兄弟爻。视官鬼爻是否旺、被世爻生扶并动化吉象，抑或被冲克刑害判断对象能力与缘分质量。兄弟爻代表家庭背景与姻亲关系。若官鬼爻为用神且生合世爻，预示匹配度高、缘分深；若官鬼爻动化退化或遭刑冲，需警惕婚姻障碍或对象争斗烦恼。",
+                "risk_assessment": [
+                    "官鬼爻得力且动爻化合，缘分稳固，对象能力与资源俱佳。",
+                    "兄弟爻旺相，配偶家庭协调，但若被刑克需留意家庭关系摩擦。",
+                    "官鬼爻化忌或被冲动，可能婚恋出现波折延期或反复。",
+                    "若官鬼爻旬空或变卦失地，缘分不稳，需察觉时机与客观条件。",
+                    "天姚、咸池指夫妻生活是否和谐、愉快。"
+                ]
+            }
+        ],
+        "other_tips": "结果描述中，应体现配偶的体貌特征、性格特质、职业倾向、原生家庭、是否有海外经历、学历高低、财富等（取最明显的一些项）。"
+    },
+
+    "qualitative_stage": {
+
+
+    // === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "建议结合现实社交圈、兴趣、价值观、诚信等多元因素判断，避免过度依赖术数断语。"
+        ],
+
+        "ui_representation_tips": "引导用户在选定意向对象时进入合盘，在无选定对象时进入寻人提示。",
+
+        "follow_up_questions": [
+            {
+                "question_id": "REL01_Q002",
+                "question_text": "我下一个桃花什么时候出现？"
+            },
+            {
+                "question_id": "DAY01_Q003",
+                "question_text": "我要找的人会在哪里？"
+            }
+        ]
+    },
+    // === 合盘配置 ===
+    // 本题为单人画像，不需要预加载合盘
+    "synastry": { 
+        "required": false 
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q030",
+        "question_text": "TA对我有没有生理性喜欢？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+        
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题需要预先加载合盘，请在用户输入八字后，加载合盘。"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "text",
+                    "name": "最近互动情况",
+                    "content": ""
+                }]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以世爻代表自己，应爻为TA。首看应爻与世爻地支关系：六合（三合、六合）或生合，表示TA有明显的生理性吸引或喜欢；若相冲、相克，则表明TA生理吸引力较弱甚至可能排斥。再观察动爻与化爻：动爻若生合世爻或应爻，生理倾向明显增强；动爻冲克则减弱或存在顾虑。最后以六兽辅助分析：青龙、朱雀代表积极主动的生理吸引力；玄武、白虎则生理吸引力可能受压抑或隐秘表达。",
+                "risk_assessment": [
+                    "如果遇到应爻与世爻六合三合或生合，则意味着TA有明显的生理性吸引或喜欢，化学反应强烈",
+                    "如果遇到动爻生合世爻或应爻，则意味着生理倾向明显增强，身体层面的好感显著",
+                    "如果遇到青龙朱雀临应爻，则意味着积极主动的生理吸引力，TA对你有明确好感",
+                    "如果遇到六神和谐且应爻得力，则意味着TA不仅精神喜欢你，身体层面也有吸引",
+                    "如果遇到应爻与世爻相冲相克，则意味着TA生理吸引力较弱甚至可能排斥，缺乏化学反应",
+                    "如果遇到动爻冲克或化凶，则意味着生理喜欢程度减弱或存在顾虑，需要时间培养",
+                    "如果遇到玄武白虎临爻，则意味着生理吸引力可能受压抑或隐秘表达，不会直接流露"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "可结合动爻、化爻及六兽，细致分析TA的生理喜欢程度。建议用委婉、尊重的语气表达分析结果。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "涉及隐私和个人界限，建议尊重对方意愿，理性看待关系发展。",
+            "表达需保持尊重与委婉，避免冒犯或尴尬。"
+        ],
+        "ui_representation_tips": "避免任何可能的误解或冒犯。",
+        "follow_up_questions": []
+    },
+    "synastry": {
+        "required": true
+    }
+}

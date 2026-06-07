@@ -1,0 +1,61 @@
+// API 请求示例（EDU01_Q003）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "EDU01_Q003"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "目标学历层次",
+                        "input": "专科"
+                    },
+                    {
+                        "name": "当前学历层次",
+                        "input": "专科"
+                    },
+                    {
+                        "name": "与主业关联度",
+                        "input": "10分 - 高度相关"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "学费预算",
+                        "input": "5"
+                    },
+                    {
+                        "name": "预期完成时间",
+                        "input": "5"
+                    },
+                    {
+                        "name": "预期完成时间单位",
+                        "input": "月"
+                    },
+                    {
+                        "name": "目前薪资",
+                        "input": "5"
+                    },
+                    {
+                        "name": "预期薪资",
+                        "input": "5"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

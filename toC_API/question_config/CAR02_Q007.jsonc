@@ -1,0 +1,92 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR02_Q007",
+        "question_text": "我应该如何和领导相处？",
+        "question_domain": "职业发展",
+        "question_theme": "工作模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "此处单指用户与广义上的领导如何相处。如用户特别指定需要与哪位领导进行相处，请跳转到REL领域的问题进行合盘处理。"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "领导风格",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "当前与领导的主要互动场景、地点",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+        // # === 术数盘式数据 ===
+        "methods": [
+
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "采用紫微斗数官禄宫、命宫与交友宫三宫联动分析：官禄宫代表领导对我的认可，命宫代表我的适配力，交友宫代表我与领导的互动关系。分析官禄宫若有武曲、天府、化禄、化权等吉化，则说明领导欣赏能力与贡献，应主动承担责任；若官禄宫化忌冲命宫，则需谨慎低调沟通。交友宫有吉星，如天机、红鸾，则以灵活亲和方式建立信任。命宫与官禄宫若形成三方四正联动，说明适合共事。通过分析四化联动与宫位冲克，评估顺应、配合或沟通策略。。若化忌冲命宫，则需谨慎言行，防止误会。",
+                "risk_assessment": [
+                    "如果遇到官禄宫吉星化禄或化权，则意味着领导赏识认可，应主动展现能力承担更多责任",
+                    "如果遇到官禄宫化忌冲克命宫，则意味着与领导关系紧张，需谨慎表达避免正面冲突",
+                    "如果遇到交友宫入庙且有吉星拱照，则意味着增进互动信任有利，有助于沟通合作",
+                    "如果遇到交友宫遭化煞或空亡，则意味着人际关系易疏远，需主动维系和改善关系",
+                    "如果遇到命宫与官禄宫三方四正联动强劲，则意味着关系配合度高，应担当桥梁沟通角色",
+                    "如果遇到武曲天府入官禄宫且得吉化，则意味着领导重视执行力，宜展现务实可靠的工作作风",
+                    "如果遇到官禄宫主星陷地或被忌煞冲破，则意味着领导关系存在障碍，需耐心化解误解"
+                ]
+            }
+        ],
+        "other_tips": ""
+    },
+
+    "qualitative_stage": {
+        // # === 法律与合规要求 ===
+        "law_and_regulation_requirements":  [
+            "处理领导关系应遵守职场道德与公司制度",
+            "建议在沟通中尊重层级与隐私，避免触碰敏感或保密话题"
+        ],
+
+    // # === UI提示 ===
+        "ui_representation_tips": "",
+
+    // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "CAR02_Q006",
+                "question_text": "我应该如何和同事相处？"
+            },
+            {
+                "question_id": "CAR02_Q008",
+                "question_text": "我应该把自己放在团队里的什么角色？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": true // optional，是可以加载预合盘分析的
+    }
+}

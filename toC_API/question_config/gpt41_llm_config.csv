@@ -1,0 +1,80 @@
+question_id,quantitative_model,quantitative_temperature,qualitative_model,qualitative_temperature,description
+CAR01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career guidance question 1
+CAR01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career guidance question 2
+CAR01_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career guidance question 3
+CAR01_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career guidance question 4
+CAR02_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 1
+CAR02_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 2
+CAR02_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 3
+CAR02_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 4
+CAR02_Q005,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 5
+CAR02_Q006,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 6
+CAR02_Q007,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 7
+CAR02_Q008,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career development question 8
+CAR03_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 1
+CAR03_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 2
+CAR03_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 3
+CAR03_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 4
+CAR03_Q005,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 5
+CAR03_Q006,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 6
+CAR03_Q007,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 7
+CAR03_Q008,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career transition question 8
+CAR04_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career planning question 1
+CAR04_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career planning question 2
+CAR04_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career planning question 3
+CAR04_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for career planning question 4
+DAY01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for daily fortune question 1
+DAY01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for daily fortune question 2
+DAY01_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for daily fortune question 3
+DAY01_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for daily fortune question 4
+DEV01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for personal development question 1
+DEV01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for personal development question 2
+EDU01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for education question 1
+EDU01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for education question 2
+EDU01_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for education question 3
+EDU01_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for education question 4
+EDU02_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for education planning question 1
+EDU02_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for education planning question 2
+EDU02_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for education planning question 3
+FAM01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for family question 1
+FAM01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for family question 2
+FAM01_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for family question 3
+FAM01_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for family question 4
+FIN01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for financial question 1
+FIN01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for financial question 2
+FIN01_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for financial question 3
+HLT01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for health question 1
+HLT01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for health question 2
+HLT01_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for health question 3
+HLT01_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for health question 4
+REL01_Q001,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 1
+REL01_Q002,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 2
+REL01_Q003,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 3
+REL01_Q004,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 4
+REL01_Q005,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 5
+REL01_Q006,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 6
+REL01_Q007,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 7
+REL01_Q008,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 8
+REL01_Q009,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 9
+REL01_Q010,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 10
+REL01_Q011,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 11
+REL01_Q012,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 12
+REL01_Q013,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 13
+REL01_Q014,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 14
+REL01_Q015,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 15
+REL01_Q016,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 16
+REL01_Q017,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 17
+REL01_Q018,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 18
+REL01_Q019,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 19
+REL01_Q020,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 20
+REL01_Q021,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 21
+REL01_Q022,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 22
+REL01_Q023,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 23
+REL01_Q024,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 24
+REL01_Q025,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 25
+REL01_Q026,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 26
+REL01_Q027,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 27
+REL01_Q028,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 28
+REL01_Q029,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 29
+REL01_Q030,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 30
+REL01_Q031,gpt-4.1-nano,0.1,gpt-4.1-mini,0.3,GPT-4.1-NANO configuration for relationship question 31

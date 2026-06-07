@@ -1,0 +1,74 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q007",
+        "question_text": "我和TA之间是否存在三方关系？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                "type": "text",
+                "name": "对方表现异常之处"
+            },
+            {
+                    "type": "text",
+                    "name": "怀疑的具体情况"
+                }]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "六爻应从卦体、卦名出发。首观卦中用神（财或官）之外，是否再现一重财或官，若有，则为明面竞争之象。若无，则需细查伏神，看用神之下有无伏藏，此为暗通款曲之兆。再者，兄弟爻发动亦为竞争之象，若其临玄武、桃花等煞，则第三者插足之可能性大增。应爻（代表对方）若与卦中其他爻相合，亦是其心有旁骛的表征。最后，若卦中子孙爻发动，克伤官鬼（代表女方之夫或情缘），或兄弟爻发动，克伤妻财（代表男方之妻或情缘），均是外力破坏感情的明确信号。伏神发动、桃花临身、应爻不专等为三方关系信号。",
+                "risk_assessment": [
+                    "如果遇到伏神与桃花同时发动，则意味着暗地有所牵连，存在隐秘第三方关系需高度警惕",
+                    "如果遇到兄弟爻发动并带玄武桃花煞，则意味着第三者确实存在，感情面临威胁",
+                    "如果遇到应爻化空或伏藏卦象，则意味着对方有隐瞒或心意不专，行为可疑",
+                    "如果遇到子孙爻或兄弟爻克制用神，则意味着外界势力造成关系破裂，三方介入明显",
+                    "如果遇到白虎临应爻卦象，则意味着情感冲突尖锐，第三方矛盾激化",
+                    "如果遇到用神重现或卦中再现二重财官，则意味着明面竞争对手存在，需直面挑战",
+                    "如果遇到应爻与他爻相合而背世，则意味着对方心有旁骛，感情专一度存疑",
+                    "如果遇到世应相合且用神专一，则意味着感情纯洁专一，三方关系不存在"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": "警惕兄弟爻、子孙爻发动等特殊卦象。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "无论任何情况，都不应诉诸对自己或对他人的暴力行为"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": true
+    }
+}

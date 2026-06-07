@@ -1,0 +1,85 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "HLT01_Q003",
+        "question_text": "我应该如何调整我的饮食方式到一个合适我的舒适状态？",
+        "question_domain": "健康生活",
+        "question_theme": "健康投资",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default", // default, restriction, warning, notice, error
+            "message": "None"
+        }, //任何弹窗提示，如果需要的话
+
+        
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "text",
+                    "name": "体质状况",
+                    "placeholder": "请描述您的体质状况"
+                },
+                {
+                    "type": "text",
+                    "name": "饮食偏好",
+                    "placeholder": "请描述您的饮食偏好"
+                },
+                {
+                    "type": "text",
+                    "name": "健康目标",
+                    "placeholder": "请描述您的健康目标"
+                }
+            ],
+            "optional_inputs": []
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "健康问题重在五行平衡与体质分析，通过八字判断先天体质和疾病倾向。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "priority_remark": 1,
+                "risk_decision_logic":"分析命主八字日主、用神、忌神，判断五行偏盛偏衰，结合饮食五行属性予以平衡建议。如日主偏弱，宜补助其五行；偏旺，则宜疏导抑制。命局金水过旺者，体质偏寒湿，宜食辛辣、温热之物以驱寒，如姜、蒜、羊肉。命局木火炎上者，体质偏燥热，宜食甘寒、滋润之品以降火，如梨、藕、鸭肉。此为基本平衡之道。更高层次者，需看命局有无冲克，若有，则取通关之五行为食，以和解其争战。如金木交战，宜食水性食物（如鱼、黑豆）以调和。最终，回归调候用神，此为天赋体质最根本之需求，若命局需丙火解冻，则无论全局五行如何，饮食皆不宜过寒。",
+                "risk_assessment":[
+                    "如果遇到命局金水过旺体质偏寒湿，则意味着宜食辛辣温热之物如姜蒜羊肉以驱寒暖胃",
+                    "如果遇到命局木火炎上体质偏燥热，则意味着宜食甘寒滋润之品如梨藕鸭肉以降火润燥",
+                    "如果遇到金木交战且五行冲克激烈，则意味着宜食水性食物如鱼类黑豆以通关调和争战",
+                    "如果遇到日主偏弱且用神不得力，则意味着需补助对应五行食材增强体质根基",
+                    "如果遇到调候用神为火且命局寒凉，则意味着无论五行如何饮食皆不宜过寒需温补"
+                ]
+            }
+        ],
+        "other_tips": "饮食需随时令、体感微调。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "命理仅为体质参考，切勿盲目偏信"
+        ],
+
+        "ui_representation_tips": "饮食建议分层标注（主建议、禁忌、养生时段）。可设置‘一键同步时令养生’与‘忌口清单’快捷入口到个人黄历主页中。",
+
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": false
+    }
+}

@@ -1,0 +1,98 @@
+{
+    // 财富管理 - 财运收入 - 综合财运分析
+    // 以八字为主分析整体财运趋势和收入前景
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "FIN01_Q001",
+        "question_text": "我最近的偏财运如何？",
+        "question_domain": "财富运势",
+        "question_theme": "偏财运势",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "current_net_asset 当前净资产",
+                    "content": "CNY 万元"
+                },
+                {
+                    "type": "select",
+                    "name": "当前主要收入类型",
+                    "options": ["投资收益", "创业收入", "副业收入", "财富传承", "其他"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "东方术数分析财富，须明确正财与偏财之分。八字需考察财星格局、身财平衡与大运流年组合，六爻则重财爻、日月建、六亲六兽等动态变化。关注财星透干、通根、得令与否，以及盘中流通生克制化，判断整体财运走势与阶段性波动，结合风险控制与实际操作建议。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "risk_decision_logic": "财运推断首重财星。需结合日元强弱、财星旺衰、通根透干、格局成败、用神忌神、流年大运等多层次分析。偏财为非固定之财，须观偏财星是否得地、透干、遇生助，或被比劫、官杀冲克。身强财旺，偏财易得；身弱财多，反生困局，需印比相扶。特殊格局如从财、化财格须重判，结合时令与岁运推测应期。应期常在财星被激发、流年与大运同临、或逢食伤生财、比劫制伏等时段。需兼看天干地支合冲刑害、十神流通，以及命盘中的原局结构与岁运流转的联动。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "如果遇到财星受制或偏财逢克冲空亡，则意味着财运受阻易失财破财，投资需谨慎防范风险陷阱",
+                    "如果遇到比劫旺盛无制化，则意味着竞争激烈或人事关系导致财散，合作投资风险较高",
+                    "如果遇到身弱财多而无印比救助，则意味着纵有财机难以守成，宜稳健理财量力而行",
+                    "如果遇到财星得令且食伤生财有情，则意味着偏财运势亨通，投资机会增多收益可期",
+                    "如果遇到大运流年财星被激发，则意味着偏财突破期来临，把握时机能获得意外收获"
+                ],
+                "raw_palette": {}
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "卦中妻财爻为财，旺相则财源佳，休囚则财运弱。财爻宜动，动则有变，不动则财源不发。财爻旺相持世，或世爻得生、子孙爻发动生财者，主财运顺利。兼看财爻伏藏、暗动、发动所临六兽（金钱豹为偏财象）、以及与世应、父母爻的关联，判断机会真假与应期时点。应期多见财爻得日月建生扶、临旺地、逢贵人等象。更需辨其来源：若财爻由子孙爻发动所生，则为有源之财，可期可得；若财爻临玄武发动，则恐为不义之财，易生事端；若临青龙，则为正道而来之意外收获。同时，须观世爻之旺衰，身强方能胜财，若世爻休囚无力，纵有旺财亦难得。若遇兄弟爻发动、财爻被克、临空破、化退神等，则财运不济。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "如果遇到财爻临空化退神或被克合制，则意味着财机难成多为虚象，须警惕投资风险陷阱",
+                    "如果遇到兄弟爻发动克财或世爻无气，则意味着因人事竞争因素致财损，合作需谨慎",
+                    "如果遇到子孙爻发动生财且财爻得力，则意味着有新财路出现，但需关注应期与条件变化",
+                    "如果遇到财爻旺相持世且青龙护佑，则意味着正道偏财运佳，投资机会可把握",
+                    "如果遇到财爻临玄武发动，则意味着恐为不义之财易生事端，需避免灰色投资"
+                ],
+                "raw_palette": {}
+            }
+        ],
+
+        "other_tips": "收入类型决定财星层次分析，投资创业看偏财。时间范围确定大运流年重点，期望程度需要与命局财星层次相匹配。大的收入通常对应财星得力或食伤生财的特殊时期，需要结合具体数额评估可能性。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "务必合理预期，防止因贪财而误入高风险或不当途径。",
+            "请通过合法途径获得收入，避免高风险或非法投资。"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [
+            {
+                "question_id": "FIN01_Q002",
+                "question_text": "我最近适合做什么投资？",
+                "recommendation_reason": "具体的投资方向选择"
+            }
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

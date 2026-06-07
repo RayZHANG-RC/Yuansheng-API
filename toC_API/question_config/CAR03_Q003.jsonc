@@ -1,0 +1,101 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR03_Q003",
+        "question_text": "哪些环境下是我适合的创业机会？",
+        "question_domain": "职业发展",
+        "question_theme": "创业主本人",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "我已经决定了哪些创业想法？比如在哪些行业、哪些领域、哪些模式、哪些方向上创业？",
+                    "content": ""
+                },
+                {
+                    "type": "preloaded_question",
+                    "name": "CAR03-Q002 我适合在哪些行业创业？",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"从八字大运、流年入手，寻找创业的天时地利。大运流年是否行用神运、制忌神运为合适时机；宜避忌神旺盛之年。结合用神大运与目标行业五行属性匹配，判断宏观创业环境。大运走势扶助用神、抑制忌神为佳。八字大运中扶助用神之大运为宜时；流年忌神受抑之年为关键启动时；具体到流年，若与命局或大运合成财官旺局，或引动驿马、天乙贵人等吉神，则机会显现。",
+
+                "risk_assessment": [
+                    "如果遇到大运忌神当令且用神受制，则意味着宏观环境不利，创业阻力重重，宜等待时机",
+                    "如果遇到流年冲克命局关键要素，则意味着变动激烈不稳定，不宜在此时启动创业",
+                    "如果遇到岁运并临或天克地冲，则意味着环境动荡风险极高，需谨慎保守为上",
+                    "如果遇到大运制忌神且用神得助，则意味着宏观环境转好，政策机遇有利创业发展",
+                    "如果遇到流年引动贵人星或驿马星，则意味着人脉资源丰富，创业机会频现",
+                    "如果遇到用神大运配合吉利流年，则意味着天时地利人和俱备，创业成功率高"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"当下若起卦，官鬼或妻财爻若旺相并持世/合世，且四库不冲，主当前环境具备合作与利益支撑；如兄弟爻发动克世，或卦中刑冲官鬼、妻财，则不可急启动。以官鬼、妻财二爻的旺相休囚，定当前环境之利弊。",
+                "risk_assessment": [
+                    "如果遇到兄弟爻发动克世克财，则意味着当前环境竞争激烈，合作伙伴不稳定或资金流动困难",
+                    "如果遇到官鬼爻空破或化退神，则意味着缺乏权威支持，管理决策环境不利于创业",
+                    "如果遇到财爻临死墓绝地或被克制，则意味着财务环境恶劣，盈利模式不清晰",
+                    "如果遇到卦逢六冲或月破日冲，则意味着环境变化剧烈，不宜在动荡中启动项目",
+                    "如果遇到官鬼财爻双旺且生世合世，则意味着当前环境权威支持与财务条件俱佳，创业时机成熟",
+                    "如果遇到青龙持世且子孙生财，则意味着创新环境良好，项目发展潜力大，环境配合度高"
+                ],
+                "priority_remark": 2
+            }
+        ],
+        "other_tips": "结合当前想法落地的具体实施背景，建议事主扬长避短，选择最适合自己方向的事件开始起卦。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "创业决策需结合法律政策与市场调查"
+        ],
+
+        "ui_representation_tips": "",
+        "follow_up_questions": [
+            {
+                "question_id": "CAR03_Q004",
+                "question_text": "哪些时间点有利于我创业？"
+            },
+            {
+                "question_id": "CAR03_Q001",
+                "question_text": "我是否应该和TA一起合伙创业？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

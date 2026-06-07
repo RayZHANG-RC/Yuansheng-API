@@ -1,0 +1,103 @@
+{
+    // 财富管理 - 财运收入 - 工作财富自由评估
+    // 以八字为主分析职业收入的长期发展潜力
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "FIN01_Q003",
+        "question_text": "我什么时候会有意外之财？",
+        "question_domain": "财富运势",
+        "question_theme": "偏财运势",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [
+                {
+                    "type": "select",
+                    "name": "意外之财类型预期",
+                    "options": ["投资收益", "彩票中奖", "遗产继承", "借款回收", "工作奖金", "其他"]
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "当前财务状态",
+                    "placeholder": "请描述您当前的财务状态"
+                },
+                {
+                    "type": "text",
+                    "name": "其他具体需求描述",
+                    "placeholder": "请补充说明其他具体需求"
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "东方术数分析财富，须明确正财与偏财之分。八字需考察财星格局、身财平衡与大运流年组合，六爻则重财爻、日月建、六亲六兽等动态变化。关注财星透干、通根、得令与否，以及盘中流通生克制化，判断整体财运走势与阶段性波动，结合风险控制与实际操作建议。",
+
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "risk_decision_logic": "意外之财，其来有兆，查财星为用神且得地、透干、通根、被激活。八字中断之，有数种情形：其一，命局身强，大运、流年逢强旺之偏财透干或通根，此为运势所致之横财。其二，命局财星为喜用，且深藏墓库之中，待大运或流年来冲开财库（如辰戌冲、丑未冲），则如开库取宝，主突发之财。其三，命局有食伤生财之组合，待岁运引动食伤，使其生财有力，亦主有投资或才艺带来的意外收入。四、比劫岁运合去忌神财星，主因外部合作、朋友资源而有意外收益；其五，命局用神为印，而财星为忌，若岁运逢比劫克去忌神财星，此为因祸得福或因他人而得财之象。六、正官流年合去忌神，或遇天乙、文昌等吉神同临，常有贵人馈赠、奖金福利。以此六端，可断意外之财的应期与来源。需结合原局与流年实际，不能片面推断。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "如果遇到身弱财旺且财星为忌神，则意味着大运流年再遇财星反主破财损失，需谨慎防范投资风险",
+                    "如果遇到财星深藏墓库且原局合绊未透，则意味着流年岁运冲开时多见突发财机，但需结合实际努力",
+                    "如果遇到食伤透出受制或比劫制化不及，则意味着虽见财机但易有竞争被夺，需关注合作风险",
+                    "如果遇到命局身强且偏财透干通根，则意味着大运流年逢财星激活时有横财机遇可期",
+                    "如果遇到财库逢冲且身能胜财，则意味着如开库取宝主突发之财，时机成熟收获丰厚"
+                ],
+                "raw_palette": {}
+            },
+            {
+                "method_name": "小六壬",
+                "enabled": 1,
+                "risk_decision_logic": "以小六壬推测近期偏财，侧重流年、流月、日课之财卦（财喜、财惊、大安、速喜等）。主星得位且日主与财星相生为顺势；若见劫煞、空亡、冲破等象，则财机易失或反有破财隐忧。结合调候变化，判断财气聚散，应期宜以动态分析。务必参考实际市场与财务风险，不宜单凭吉象盲动。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "如果遇到日课财卦吉且岁运配合得力，则意味着短期内偏财机遇提升，但切勿过度投机冒险",
+                    "如果遇到空亡冲破劫煞或兄弟劫财象，则意味着反主破财损失风险，宜理性规避投机行为",
+                    "如果遇到调候不当且盘内主客失衡，则意味着财机虽现但难以持久，需见好就收适时退出"
+                ],
+                "raw_palette": {}
+            }
+        ],
+
+        "other_tips": ""
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "财富管理和投资须合法合规，严格遵守国家金融法律法规，警惕非法集资、传销及高风险赌博类活动。",
+            "不得以术数预测结果作为实际投资或投机决策的唯一依据。",
+            "意外之财往往是盘中多种机缘叠加。需结合八字命理、六壬卦象、市场环境与个人努力共同把握。切勿沉迷投机或非法手段，正道取财方能长久。"
+        ],
+
+        "ui_representation_tips": "建议采用冷静客观的语气，避免使用过于肯定的语气，如“一定”、“肯定”等。宜采用“有机会”“可能性较大”等描述，鼓励理性理解和风险意识。对于运势、流年等预测内容，应结合具体年份、周期明确标注前提条件。",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU01_Q003",
+                "question_text": "我去读 _____，对我未来的薪资涨幅有哪些帮助和回报吗？"
+            }
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+}

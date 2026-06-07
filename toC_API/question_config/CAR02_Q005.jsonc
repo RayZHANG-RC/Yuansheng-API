@@ -1,0 +1,80 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR02_Q005",
+        "question_text": "我是否适合多线程并行——同时做几份不同的职业？",
+        "question_domain": "职业发展",
+        "question_theme": "工作模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{}]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 ===
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        // # === 术数盘式数据 ===
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "分析迁移宫动能（出行、活动力）、命宫承载力和官禄宫组织岗位支持情况。分析官禄宫内各个星等的数量，其中吉星数量暗含所能同时多线程并行不同职业，或同职业下不同项目组之间的数量。若命官迁三宫形成禄化权化等吉格，说明有并行多岗能量。若有巨门、天机入迁移宫或三奇三星相会，则具备多线程敏感度；反之若逢空亡、化忌入迁移或官禄宫，易因多线程分散精力。以命宫、官禄宫、迁移宫为主，分析事业多线程能力与外部机会。若命局地支多见'墓库'，或有'拱合'之局，主其人能暗中包容、运作多项事务。但若身弱，或格局偏枯，则多线并行必将导致精力耗散，一事无成。",
+                "risk_assessment": [
+                    "如果遇到迁移宫吉星庙旺且四化呈祥，则意味着精力与资源调度能力强，适合多线程并行",
+                    "如果遇到命宫官禄宫同宫或三方四正有权化禄化，则意味着能够支撑多重身份和职业角色",
+                    "如果遇到命宫、官禄宫、迁移宫星曜配合良好，则意味着多职业身份易于平衡，不会产生冲突",
+                    "如果遇到巨门天机入迁移宫且得力，则意味着具备多线程敏感度和灵活应变能力",
+                    "如果遇到三奇三星相会于命官迁宫，则意味着天赋异禀，能够同时处理多个复杂项目",
+                    "如果遇到迁移宫或官禄宫遭化忌四煞冲破，则意味着精力分散导致主业受损，难以兼顾",
+                    "如果遇到命宫官禄迁移三宫空亡，则意味着多线程承载力严重不足，容易过劳崩溃",
+                    "如果遇到格局偏枯且身弱无救，则意味着多线并行必将导致精力耗散，一事无成"
+                ]
+            }
+        ],
+        "other_tips": "如您的精力分配较紧张，建议选择节奏匹配、自动化程度高的兼职形式，避免短时间高强度重复消耗，优选线上远程或轻量项目。"
+    },
+
+    "qualitative_stage": {
+        // # === 法律与合规要求 ===
+        "law_and_regulation_requirements": [
+            "并行职业过程中请遵守劳动合同及商业合规要求",
+            "需避免利益冲突，确保合法合规"
+        ],
+        // # === UI提示 ===
+        "ui_representation_tips": "可根据职业类型和精力分配自动推荐多线程建议。",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "CAR02_Q003",
+                "question_text": "我是否有发展副业的机会？"
+            },
+            {
+                "question_id": "CAR02_Q004",
+                "question_text": "我适合发展什么方向的副业？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

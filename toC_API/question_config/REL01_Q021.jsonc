@@ -1,0 +1,87 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q021",
+        "question_text": "我们现在是否适合养孩子？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题需要预先加载合盘，请在用户输入八字后，加载合盘。"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [{
+                    "type": "select",
+                    "name": "对方年龄状况",
+                    "options": ["20-29岁", "30-39岁", "40-49岁", "50-59岁", "60岁以上"]
+                },
+                {
+                    "type": "text",
+                    "name": "经济条件",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "身体健康状况",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "心理准备",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "定子女缘分之早晚，当以八字为主，观子女星（男命官杀，女命食伤）与子女宫（时柱）。若大运、流年引动子女星，或来合、冲子女宫，且此星、此宫为喜用，则为最佳生育时机。若原局或大运流年行至子女宫，出现化禄、化权、化科、红鸾、天喜，且无擎羊、陀罗、化忌等煞曜加临，则也是合理的添丁时机。若子女星或宫位为忌，则需待岁运克制此忌神之时，方能顺利得子。若流年命宫或夫妻宫亦有红鸾天喜辅助，添丁概率更高。若流年化忌冲子女宫，则该年不宜生育，须避之。",
+                "risk_assessment": [
+                    "如果遇到子女宫主星旺相且逢吉神拱照，则意味着子嗣缘分稳定，胎孕过程顺利安全",
+                    "如果遇到大运流年引动子女星为喜用，则意味着此时为最佳生育时机，添丁概率高",
+                    "如果遇到流年子女宫化禄化权化科，则意味着合理的添丁时机，且有红鸾天喜辅助",
+                    "如果遇到流年命宫或夫妻宫红鸾天喜加临，则意味着添丁概率更高，家庭和谐",
+                    "如果遇到子女宫或流年逢煞曜如擎羊陀罗化忌，则意味着不宜当年求孕，需避开煞动或等待化解",
+                    "如果遇到流年化忌冲子女宫，则意味着该年不宜生育须避开，健康风险较大",
+                    "如果遇到命盘或流年子女宫空亡失令，则意味着易生育迟延或需多次尝试，建议医务协助"
+                ]
+            }
+        ],
+        "other_tips": ""
+    },
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "年龄状况确定生物时机，经济条件评估现实基础，身体健康关系生育能力，心理准备影响养育质量。",
+            "请根据实际情况谨慎研判，涉及生育指导请咨询相关部门。",
+            "由于算力限制，该问题仅可提供从起盘开始之三年内的分析结果。"
+        ],
+        "ui_representation_tips": "推荐合盘对养孩子这一事件进行交叉验证。", //这也是还没有写的地方，所有的合盘都没有写
+        "follow_up_questions": [{
+                "question_id": "FAM01_Q004",
+                "question_text": "我未来的孩子会是什么样的？"
+            }]
+    },
+    "synastry": {
+        "required": true 
+    }
+}

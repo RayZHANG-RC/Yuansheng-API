@@ -1,0 +1,36 @@
+// API 请求示例（CAR03_Q003）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR03_Q003"
+            },
+            "user_specification": {
+                "required_inputs": [],
+                "optional_inputs": [
+                    {
+                        "name": "我已经决定了哪些创业想法？比如在哪些行业、哪些领域、哪些模式、哪些方向上创业？",
+                        "input": ""
+                    },
+                    {
+                        "name": "CAR03-Q002 我适合在哪些行业创业？",
+                        "input": "CAR03-Q002 我适合在哪些行业创业？"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

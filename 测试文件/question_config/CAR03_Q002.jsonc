@@ -1,0 +1,44 @@
+// API 请求示例（CAR03_Q002）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR03_Q002"
+            },
+            "user_specification": {
+                "required_inputs": [],
+                "optional_inputs": [
+                    {
+                        "name": "当前擅长的领域",
+                        "input": ""
+                    },
+                    {
+                        "name": "当前已从事过的领域",
+                        "input": ""
+                    },
+                    {
+                        "name": "当前的资源背景",
+                        "input": ""
+                    },
+                    {
+                        "name": "推荐补充家庭支持、资金规模等事实信息，以进一步精炼建议。",
+                        "input": ""
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

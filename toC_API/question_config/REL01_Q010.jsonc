@@ -1,0 +1,96 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q010",
+        "question_text": "我和TA的矛盾如何化解？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "该问题可以预先加载合盘，但是不强制。"
+        },
+
+        "user_specification": {
+            "required_inputs": [{}],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "矛盾性质",
+                    "placeholder": "请描述矛盾的性质和原因..."
+                },
+                {
+                    "type": "range",
+                    "name": "冲突程度",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5,
+                    "labels": {"1": "轻微", "10": "非常激烈"}
+                },
+                {
+                    "type": "text",
+                    "name": "争执焦点",
+                    "placeholder": "请描述争执的具体焦点..."
+                },
+                {
+                    "type": "range",
+                    "name": "和解意愿",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5,
+                    "labels": {"1": "无所谓", "10": "意愿强烈"}
+                }
+            ]
+        }
+    },
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "通关之神、合化解冲、生扶调和为化解路径，无解神则难以化解。论关系之深度与终点，须分步断析。短期发展以六爻为凭：若卦象六合，则关系稳定，易于深入；若变为六冲，则前景堪忧。卦中代表感情的财爻（或官爻）旺相生世，且有青龙、勾陈等吉兽加持，则关系能顺利进展至更亲密阶段。长期归宿则以八字为准：若双方夫妻宫互为喜用，且无严重刑冲，则有夫妻之缘；若大运同步进入利于婚姻的阶段，则能修成正果。反之，若双方八字冲克过重，或大运相背，即使六爻当下吉利，长远亦难免波折。",
+                "risk_assessment": [
+                    "如果遇到通关之神或合化解冲卦象，则意味着矛盾有化解路径，可通过第三方或时间缓解",
+                    "如果遇到生扶调和的卦象组合，则意味着双方都有和解意愿，矛盾能够顺利化解",
+                    "如果遇到财官爻旺相且六合卦象，则意味着感情基础深厚，矛盾只是暂时可轻松化解",
+                    "如果遇到青龙勾陈等吉兽加持，则意味着化解过程顺利，关系能重回和谐状态",
+                    "如果遇到无解神且卦象闭塞，则意味着矛盾难以化解，可能需要接受现状",
+                    "如果遇到财官爻空破或被刑冲，则意味着感情根基受损，化解困难重重",
+                    "如果遇到白虎或反吟伏吟凶象，则意味着争执激烈化解过程充满变数",
+                    "如果遇到变卦六冲或回头克世，则意味着矛盾可能加剧，建议暂停激进行动",
+                    "如果遇到世应相生且动爻化吉，则意味着双方都有诚意，矛盾化解指日可待"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "走到哪一步既看天时，也看地利人和。建议双方在自己舒适的区域内进行探索。"
+        ],
+        "ui_representation_tips": "",
+        "follow_up_questions": [{}]
+    },
+
+    // === 合盘配置 ===
+    // 该问题需要双方性状分析来找到化解矛盾的最佳方式
+    "synastry": {
+        "required": true  // Optional: 预加载合盘分析，和REL01_Q008 9 10 存在同类的optional冲突
+    }
+}

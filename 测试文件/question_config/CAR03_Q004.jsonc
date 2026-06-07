@@ -1,0 +1,45 @@
+// API 请求示例（CAR03_Q004）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "CAR03_Q004"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "时间窗口（2年以内给月份）",
+                        "input": "1-3个月"
+                    },
+                    {
+                        "name": "时间窗口（2年以上给年份）",
+                        "input": "3年后"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "选定的创业方向（比如在哪些行业、哪些领域、哪些模式、哪些方向上创业？）计划进入的行业或领域",
+                        "input": ""
+                    },
+                    {
+                        "name": "CAR03-Q002 我适合在哪些行业创业？",
+                        "input": "CAR03-Q002 我适合在哪些行业创业？"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

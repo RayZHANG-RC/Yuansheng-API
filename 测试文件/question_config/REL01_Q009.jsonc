@@ -1,0 +1,50 @@
+// API 请求示例（REL01_Q009）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "REL01_Q009"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "当前关系状态",
+                        "input": "无恋情史"
+                    },
+                    {
+                        "name": "认识时长",
+                        "input": "1个月内"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "现实阻碍",
+                        "input": ""
+                    },
+                    {
+                        "name": "双方意愿",
+                        "input": ""
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            },
+            "synastry": "true",
+            "person_b": {
+                "birth_time": "199005151400",
+                "gender": "female"
+            }
+        }
+    }
+}

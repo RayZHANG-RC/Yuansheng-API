@@ -1,0 +1,73 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "FAM01_Q001",
+        "question_text": "我的宠物运势如何？",
+        "question_domain": "家庭生活",
+        "question_theme": "宠物与子女",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "user_specification": {
+            "required_inputs": [],
+            "optional_inputs": [
+                {"type": "select", "name": "宠物类型", "options": ["猫", "狗", "鸟", "鱼", "仓鼠","爬行类", "其他"]},
+                {"type": "select", "name": "居住环境", "options": ["室内", "室外", "其他"]},
+                {"type": "select", "name": "照料频次", "options": ["每天多次", "每天一次","每三天一次", "每周一次", "其他"]},
+                {"type": "text","name": "宠物昵称","content": ""}]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "宠物及无民事行为能力的子女，可将其视为一种特殊的'子女'或'田宅'之延伸。",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "宠物可比照“子女”或“田宅”论断，通过六爻动静、六亲变化，判断宠物健康、情感及家庭和谐。特别注意动爻、化爻、世应爻等多重交互对宠物福祸的深层影响。详细检查卦体和动爻，分析宠物与主人的缘分、健康及家庭氛围。吉星拱照则宠物运佳，煞忌冲克则需注意健康与家庭和谐。另检查日月建、六兽等，六兽亦可直接判断为对应宠物之类象。综合判断宠物与主人的缘分、健康、行为和家庭氛围。遇吉星拱照，主宠物得福；若见冲克刑害、煞忌加临，则预警健康隐忧或家庭关系波动。需关注动爻化忌、交互连动及外卦、内卦之象。",
+                "risk_assessment": [
+                    "如果遇到六爻出现刑冲或日月建克，则意味着宠物近期健康波动较大，需重点防范疾病",
+                    "如果遇到主卦变卦不利或凶神当值，则意味着需加强照料与家庭互动，预防突发状况",
+                    "如果遇到子孙爻受克或化退神，则意味着宠物活力不足，精神状态不佳需关注",
+                    "如果遇到财爻破损或比劫夺财，则意味着宠物养护成本增加，经济压力较大",
+                    "如果遇到子孙爻旺相且青龙护佑，则意味着宠物健康活泼，给家庭带来欢乐",
+                    "如果遇到世爻与子孙爻相生，则意味着人宠关系和谐，相互陪伴共同成长",
+                    "如果遇到吉神临门且卦象稳定，则意味着宠物运势亨通，成为家庭幸福的重要组成"
+                ]
+            }
+        ],
+
+        "other_tips": "如遇卦象动爻不稳，建议调整环境气场、改变照料方式或适度改变家居环境，提升宠物运势与健康指数。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": ["遵守当地动物保护法规，合法饲养宠物。"],
+
+        "ui_representation_tips": "增强仪式感和体验感。需要称呼用户宠物的昵称。",
+
+        // # === 后续追问建议 ===
+        "follow_up_questions": [
+            {
+                "question_id": "HLT01_Q004",
+                "question_text": "我应该寻求何种放松方式到一个合适我的舒适状态？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

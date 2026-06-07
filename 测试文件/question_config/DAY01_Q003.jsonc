@@ -1,0 +1,37 @@
+// API 请求示例（DAY01_Q003）
+// 格式对齐 CUSTOMER_API_QUICKSTART.md 5.2
+{
+    "user_id": "", // 由合作方提供，贵方用户唯一标识
+    "session_input": {
+        "session_metadata": {
+            "session_id": "" // 由合作方提供，须在贵方系统内全局唯一
+        },
+        "question_parameters": {
+            "question_metadata": {
+                "question_id": "DAY01_Q003"
+            },
+            "user_specification": {
+                "required_inputs": [
+                    {
+                        "name": "日期",
+                        "input": "2026-06-05"
+                    }
+                ],
+                "optional_inputs": [
+                    {
+                        "name": "我未来的结婚对象是什么样的人？",
+                        "input": "我未来的结婚对象是什么样的人？"
+                    }
+                ],
+                "other_context": ""
+            }
+        },
+        "palette_data": {
+            "current_time": "202606051200",
+            "person_a": {
+                "birth_time": "199001010800",
+                "gender": "male"
+            }
+        }
+    }
+}

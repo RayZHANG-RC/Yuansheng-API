@@ -1,0 +1,107 @@
+{
+    // 预计上线版本 V0.0 - V1.0
+    "question_metadata": {
+        "analysis_version": "V0.0",
+        "question_id": "XXX01_Q001",
+        "question_text": "xxxxxx？",
+        "question_domain": "XXXX",
+        "question_theme": "XXX",
+        "llm_config": {
+            // LLM configurations are now managed via CSV files:
+            // - llm_configs.csv: Defines available LLM configurations (gpt-4.1, gpt-5, etc.)
+            // - question_llm_mapping.csv: Maps question IDs to their preferred LLM configurations
+            // This approach eliminates duplicate question files between GPT versions
+            "config_source": "csv",
+            "config_files": {
+                "llm_configs": "llm_configs.csv",
+                "question_mapping": "question_llm_mapping.csv"
+            }
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default", // default, restriction, warning, notice, error
+            "message": "None"
+        }, //任何弹窗提示，如果需要的话
+
+        "user_specification": {
+            "required_inputs": [// # 用培训的重要程度代替培训类型，要用户评级1-100——⚠️UI设计，40或以下只与个人素养有关，UI设计弹出提示：建议去Domain-DEV个人发展里的问题，60以上和主业高度相关，90以上和正副业都有关
+                {
+                    "type": "number", // number, text, selection, date, time, boolean, API
+                    "name": "", //
+                    "content": "1-100"
+                }
+            ],
+            "optional_inputs": [
+                {"type": "text", "name": "user_caption", "content": "用户对问题的描述"},
+                {"preloaded_question": {}} // 预加载的问题，用于对接follow_up_questions
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        // # === 领域内问题的基调 === 预计上线版本 V2.0
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系", // # 这个是跟着整个domain一起走的，会有一些基础setting，使得同一个domain下变得统一
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 0, // 反正在Python里面 0和1也可以直接表示bool类型
+
+                "risk_decision_logic":"", // 整体指导风险分析的逻辑
+                "priority_remark": 1, // 1-4，1为最高优先级，4为最低优先级
+
+                "criteria":[], // 用于排盘内容名称，但并非所有盘式都有criteria
+                "risk_assessment":[], // 用于排盘逻辑关系评估
+
+                "raw_palette":{} // placeholder, 用于接入排盘数据
+            },
+            {
+                "method_name": "八字",
+                "enabled": 1, // 0 or 1
+                "criteria":[], //
+                "raw_palette":{}, //
+                "risk_assessment":[],
+                "priority_remark": 2
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1, // 0 or 1
+                "criteria":[],
+                "raw_palette":{}, //
+                "risk_decision_logic":"",
+                "risk_assessment":[],
+                "priority_remark": 3
+            },
+            {
+                "method_name": "小六壬",
+                "enabled": 0,
+                "criteria":[],
+                "raw_palette":{}, //
+                "risk_decision_logic":"",
+                "risk_assessment":[],
+                "priority_remark": 4
+            }
+        ],
+        "other_tips": "" //对于排盘分析的补充说明
+    },
+
+    "qualitative_stage": {
+        // # === 合规相关 @法务相关的数据 ===
+        "law_and_regulation_requirements": [
+            "法务相关合规要求" // 法务相关的数据
+        ],
+
+        "ui_representation_tips": "",  // #其他展示时需要注意的
+
+        "follow_up_questions": [
+            {"question_id": "DEV01_Q001", "question_text": "我是否改去外地工作？"}
+        ]
+    },
+
+    // === 合盘配置 ===
+    // 控制该问题是否需要预加载合盘分析（适用于需要双方性状分析的问题）
+    "synastry": {
+        "required": false  // true: 该问题需要合盘预加载；false/省略: 不强制合盘；Optional: 可选加载合盘，统一用false来表示，不强制合盘，但是在ui pop up中需要提示用户
+    }
+}

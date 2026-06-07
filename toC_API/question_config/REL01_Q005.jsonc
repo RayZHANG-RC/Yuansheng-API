@@ -1,0 +1,82 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "REL01_Q005",
+        "question_text": "我是否适合现在和TA恋爱？",
+        "question_domain": "人际关系",
+        "question_theme": "亲密关系",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [{
+                    "type": "selection",
+                    "name": "对方生理性别",
+                    "options": ["男", "女"]
+                }],
+            "optional_inputs": [
+                {
+                    "name": "当前感情状态",
+                    "type": "selection",
+                    "options": ["单身求缘", "刚分手", "一直单身", "复合可能", "其他"]
+                },
+                {
+                    "name": "期望时间范围",
+                    "type": "selection",
+                    "options": ["1个月内", "3个月内", "半年内", "1年内", "2年内"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "婚姻与配偶在命理中对应夫妻宫、疾厄宫及兄弟宫，关联亲密关系、健康、人际互动与家庭格局。高阶分析融合紫微三方四正、四化飞星、跨宫联动，并结合八字配偶星与六爻时机判断，以揭示配偶个性、能力、背景、婚运阶段。",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "raw_palette": {},
+                "risk_decision_logic": "以卦体之变化为论述基础。取世爻代表求测者，应爻代表TA，用神为男性看妻财爻、女性看官鬼爻。检查世应关系：相生相合或比和代表互相好感；相冲相克则缘分不稳。用神若动化合世爻／应爻，显示情感互动良好；若动化冲或化忌、空亡，则当前恋情有阻碍或非真挚。查看是否存在兄弟爻或子孙爻发动，提示第三者或家庭干扰可能性。结合日月建与旬空判断时间是否适合进入恋情，否则需等待吉象时机。",
+                "risk_assessment": [
+                    "如果遇到用神动化合世爻或应爻，则意味着情感互动和谐，当前时机非常适合开始恋爱关系",
+                    "如果遇到世应相生相合或比和，则意味着双方磁场契合，感情基础稳固，恋爱时机成熟",
+                    "如果遇到用神旺相且临青龙贵人，则意味着感情发展顺利吉祥，正缘降临值得把握",
+                    "如果遇到用神动化冲克或化忌空亡，则意味着感情缘分虽存但现阶段难以稳定，建议观察",
+                    "如果遇到兄弟爻或子孙爻发动，则意味着家庭或第三方因素可能造成恋爱干扰，需谨慎处理",
+                    "如果遇到世爻装白虎而应爻非青龙，则意味着感情冲突激烈，当前不宜进入恋情"
+                ],
+                "priority_remark": 1
+            }
+        ],
+        "other_tips": ""
+
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "感情建议仅供参考，不代表恋情发展必然。"
+        ],
+        "ui_representation_tips": "祝和合的恋人们长长久久，祝不和的恋人们早日和解。",
+        "follow_up_questions": [{}]
+    },
+
+    "synastry": {
+        "required": true
+    }
+}

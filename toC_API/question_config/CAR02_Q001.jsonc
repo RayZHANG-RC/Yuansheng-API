@@ -1,0 +1,136 @@
+{
+    // CAR02_Q001: 面试的时候，什么样的表达方式最适合我？
+    // 工作模式 - 个人表达风格优化
+
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR02_Q001",
+        "question_text": "我更适合一个什么样的自我表达、自我表现形式？",
+        "question_domain": "职业发展",
+        "question_theme": "工作模式",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "notice",
+            "message": "表达和表现包括：肢体语言、表情、眼神、声音、语速、语调等，适用范围：面试、演讲、谈判、社交、职场沟通等。"
+        },
+
+        "user_input_requirements": {
+            "required_inputs": [
+                
+                {
+                    "type": "select",
+                    "name": "面试岗位类型",
+                    "options": ["技术岗位", "管理岗位", "销售岗位", "创意岗位", "服务岗位", "其他"]
+                },
+                {
+                    "name": "个人性格倾向",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5,
+                    "labels": {"1": "内向沉稳", "5": "平衡中性", "10": "外向活泼"}
+                },
+                {
+                    "type": "range",
+                    "name": "个人思维习惯",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5,
+                    "labels": {"1": "理性逻辑", "5": "平衡中性", "10": "感性创意"}
+                },
+                {
+                    "type": "range",
+                    "name": "面试重要程度",
+                    "min": 1,
+                    "max": 10,
+                    "default_value": 5,
+                    "labels": {"1": "用于练手", "5": "一般机会", "10": "梦想职位"}
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "面试官背景",
+                    "placeholder": "请输入面试官背景"
+                },
+                {
+                    "type": "select",
+                    "name": "公司文化",
+                    "options": ["传统稳重", "年轻活力", "创新开放", "严谨专业", "不确定"]
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 1,
+                "risk_decision_logic": "八字中食神、伤官、印比、比劫各有表达特质。通过十神配置分析个性特点和最佳表达方式。食神旺者宜语气平和、逻辑清晰；伤官旺者适合灵活幽默展现才气；印星强者适合深度思考和专业表达；比劫多者宜直率真实。结合日主强弱与五行格局，形成最适个性表达风格。",
+                "risk_assessment": [
+                    "如果遇到食神旺相且清透，则意味着表达风格宜稳重叙述，以逻辑条理展现可信赖形象",
+                    "如果遇到伤官发达无制，则意味着适合幽默风趣表达，以才华智慧展现个人闪光点",
+                    "如果遇到印星旺盛当权，则意味着适合深度专业表达，以知识厚度展现权威可靠",
+                    "如果遇到比劫众多且透干，则意味着适合坦诚真实表达，以真我风采赢得共鸣",
+                    "如果遇到忌神显露发动，则意味着需避免对应表达风格，以防产生反效果或误解",
+                    "如果遇到食神伤官并现且有情，则意味着表达能力极强，可灵活切换多种沟通方式",
+                    "如果遇到印比相生且格局清纯，则意味着稳重可靠是最大优势，适合展现专业素养"
+                ]
+            },
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette": {},
+                "priority_remark": 2,
+                "risk_decision_logic": "紫微迁移宫、命宫与交友宫的主星与四化结果决定外在沟通面貌与人际交流能力。通过分析迁移宫主星与交友宫关联，若迁移宫有太阳/天同/天府等吉星或吉化，宜展现热情与亲和；若主星为太阴/天机，宜表现稳重与智慧；若交友宫吉则易获得沟通共鸣；结合命宫四化判断表达风格是否匹配对方预期。",
+                "risk_assessment": [
+                    "如果遇到迁移宫吉星庙旺且四化良好，则意味着第一印象佳，可适当展现个人魅力与自信",
+                    "如果遇到命宫主星稳重且三方得力，则意味着适合沉稳专业的表达方式，给人可靠感",
+                    "如果遇到交友宫吉星拱照或化禄，则意味着人际互动能力强，能快速建立信任关系",
+                    "如果遇到四化飞入迁移宫或交友宫且为吉化，则意味着表达方式更具感染力和说服力",
+                    "如果遇到迁移宫或交友宫陷地受克，则意味着需谨慎调整表达姿态，避免误解或冲突",
+                    "如果遇到命宫太阳太阴合照迁移，则意味着表达风格宜刚柔并济，既有热情又有深度",
+                    "如果遇到迁移宫化权且命宫得力，则意味着具备领导风范，适合展现决断力和权威性"
+                ]
+            }
+        ],
+        "other_tips": "建议根据单位文化特点与场景类型灵活调整表达方式：例如应对大型舞台演讲建议偏伤官风格；面对高管面试建议偏食神稳定；当谈及团队协作可适当开启印星深度互动。"
+    },
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "沟通过程需保持真实诚信，不得虚假夸张",
+            "表达方式应符合职场规范与道德标准"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU01_Q001",
+                "question_text": "我参加此次 _____ 培训，对我未来的薪资涨幅有哪些帮助和回报吗？"
+            },
+            {
+                "question_id": "DAY01_Q001",
+                "question_text": "某一天的面试，我应当如何表达自己？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}

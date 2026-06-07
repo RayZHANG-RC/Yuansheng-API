@@ -1,0 +1,112 @@
+{
+    // 职业发展 - 工作转换 - 换工作成功与否及时机分析
+    // 以六爻为主分析具体求职事件的成败时机
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR01_Q002",
+        "question_text": "我最近一次加薪机会是什么时候？我要如何做？",
+        "question_domain": "职业发展",
+        "question_theme": "职场晋升",
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "restriction",
+            "message": "此功能仅适用于已在职场工作的用户。"
+        },
+        "user_specification": {
+            "required_inputs": [
+                {"type": "text", "name": "地理位置信息", "options": "请输入地理位置信息"},
+                {"type": "number", "name": "current_salary (CNY/月)", "options": "0-1000000000"}
+            ],
+            "optional_inputs": [{
+                    "type": "select",
+                    "name": "当前单位性质",
+                    "options": [  "国家行政机关",
+                        "事业单位（含公立学校、医院、科研机构等）",
+                        "国有企业",
+                        "国有控股企业",
+                        "集体所有制企业",
+                        "三资企业（中外合资/合作/外资企业）",
+                        "私营企业（含私营独资/私营有限公司/私营股份制）",
+                        "外商独资企业（外资控股）",
+                        "合伙企业",
+                        "个人独资企业",
+                        "其他（如非营利社会组织、民办非企业单位等）"]
+                }]
+        }
+    },
+
+    "quantitative_stage": {
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "分析关键为父母爻的旺衰与临值，官鬼爻的生克关系，以及财爻是否具气。应期应关注父母爻当值时或财官互生互化之机。以父母爻为岗位与任命凭证用神，官鬼为上级关系，财爻为加薪指标，世爻为自身状态。分析父母爻当值、生扶与化进，官鬼克世逆或合世顺，财爻是否带气，以判定加薪机会与时间。变爻提示周期与可能阻滞。",
+                "priority_remark": 1,
+                "criteria": [
+                    {
+                        "name": "父母爻",
+                        "role": "新职位/主管任命",
+                        "implication": "旺相则职位运具实质支撑；空破则机会薄弱"
+                    },
+                    {
+                        "name": "官鬼爻",
+                        "role": "决策者/上级关系",
+                        "implication": "旺相且受扶者，人际关系顺；被克或化煞则关系复杂"
+                    },
+                    {
+                        "name": "财爻",
+                        "role": "薪资待遇",
+                        "implication": "休囚或无气，薪资提升有限"
+                    },
+                    {
+                        "name": "世爻",
+                        "role": "求测者自身",
+                        "implication": "需有气，并能承托官鬼与父母动态"
+                    }
+                ],
+                "risk_assessment": [
+                    "如果遇到父母爻空破被克制，则意味着岗位支持薄弱，职位权威不足，加薪申请难获认可",
+                    "如果遇到官鬼爻克世或化忌煞，则意味着上级关系复杂，决策者态度不明或存在阻碍",
+                    "如果遇到财爻休囚无气或被冲克，则意味着薪资提升空间有限，财务预算紧张或政策限制",
+                    "如果遇到兄弟爻发动争财，则意味着同事竞争激烈，薪酬资源分配存在争议",
+                    "如果遇到世爻无力承财或被刑冲，则意味着个人能力不足以支撑期望薪资，需提升自身价值",
+                    "如果遇到财爻旺相且官鬼生世，则意味着薪资上调条件成熟，上级支持有力，加薪可期",
+                    "如果遇到父母爻化禄且世爻得生，则意味着职位价值得到认可，岗位津贴或职级调整带来收入增长"
+                ],
+                "raw_palette": {}
+            }
+        ],
+        "other_tips": "应期判断需结合加薪的手续流程；如官鬼、财爻变爻当值日为最佳节点。"
+
+    },
+
+    "qualitative_stage": {
+        "law_and_regulation_requirements": [
+            "劳动关系与薪酬协议应遵循《劳动合同法》和企业政策。"
+        ],
+
+        "ui_representation_tips": "应期时间, 关键风险, 操作建议",
+
+        "follow_up_questions": [
+            {
+                "question_id": "CAR01_Q001",
+                "question_text": "我最近一次升职机会是什么时候？我要如何做？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+
+}

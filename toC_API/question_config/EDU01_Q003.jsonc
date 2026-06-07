@@ -1,0 +1,135 @@
+{
+    // 教育发展 - 学历进阶 - 学历对薪资收入的影响分析
+    // 专注于学历提升对职业地位和财富收入的综合影响
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "EDU01_Q003",
+        "question_text": "我去读 _____，对我未来的薪资涨幅有哪些帮助和回报吗？",
+        "question_domain": "教育发展",
+        "question_theme": "学历进阶",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "note": "我去读_____，刚毕业后的薪资会比现在更高吗？",
+
+
+        "user_specification": {
+            "required_inputs": [
+                {"type": "select", "name": "目标学历层次", "options": ["专科", "成人本科", "硕士", "博士", "MBA", "EMBA", "FMBA"]},
+                {"type": "select", "name": "当前学历层次", "options": ["专科", "成人本科", "硕士", "博士", "MBA", "EMBA", "FMBA"]},
+                {
+                    "type": "select",
+                    "name": "与主业关联度",
+                    "options": ["10分 - 高度相关", "9分 - 非常相关", "8分 - 很相关", "7分 - 相关", "6分 - 较相关", "5分 - 一般相关", "4分 - 不太相关", "3分 - 相关性较低", "2分 - 相关性很低", "1分 - 几乎不相关"]
+                }
+            ],
+            "optional_inputs": [
+                {
+                    "type": "number",
+                    "name": "学费预算",
+                    "min": 0,
+                    "unit": "元"
+                },
+                {
+                    "type": "number",
+                    "name": "预期完成时间",
+                    "min": 0
+                },
+                {
+                    "type": "select",
+                    "name": "预期完成时间单位",
+                    "options": ["月", "年"]
+                },
+                {
+                    "type": "number",
+                    "name": "目前薪资",
+                    "min": 0,
+                    "unit": "元"
+                },
+                {
+                    "type": "number",
+                    "name": "预期薪资",
+                    "min": 0,
+                    "unit": "元"
+                }
+            ]
+        }
+    },
+
+
+    "quantitative_stage":{
+
+        "domain_logic": "教育发展属中长期规划，重点分析印星（学习能力）、食伤（才华发挥）与财星（投资回报）的配置关系，结合大运流年判断最佳进修时机和发展方向",
+
+        "methods": [
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "risk_decision_logic": "紫微斗数中以官禄宫层次、财帛宫收入、福德宫学习、迁移宫外界机遇为重点。若文昌、文曲入命或官禄，流年大限走强运，化禄化权入命财官者，学历对薪资提升最为有利。",
+                "priority_remark": 1,
+                "risk_assessment": [
+                    "如果遇到命局财星破损或为忌神，则意味着学费投资风险高，容易导致财务危机影响生活",
+                    "如果遇到印星受损或文昌失陷，则意味着学习能力不足，难以完成学业或效果不佳",
+                    "如果遇到大运冲克学业宫或驿马受阻，则意味着学习过程阻力重重，进展缓慢",
+                    "如果遇到比劫夺财或官杀混杂，则意味着学成后就业竞争激烈，薪资提升有限",
+                    "如果遇到禄存与文昌同度在迁移宫，则意味着学历对薪资提升极为有利，投资回报丰厚",
+                    "如果遇到财官相生且印星得力，则意味着学业与事业完美结合，发展前景广阔",
+                    "如果遇到用神大运配合学业五行，则意味着深造时机成熟，成就斐然可期"
+                ],
+                "raw_palette": {}
+            },
+            {
+                "method_name": "六爻",
+                "enabled": 1,
+                "risk_decision_logic": "以妻财爻为薪资回报，父母爻为学习培训。若妻财爻旺相持世或生合世爻，且子孙爻发动以生财，则投资有回报。根据妻财爻来定义。若财爻化退神或回头克，则投资难有预期收益。",
+                "priority_remark": 2,
+                "risk_assessment": [
+                    "妻财爻旬空月破，投资回报堪忧"
+                ],
+                "raw_palette": {} // 将自动加载六爻示例盘.json
+            }
+        ],
+        "other_tips": "学历层次影响官星分析深度，专业方向确定食伤重点，学费预算评估财星压力，完成时间配合大运分析。重点关注官印相生和食伤生财两种模式的投资回报率。区别于培训，学历进阶更多涉及社会地位和长期收益。本科以下都认为是有利有益处的。"
+    },
+
+    "qualitative_stage":{
+
+        "law_and_regulation_requirements": [
+            "学历提升涉及时间、精力、金钱等多重投入，请综合评估个人条件",
+            "薪资涨幅受多种因素影响，学历仅为其中一个变量"
+        ],
+
+        "ui_representation_tips": "",
+
+        "follow_up_questions": [
+            {
+                "question_id": "EDU01_Q004",
+                "question_text": "我去读 _____，对我未来的人生发展有哪些帮助和回报吗？",
+                "recommendation_reason": "从薪资角度扩展到全面的人生发展评估"
+            },
+            {
+                "question_id": "CAR01_Q001",
+                "question_text": "我最近一次升职机会是什么时候？我要如何做？",
+                "recommendation_reason": "学历提升配合职场升职的时机把握"
+            }
+        ]
+    },
+    
+    "synastry": {
+        "required": false
+    }
+
+}

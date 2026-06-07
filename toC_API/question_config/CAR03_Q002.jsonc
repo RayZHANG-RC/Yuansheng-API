@@ -1,0 +1,116 @@
+{
+    "question_metadata": {
+        "analysis_version": "V0.0.1",
+        "question_id": "CAR03_Q002",
+        "question_text": "我适合在哪些行业创业？",
+        "question_domain": "职业发展",
+        "question_theme": "创业主本人",
+
+                "llm_config": {
+            // LLM configurations are now managed via unified CSV file:
+            // - unified_llm_config.csv: Contains per-question LLM configurations for both quantitative and qualitative stages
+            // This approach eliminates duplicate question files between GPT versions while allowing per-question LLM customization
+            "config_source": "csv",
+            "config_file": "unified_llm_config.csv"
+        }
+    },
+
+    "user_init": {
+
+        "ui_pop_up": {
+            "type": "default",
+            "message": "None"
+        },
+
+        "user_specification": {
+            "required_inputs": [
+
+            ],
+            "optional_inputs": [
+                {
+                    "type": "text",
+                    "name": "当前擅长的领域",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "当前已从事过的领域",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "当前的资源背景",
+                    "content": ""
+                },
+                {
+                    "type": "text",
+                    "name": "推荐补充家庭支持、资金规模等事实信息，以进一步精炼建议。",
+                    "content": ""
+                }
+            ]
+        }
+    },
+
+    "quantitative_stage": {
+
+        "domain_logic": "六爻以父母爻代表岗位权力与任命凭证，官鬼爻代表主管或决策权，财爻代表薪资待遇，世爻代表求测者自身状态。使用紫微斗数、八字评估职位，重心在官禄与命宫的三方四正格局。",
+
+        "methods": [
+            {
+                "method_name": "八字",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"创业行业方向需从命局的五行喜用、格局天赋、命宫/财帛宫星曜来判断。根据日主五行强弱分析用神，首先依五行喜忌与调候用神，定最适宜之行业五行属性。若喜木/火宜文化、教育、餐饮；喜土/金宜地产、金融、咨询；喜水/木宜贸易、网络。再依格局特征（如食伤生财、正财格、财官旺）提炼天赋行业方向：创意、经营或管理类创业。再根据格局高低与十神组合，剖析天赋与职业方向：如伤官配印者宜文化、技术；财官双美者宜政商；食神生财者善经营。结合盲派宾主理论，看日主所能掌控的财官，判断是为己谋事，还是为他人作嫁。结合格局与十神组合，剖析天赋与职业方向。",
+                "risk_assessment": [
+                    "如果遇到日主身弱且用神无力，则意味着个人能力难以支撑大规模创业，宜选择轻资产行业或技能型创业",
+                    "如果遇到财星被克或空亡，则意味着所选行业盈利前景不明，需谨慎评估市场风险",
+                    "如果遇到比劫夺财且官杀混杂，则意味着竞争激烈且管理压力大，需避开红海市场",
+                    "如果遇到伤官见官或食伤被克，则意味着创新思维受阻，不宜选择需要持续创新的行业",
+                    "如果遇到五行用神与行业属性相违背，则意味着事业发展阻力重重，难以发挥天赋优势",
+                    "如果遇到食伤生财且财官相生，则意味着创意变现能力强，适合文创、咨询、教育等行业",
+                    "如果遇到用神得力且格局纯正，则意味着行业选择与个人天赋高度匹配，成功概率大"
+                ],
+                "priority_remark": 1
+            },
+            {
+                "method_name": "紫微斗数",
+                "enabled": 1,
+                "raw_palette":{},
+                "risk_decision_logic":"从财帛宫与官禄宫观察星曜布局：如武曲、太阴、禄存重聚，适合财富积累型行业；如天机、太阳旺相，适合咨询、教育、传播等；与财帛宫四化飞星互动，分析行业运行机制与风险趋势。详查官禄宫及其三方四正，观主星之庙旺利陷，如见紫府、武贪、日月，各有擅场。最终结合官禄宫四化飞星与命、财、迁诸宫的交会，洞察职业发展的最终形态与成就高低。查官禄宫及其三方四正，观主星之庙旺利陷，结合四化飞星与命、财、迁诸宫的交会，洞察职业发展的最终形态。",
+                "risk_assessment": [
+                    "如果遇到财帛宫化忌或主星陷弱，则意味着所选行业财运不稳，投资回报风险较高",
+                    "如果遇到官禄宫煞星云集或四化冲突，则意味着行业发展阻力重重，竞争环境恶劣",
+                    "如果遇到命宫与财帛宫严重冲克，则意味着个人特质与所选行业不匹配，发展受限",
+                    "如果遇到迁移宫受损或化忌，则意味着行业拓展困难，市场推广效果不佳",
+                    "如果遇到财帛宫星曜旺相且四化吉利，则意味着行业财运亨通，资金积累能力强",
+                    "如果遇到官禄宫主星庙旺且得三方吉助，则意味着行业地位稳固，合作机会丰富",
+                    "如果遇到财官生权禄且无煞星干扰，则意味着所选行业发展前景广阔，成就可期"
+                ],
+                "priority_remark": 2
+            }
+        ],
+        "other_tips": "注意从创业者的角度考量，传统行业的固定业态里已经存在了很多通吃的寡头大家。故而，建议从新兴行业、细分领域、创新模式等角度出发，寻找差异化竞争机会。"
+    },
+
+    "qualitative_stage": {
+
+        "law_and_regulation_requirements": [
+            "行业准入需遵守相关法律法规并咨询专业部门"
+        ],
+
+        "ui_representation_tips": "",
+        "follow_up_questions": [
+            {
+                "question_id": "CAR03_Q003",
+                "question_text": "哪些环境下是我适合的创业机会？"
+            },
+            {
+                "question_id": "CAR03_Q001",
+                "question_text": "我是否应该和TA一起合伙创业？"
+            }
+        ]
+    },
+    "synastry": {
+        "required": false
+    }
+}
